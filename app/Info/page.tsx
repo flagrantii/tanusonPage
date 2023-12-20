@@ -6,7 +6,9 @@ const Info = () => {
       <div className="flex flex-col lg:flex-row justify-between pb-12">
         <div className="w-full lg:w-5/12">
           <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">About Us</h1>
-          <p className="font-normal text-base leading-6 text-gray-600 pb-8">A motivated and highly detail-oriented Software Engineer with a proven track record of designing, developing, and implementing innovative software solutions. Proficient in full-stack development, with expertise in front-end and back-end technologies. Skilled in problem-solving and troubleshooting to ensure optimal functionality and performance. Continuously staying abreast of emerging technologies and industry trends to drive the adoption of best practices. Committed to delivering excellence in every phase of the software development life cycle.</p>
+          <p className="font-normal text-base leading-6 text-gray-600 pb-8">
+              A motivated and highly detail-oriented Software Engineer with a proven track record of designing, developing, and implementing innovative software solutions. Studied at Chulalongkorn University in CEDT. Proficient in full-stack development, with expertise in front-end and back-end technologies. Skilled in problem-solving and troubleshooting to ensure optimal functionality and performance. Continuously staying abreast of emerging technologies and industry trends to drive the adoption of best practices. Committed to delivering excellence in every phase of the software development life cycle.
+            </p>
           <div className="grid gap-2 grid-cols-8 pb-24">
 
             <img src="/js.png" alt="" className="w-8 h-8" />
@@ -40,7 +42,7 @@ const Info = () => {
           <p className="font-normal text-base leading-6 text-gray-600">PCCNST played a pivotal role in showing me what I love to do, fostering a love for continuous learning, and surrounding me with a wealth of inspiring peers.</p>
           
         </div>
-        <div className="w-full lg:w-6/12 flex items-center justify-center">
+        <div className="w-full lg:w-6/12 flex items-center justify-center sm:mt-5">
           <img className="h-30" src="/me5.png" alt="A group of People" />
         </div>
       </div>
