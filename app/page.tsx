@@ -34,7 +34,7 @@ export default function Main() {
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => setMobileMenuOpen(true)}
               >
                 <span className="sr-only">Close menu</span>
                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
@@ -76,10 +76,7 @@ export default function Main() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-44">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-indigo-600">
-                <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
+              <a href="#" className="font-semibold text-#ffc400">
               </a>
             </div>
           </div>
@@ -107,7 +104,7 @@ export default function Main() {
                   alt="ggg"
                 />
               </a>
-              <a href="https://www.linkedin.com/in/tanuson-deachaboonchana-153542258/" target='_blank'>
+              <a href="https://www.linkedin.com/in/tanuson-deachaboonchana-743a3029b/" target='_blank'>
                 <Image
                   src="/linkedin.png"
                   width={32}
@@ -116,9 +113,17 @@ export default function Main() {
                 />
               </a>
             </div>
+            <a href='/Port'>
+              <div className="mt-10 relative rounded-full px-3 py-1 text-sm hover:font-bold leading-6 text-gray-600 ring-1 ring-purple-900/10 hover:bg-purple-500 transition-all hover:text-white ">
+                See More
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+
+

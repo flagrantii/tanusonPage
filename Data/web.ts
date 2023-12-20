@@ -1,87 +1,90 @@
 export const webs = [
     {
       id: 1,
-      title: 'Boost your conversion rate',
+      title: 'Trip Recomendation',
       href: '#',
       description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      date: 'Mar 16, 2020',
+        'A website for recommending travel trips within Bangkok using Machine Learning Build frontend web-app using css and javascript and build a recommend ai api using python.',
+      date: 'April 2023',
       datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
+      category: { title: 'Complete', href: '#' },
+      style: 'relative z-10 rounded-full bg-green-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
+        name: 'PCSHS-NST Team',
+        role: 'Frontend Developer',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          '/triplogo.jpg',
       },
     },
     {
-      id: 1,
-      title: 'Boost your conversion rate',
+      id: 2,
+      title: 'Carbon Credits Marketplace',
       href: '#',
       description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      date: 'Mar 16, 2020',
+        'E-commerce website for buying-selling-exchanging carbon credits. Build Frontend with React, Design UX/UI with figma and build the features available in the app.',
+      date: 'May 2023',
       datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
+      category: { title: 'Complete', href: '#' },
+      style: 'relative z-10 rounded-full bg-green-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
+        name: 'Coala Team',
+        role: 'FullStack Developer / UXUI Designer',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          '/carbonlogo.jpg',
+      },
+    },{
+      id: 3,
+      title: '10 Days Project (Full Option Ecommerce)',
+      href: '#',
+      description:
+        'E-commerce website that has features of other social applications For practicing making features in each type FullStack Full Option Ecommerce app with Next, Typescript Tailwind css, Prisma, Supabase',
+      date: 'September 2023',
+      datetime: '2020-03-16',
+      category: { title: 'In Progress', href: '#' },
+      style: 'relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
+      author: {
+        name: 'Tanuson',
+        role: 'All roles',
+        href: '#',
+        imageUrl:
+          '10logo.jpg',
+      },
+    },{
+      id: 4,
+      title: 'Tech Cave',
+      href: '#',
+      description:
+        'The website collects various activities and events related to technology and creates profiles for high school age groups.',
+      date: 'October 2023',
+      datetime: '2020-03-16',
+      category: { title: 'In Progress', href: '#' },
+      style: 'relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
+      author: {
+        name: 'Tanuson',
+        role: 'All roles',
+        href: '#',
+        imageUrl:
+        'techcavelogo.jpg',
       },
     },
     {
-      id: 1,
-      title: 'Boost your conversion rate',
+      id: 5,
+      title: 'Ranfoom',
       href: '#',
       description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      date: 'Mar 16, 2020',
+        'Explore culinary creativity with the Random Meal app. Tap for surprise recipes, customize filters, and enjoy step-by-step guidance in style with Flutter.',
+      date: 'June 2021',
       datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
+      category: { title: 'Complete', href: '#' },
+      style: 'relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
+        name: 'Ranfoom Team',
+        role: 'Frontend Developer / UXUI Designer',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-    {
-      id: 1,
-      title: 'Boost your conversion rate',
-      href: '#',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
-      author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-    {
-      id: 1,
-      title: 'Boost your conversion rate',
-      href: '#',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
-      author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'foodlogo.jpg',
       },
     },
   ]
