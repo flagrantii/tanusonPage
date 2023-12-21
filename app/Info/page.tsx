@@ -23,11 +23,10 @@ const Info = () => {
             <img src="/next.png" alt="" className="w-8 h-8" />
             <img src="/vue.png" alt="" className="w-8 h-8" />
             <img src="/nuxt.png" alt="" className="w-8 h-6 mt-1" />
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
             <img src="/laravel.png" alt="" className="w-8 h-8" />
+            <div></div>
+            <div></div>
+            <div></div>
             <img src="/flutter.png" alt="" className="w-8 h-8" />
             <img src="/docker.png" alt="" className="w-8 h-8" />
             <img src="/sql.png" alt="" className="w-8 h-8" />
