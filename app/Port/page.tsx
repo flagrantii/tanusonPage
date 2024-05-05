@@ -21,7 +21,7 @@ export default function page() {
             </div>
         
             {/* BEGIN: career */}
-            <div className="sm:py-12">
+            <div className="sm:py-12 py-16">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-7xl lg:mx-0">
                 <Typography variant="h4" color={"white"} fontWeight={"bold"}>

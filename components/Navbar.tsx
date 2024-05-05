@@ -1,8 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
 import HubIcon from '@mui/icons-material/Hub';
 import NavbarRoute from './NavbarRoute';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [opacity, setOpacity] = useState(1);
@@ -18,13 +19,16 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+    const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const router = useRouter();
 
   return (
     <>
       <Box
         padding={3}
         display={"flex"}
-        gap={4}
+        gap={isMobile ? 1 : 2}
         position={"fixed"}
         width={"100%"}
         height={"10vh"}
@@ -32,12 +36,16 @@ export default function Navbar() {
         top={0}
         sx={{ inset: 0, opacity }}
       >
-        <Box display={"flex"} gap={2}>
-          <HubIcon sx={{ color: "blue" }} fontSize='large' />
-          <Typography variant="h6" color={"white"} fontWeight={"bold"} fontSize={"h6"}>
-            Tanuson Deachaboonchana
-          </Typography>
-        </Box>
+        
+            <Box display={"flex"} gap={2}>
+                <button title='' onClick={() => router.push("/")}>
+                    <HubIcon sx={{ color: "blue" }} fontSize='large'/>
+                </button>
+                <Typography variant="h6" color={"white"} fontWeight={"bold"}>
+                    Tanuson Deachaboonchana
+                </Typography>
+            </Box>
+        
         <NavbarRoute />
       </Box>
     </>

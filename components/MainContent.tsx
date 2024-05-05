@@ -2,6 +2,10 @@ import { Box, Button, Container, Typography, colors, useMediaQuery, useTheme } f
 import React from 'react';
 import SendIcon from '@mui/icons-material/Send';
 import { useRouter } from 'next/navigation';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import Link from 'next/link';
 
 export default function MainContent() {
   const router = useRouter();
@@ -36,6 +40,16 @@ export default function MainContent() {
           CEDT student, Enthusiastic Software Developer specializing in Web Ap Development, committed to empowering
           others through innovative and user-centric digital solutions.
         </Typography>
+        <Box
+        display={"flex"}
+        flexDirection={"row"}
+        gap={3}
+        marginTop={2}
+        >
+            <Link href="https://github.com/flagrantii" target='_blank'><GitHubIcon sx={{color:"white"}} fontSize='large'/></Link>
+            <Link href="https://www.linkedin.com/in/tanuson-deachaboonchana-743a3029b/" target='_blank'><LinkedInIcon sx={{color:"white"}} fontSize='large'/></Link>
+            <Link href="https://twitter.com/TanusonD10318" target='_blank'><TwitterIcon sx={{color:"white"}} fontSize='large'/></Link>
+        </Box>
         <Button
           variant="outlined"
           endIcon={<SendIcon />}
