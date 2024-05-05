@@ -16,13 +16,15 @@ export default function MainContent() {
         display="flex"
         flexDirection="column"
         gap={2}
-        top="20%"
+        top={isMobile ? '30%' : '20%'}
         width={isMobile ? '80%' : '50%'}
         marginLeft={isMobile ? 'auto' : 3}
         alignItems={isMobile ? 'center' : 'flex-start'}
         textAlign={isMobile ? 'center' : 'left'}
         justifyItems={isMobile ? 'center' : 'flex-start'}
-        
+        justifyContent={isMobile ? 'center' : 'flex-start'}
+        maxWidth={isMobile ? '100%' : '50%'}
+        left={isMobile ? 40 : 0}
       >
         <Typography variant={isMobile ? 'h5' : 'h1'} color="white" fontWeight="bold">
           Tanuson Deachaboonchana
