@@ -13,7 +13,9 @@ export default function Home() {
    <>
     <MainContent />
     {
-      (isDesktop >=1024)? <Spline className="h-2" scene="https://prod.spline.design/lsjnayOXzDK5gyEj/scene.splinecode" /> : null
+      (isDesktop >=1600)? 
+        <Spline className="h-2" scene="https://prod.spline.design/lsjnayOXzDK5gyEj/scene.splinecode" />
+      : null
     }
    </>
   );

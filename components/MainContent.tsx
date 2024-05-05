@@ -33,7 +33,7 @@ export default function MainContent() {
         <Typography variant={isMobile ? 'h5' : 'h1'} color="white" fontWeight="bold">
           Tanuson Deachaboonchana
         </Typography>
-        <Typography variant={isMobile ? 'h5' : 'h4'} color="white" fontWeight="semi-bold">
+        <Typography variant={isMobile ? 'h6' : 'h5'} color="white" fontWeight="semi-bold">
           Software Engineer, FullStack Developer
         </Typography>
         <Typography variant={isMobile ? 'body1' : 'h6'} color="white" fontWeight="semi">
