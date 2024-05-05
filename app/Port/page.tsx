@@ -8,7 +8,7 @@ export default function page() {
     return (
         <>
         <div className="py-6 sm:pt-6">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-6">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24">
                 <div className="mx-auto max-w-7xl lg:mx-0">
                 <Typography variant="h4" color={"white"} fontWeight={"bold"}>
                     Projects

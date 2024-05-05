@@ -6,9 +6,9 @@ export default function NavbarRoute() {
     const router = useRouter()
     return (
         <Box
-            padding={2}
             display={"flex"}
             justifyContent={"center"}
+            alignItems={"center"}
             gap={2}
         >
             <Typography onClick={() => router.push('/')} sx={{color:"white", cursor:"pointer"}}>Home</Typography>

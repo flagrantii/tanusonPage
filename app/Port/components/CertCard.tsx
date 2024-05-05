@@ -4,11 +4,11 @@ import { certJson } from '@/data/interface'
 export default function CertCard({certProps}: {certProps: certJson}) {
   return (
     <>
-        <article key={certProps.id} className="flex max-w-xl flex-col items-start justify-between bg-gray-50 p-5 rounded-md ">
+        <article key={certProps.id} className="flex max-w-xl flex-col items-start justify-between bg-gray-900 p-5 rounded-md ">
             <div className="group relative">
                 <div className="flex flex-row gap-3 items-center">
                 <img src={certProps.author.imageUrl} alt="" className="h-10 w-10 rounded-full mt-2 bg-gray-50" />
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-100 group-hover:text-gray-400">
                     <a href={certProps.href}>
                     <span className="absolute inset-0" />
                     {certProps.title}
@@ -16,22 +16,22 @@ export default function CertCard({certProps}: {certProps: certJson}) {
                 </h3>
                 </div>
                 <div className="flex items-center gap-x-4 text-xs mt-5">
-                <time dateTime={certProps.datetime} className="text-gray-500">
+                <time dateTime={certProps.datetime} className="text-gray-300">
                 {certProps.date}
                 </time>
 
-                <a href={certProps.href} className={certProps.style}>
+                <a href={certProps.href} className={`relative z-10 rounded-full bg-blue-800 px-3 py-1.5 font-medium text-gray-200 hover:bg-blue-900`}>
                 {certProps.category.title}
                 </a>
-                <p>{certProps.category.org}</p>
+                <p className='text-gray-300'>{certProps.category.org}</p>
             </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{certProps.description}</p>
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">{certProps.description}</p>
             </div>
 
             <div className='flex xs:grid xs:grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 gap-2 flex-wrap'>
                 {certProps.skills?.map((skill) => (
                     <div className='flex'>
-                        <span className='inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-600/10'>
+                        <span className='inline-flex items-center rounded-md bg-gray-700 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-600/10'>
                         {skill}
                         </span>
                     </div>

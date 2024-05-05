@@ -1,7 +1,6 @@
 import React from 'react'
 import WebCard from './WebCard'
 import { webs } from '@/data/web'
-import { webJson } from '@/data/interface'
 
 export default function WebCatelog() {
   return (

@@ -8,7 +8,6 @@ export const webs = [
       date: 'April 2023',
       datetime: '2020-03-16',
       category: { title: 'Complete', href: '#' },
-      style: 'relative z-10 rounded-full bg-green-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
         name: 'PCSHS-NST Team',
         role: 'Frontend Developer',
@@ -26,7 +25,6 @@ export const webs = [
       date: 'May 2023',
       datetime: '2020-03-16',
       category: { title: 'Complete', href: '#' },
-      style: 'relative z-10 rounded-full bg-green-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
         name: 'Coala Team',
         role: 'FullStack Developer / UXUI Designer',
@@ -43,7 +41,6 @@ export const webs = [
       date: 'September 2023',
       datetime: '2020-03-16',
       category: { title: 'In Progress', href: '#' },
-      style: 'relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
         name: 'Tanuson',
         role: 'All roles',
@@ -60,7 +57,6 @@ export const webs = [
       date: 'October 2023',
       datetime: '2020-03-16',
       category: { title: 'In Progress', href: '#' },
-      style: 'relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
         name: 'Tanuson',
         role: 'All roles',
@@ -78,7 +74,6 @@ export const webs = [
       date: 'June 2021',
       datetime: '2020-03-16',
       category: { title: 'Complete', href: '#' },
-      style: 'relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
       author: {
         name: 'Ranfoom Team',
         role: 'Frontend Developer / UXUI Designer',

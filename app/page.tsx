@@ -1,13 +1,20 @@
 "use client"
 import MainContent from "@/components/MainContent";
 import Spline from "@splinetool/react-spline";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isDesktop, setIsDesktop] = useState(0);
+  useEffect(() => {
+    setIsDesktop(window.innerWidth)
+  }, []);
+
   return (
    <>
     <MainContent />
-    <Spline className="h-2" scene="https://prod.spline.design/lsjnayOXzDK5gyEj/scene.splinecode" />
+    {
+      (isDesktop >=1024)? <Spline className="h-2" scene="https://prod.spline.design/lsjnayOXzDK5gyEj/scene.splinecode" /> : null
+    }
    </>
   );
 }

@@ -6,7 +6,6 @@ export interface webJson {
     date: string;
     datetime: string;
     category: { title: string; href: string };
-    style: string;
     author: {
         name: string;
         role: string;
@@ -23,7 +22,6 @@ export interface certJson {
         date: string;
         datetime: string;
         category: { title: string; org: string };
-        style: string,
           author: {
           name: string;
           role: string;
