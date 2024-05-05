@@ -22,6 +22,7 @@ export default function MainContent() {
         alignItems={isMobile ? 'center' : 'flex-start'}
         textAlign={isMobile ? 'center' : 'left'}
         justifyItems={isMobile ? 'center' : 'flex-start'}
+        
       >
         <Typography variant={isMobile ? 'h5' : 'h1'} color="white" fontWeight="bold">
           Tanuson Deachaboonchana
