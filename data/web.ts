@@ -82,4 +82,21 @@ export const webs = [
         'foodlogo.jpg',
       },
     },
+    {
+      id: 6,
+      title: 'CUNEXT Event',
+      href: '#',
+      description:
+        'This is a product in HackChula, Comprehensive platform designed to enhance the experience of event discovery, organization, and management within the university community. This application offers a range of features tailored to meet the needs of students, faculty, and event organizers, ensuring seamless event engagement and efficient management.',
+      date: 'March 2024',
+      datetime: '2020-03-16',
+      category: { title: 'Completed', href: '#' },
+      author: {
+        name: 'John Doe Team',
+        role: 'Frontend Developer / Mobile Developer',
+        href: '#',
+        imageUrl:
+        'CUNEXT.png',
+      },
+    },
   ]

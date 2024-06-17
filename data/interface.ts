@@ -43,3 +43,14 @@ export interface careerJson {
         location: string;
         img: string;
 }
+
+export interface eduJson {
+    id: number;
+    company: string;
+    href: string;
+    description: string;
+    date: string;
+    role: string;
+    location: string;
+    img: string;
+}
