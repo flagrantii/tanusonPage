@@ -7,7 +7,7 @@ export const webs = [
         'A website for recommending travel trips within Bangkok using Machine Learning Build frontend web-app using css and javascript and build a recommend ai api using python.',
       date: 'April 2023',
       datetime: '2020-03-16',
-      category: { title: 'Complete', href: '#' },
+      category: { title: 'Completed', href: '#' },
       author: {
         name: 'PCSHS-NST Team',
         role: 'Frontend Developer',
@@ -24,7 +24,7 @@ export const webs = [
         'E-commerce website for buying-selling-exchanging carbon credits. Build Frontend with React, Design UX/UI with figma and build the features available in the app.',
       date: 'May 2023',
       datetime: '2020-03-16',
-      category: { title: 'Complete', href: '#' },
+      category: { title: 'Completed', href: '#' },
       author: {
         name: 'Coala Team',
         role: 'FullStack Developer / UXUI Designer',
@@ -73,7 +73,7 @@ export const webs = [
         'Explore culinary creativity with the Random Meal app. Tap for surprise recipes, customize filters, and enjoy step-by-step guidance in style with Flutter.',
       date: 'June 2021',
       datetime: '2020-03-16',
-      category: { title: 'Complete', href: '#' },
+      category: { title: 'Completed', href: '#' },
       author: {
         name: 'Ranfoom Team',
         role: 'Frontend Developer / UXUI Designer',

@@ -5,7 +5,7 @@ export default function CareerCard({careerProps}: {careerProps: careerJson}) {
   return (
     <>
     <div className="mx-auto max-w-6xl px-6 lg:px-8 ">
-        <div className="bg-gray-900 p-4 rounded-lg ">
+        <div className="bg-gray-900 px-4 py-2 rounded-lg ">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:py-6 ">
             <div className="w-16 h-16 md:w-32 md:h-32 rounded-xl bg-gray-400"></div>
             <div className='grid grid-cols-1 gap-1 w-full'>

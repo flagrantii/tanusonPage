@@ -3,11 +3,27 @@ import WebCatelog from './components/WebCatelog'
 import { Typography } from '@mui/material'
 import CareerCatelog from './components/CareerCatelog'
 import CertCatalog from './components/CertCatalog'
+import EduCatelog from './components/EduCatelog'
 
 export default function page() {
     return (
         <>
         <div className="py-6 sm:pt-6">
+            {/* BEGIN: project */}
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24">
+                <div className="mx-auto max-w-7xl lg:mx-0">
+                <Typography variant="h4" color={"white"} fontWeight={"bold"}>
+                    Educations
+                    </Typography>
+                <Typography variant="h6" color={"white"} marginTop={2}>
+                    On my education page, discover the academic journey that has shaped my expertise in technology and innovation. From foundational courses in computer engineering to advanced studies in web app development, data science, each educational milestone demonstrates my dedication to mastering complex concepts and staying at the forefront of technological advancements.
+                </Typography>
+                </div>
+                <EduCatelog />
+            </div>
+            {/* END: project */}
+
+            {/* BEGIN: project */}
             <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24">
                 <div className="mx-auto max-w-7xl lg:mx-0">
                 <Typography variant="h4" color={"white"} fontWeight={"bold"}>
@@ -19,6 +35,7 @@ export default function page() {
                 </div>
                 <WebCatelog />
             </div>
+            {/* END: project */}
         
             {/* BEGIN: career */}
             <div className="sm:py-12 py-16">

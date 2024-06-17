@@ -9,9 +9,17 @@ export default function WebCard({webProps}: {webProps: webJson}) {
         <time dateTime={webProps.datetime} className="text-gray-400">
             {webProps.date}
         </time>
-        <a href={webProps.category.href} className={`relative z-10 rounded-full bg-blue-800 px-3 py-1.5 font-medium text-gray-200 hover:bg-blue-900`}>
+        {
+            (webProps.category.title === 'Completed') ? 
+            <a href={webProps.category.href} className={`relative z-10 rounded-full bg-green-800 px-3 py-1.5 font-medium text-gray-200 hover:bg-green-900`}>
             {webProps.category.title}
-        </a>
+            </a>
+            :        
+            <a href={webProps.category.href} className={`relative z-10 rounded-full bg-blue-800 px-3 py-1.5 font-medium text-gray-200 hover:bg-blue-900`}>
+            {webProps.category.title}
+            </a>
+        }
+
         </div>
         <div className="group relative">
         <div className="flex flex-row gap-3 items-center">
