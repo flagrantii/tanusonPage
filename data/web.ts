@@ -2,9 +2,9 @@ export const webs = [
     {
       id: 1,
       title: 'Trip Recomendation',
-      href: '#',
+      href: 'https://github.com/flagrantii/DemoTripReecommend',
       description:
-        'A website for recommending travel trips within Bangkok using Machine Learning Build frontend web-app using css and javascript and build a recommend ai api using python.',
+        'Utilizing AI algorithms, Trip Recommendation suggests tailored travel itineraries for Bangkok visitors based on individual preferences and interests. This web app enhances trip planning by providing personalized recommendations, optimizing travel experiences with local insights and curated suggestions',
       date: 'April 2023',
       datetime: '2020-03-16',
       category: { title: 'Completed', href: '#' },
@@ -13,15 +13,15 @@ export const webs = [
         role: 'Frontend Developer',
         href: '#',
         imageUrl:
-          '/triplogo.jpg',
+          '/icon/triplogo.jpg',
       },
     },
     {
       id: 2,
       title: 'Carbon Credits Marketplace',
-      href: '#',
+      href: 'https://github.com/flagrantii/CaronCredit-main',
       description:
-        'E-commerce website for buying-selling-exchanging carbon credits. Build Frontend with React, Design UX/UI with figma and build the features available in the app.',
+        'Bridging sustainability and consumerism, Carbon Credit Marketplace enables the trading of carbon credits through clothing purchases. This innovative web app promotes eco-friendly shopping habits while empowering users to contribute positively to environmental conservation efforts through their everyday choices',
       date: 'May 2023',
       datetime: '2020-03-16',
       category: { title: 'Completed', href: '#' },
@@ -30,47 +30,15 @@ export const webs = [
         role: 'FullStack Developer / UXUI Designer',
         href: '#',
         imageUrl:
-          '/carbonlogo.jpg',
-      },
-    },{
-      id: 3,
-      title: '10 Days Project (Full Option Ecommerce)',
-      href: '#',
-      description:
-        'E-commerce website that has features of other social applications For practicing making features in each type FullStack Full Option Ecommerce app with Next, Typescript Tailwind css, Prisma, Supabase',
-      date: 'September 2023',
-      datetime: '2020-03-16',
-      category: { title: 'In Progress', href: '#' },
-      author: {
-        name: 'Tanuson',
-        role: 'All roles',
-        href: '#',
-        imageUrl:
-          '10logo.jpg',
-      },
-    },{
-      id: 4,
-      title: 'Tech Cave',
-      href: '#',
-      description:
-        'The website collects various activities and events related to technology and creates profiles for high school age groups.',
-      date: 'October 2023',
-      datetime: '2020-03-16',
-      category: { title: 'In Progress', href: '#' },
-      author: {
-        name: 'Tanuson',
-        role: 'All roles',
-        href: '#',
-        imageUrl:
-        'techcavelogo.jpg',
+          '/icon/carbonlogo.jpg',
       },
     },
     {
-      id: 5,
+      id: 3,
       title: 'Ranfoom',
-      href: '#',
+      href: ' ',
       description:
-        'Explore culinary creativity with the Random Meal app. Tap for surprise recipes, customize filters, and enjoy step-by-step guidance in style with Flutter.',
+        'An innovative Flutter application, Ranfoom simplifies meal decision-making by randomly suggesting food options. Users enjoy a playful and spontaneous approach to choosing meals, making dining decisions fun and effortless with intuitive mobile interface features.',
       date: 'June 2021',
       datetime: '2020-03-16',
       category: { title: 'Completed', href: '#' },
@@ -79,15 +47,15 @@ export const webs = [
         role: 'Frontend Developer / UXUI Designer',
         href: '#',
         imageUrl:
-        'foodlogo.jpg',
+        '/icon/foodlogo.jpg',
       },
     },
     {
-      id: 6,
+      id: 4,
       title: 'CUNEXT Event',
-      href: '#',
+      href: 'https://github.com/flagrantii/cunext-event',
       description:
-        'This is a product in HackChula, Comprehensive platform designed to enhance the experience of event discovery, organization, and management within the university community. This application offers a range of features tailored to meet the needs of students, faculty, and event organizers, ensuring seamless event engagement and efficient management.',
+        'Revolutionizing university event management, CUNEXT Event employs React Native and Expo to streamline event discovery, organization, and engagement for students and faculty. It integrates comprehensive features for seamless planning and participation, enhancing campus-wide event experiences',
       date: 'March 2024',
       datetime: '2020-03-16',
       category: { title: 'Completed', href: '#' },
@@ -96,7 +64,58 @@ export const webs = [
         role: 'Frontend Developer / Mobile Developer',
         href: '#',
         imageUrl:
-        'CUNEXT.png',
+        '/icon/CUNEXT.png',
+      },
+    },
+    {
+      id: 5,
+      title: 'Massage Reservation',
+      href: 'https://github.com/flagrantii/Massage-Reservation-2',
+      description:
+        'Designed for ease and efficiency, Massage Reservation is a user-friendly web app for booking and managing massage appointments. It streamlines scheduling processes for clients and practitioners, ensuring seamless communication and enhancing overall service accessibility and satisfaction.',
+      date: 'April 2024',
+      datetime: '2020-03-16',
+      category: { title: 'Completed', href: '#' },
+      author: {
+        name: 'John Doe Team',
+        role: 'FullStack Developer / DevOps Engineer',
+        href: '#',
+        imageUrl:
+        '/icon/logo1.png',
+      },
+    },
+    {
+      id: 6,
+      title: 'Miessweeper with JavaFx',
+      href: 'https://github.com/flagrantii/Minesweeper-java',
+      description:
+        'Developed using JavaFX, Mine Sweeper offers a classic gaming experience with an intuitive user interface. Players navigate through a grid to uncover mines while strategically flagging potential dangers, combining logic and concentration in an engaging, interactive gameplay format.',
+      date: 'May 2024',
+      datetime: '2020-03-16',
+      category: { title: 'Completed', href: '#' },
+      author: {
+        name: 'John Doe Team',
+        role: 'Developer / Designer',
+        href: '#',
+        imageUrl:
+        '/icon/bomb.png',
+      },
+    },
+    {
+      id: 7,
+      title: 'Golong Courrency API',
+      href: '#',
+      description:
+        'Developed as part of an internship, the Golang Concurrency API enhances application performance with robust concurrency management. This project showcases advanced Golang programming skills, optimizing resource utilization and scalability in distributed systems and high-demand environments',
+      date: 'June 2024',
+      datetime: '2020-03-16',
+      category: { title: 'Completed', href: '#' },
+      author: {
+        name: 'John Doe Team',
+        role: 'Software Developer Internship',
+        href: '#',
+        imageUrl:
+        '/icon/golang.jpg',
       },
     },
   ]

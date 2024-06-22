@@ -13,8 +13,8 @@ export const cert = [
         role: 'Frontend Developer',
         href: '#',
         imageUrl:
-            '/coursera.png',
-        cersimage: '/cer_deepai.jpeg',
+            '/icon/coursera.png',
+        cersimage: '/cert/cer_deepai.jpeg',
     },
       skills: ["Linear Regression", 
       "Regularization to Avoid Overfitting", 
@@ -37,9 +37,28 @@ export const cert = [
         role: 'Frontend Developer',
         href: '#',
         imageUrl:
-          '/coursera.png',
-        cersimage: '/cer_googleit.jpeg',
+          '/icon/coursera.png',
+        cersimage: '/cert/cer_googleit.jpeg',
       },
       skills: ["Binary Code", "Customer Support", "Linux","Troubleshooting"],
+    },
+    {
+      id: 2,
+      title: 'Build LookML Objects in Looker',
+      href: '',
+      description:
+        'Certificate in "Build LookML Objects in Looker" validates proficiency in constructing LookML models within Looker, empowering data analysts to create robust data models for business intelligence.',
+      date: 'June 2024',
+      datetime: '2020-03-16',
+      category: { title: 'Google', org: 'Google Cloud' },
+      author: {
+        name: 'PCSHS-NST Team',
+        role: 'Frontend Developer',
+        href: '#',
+        imageUrl:
+          '/icon/google1.jpg',
+        cersimage: '/cert/cer_lookml.png',
+      },
+      skills: ["ML", "AI", "LookML","SQL","Data Analysis","Data Visualization"],
     },
   ]

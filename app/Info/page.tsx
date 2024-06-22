@@ -17,7 +17,7 @@ export default function page() {
           
         </div>
         <div className="w-full lg:w-6/12 flex items-center justify-center mt-16">
-          <img className="h-30" src="/me5.png" alt="A group of People" />
+          <img className="h-30" src="/image/me5.png" alt="A group of People" />
         </div>
       </div>
     </div>

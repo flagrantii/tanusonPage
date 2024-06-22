@@ -4,6 +4,7 @@ import { Box, Container, Typography, useMediaQuery, useTheme } from '@mui/materi
 import HubIcon from '@mui/icons-material/Hub';
 import NavbarRoute from './NavbarRoute';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [opacity, setOpacity] = useState(1);
@@ -39,7 +40,7 @@ export default function Navbar() {
         
             <Box display={"flex"} gap={2}>
                 <button title='' onClick={() => router.push("/")}>
-                    <HubIcon sx={{ color: "blue" }} fontSize='large'/>
+                    <Image src="/icon/connection.png" alt="logo" width={30} height={30} />
                 </button>
                 <Typography variant="h6" color={"white"} fontWeight={"bold"}>
                     Tanuson Deachaboonchana
