@@ -8,7 +8,7 @@ export const education = [
       date: 'May 2017 - March 2023',
       role: 'Student',
       location: 'Nakhon Si Thammarat, Thailand',
-      img: "/pcshs_logo.png",
+      img: "/icon/pcshs_logo.png",
     },
     {
       id: 2,
@@ -19,6 +19,6 @@ export const education = [
       date: 'August 2023 - Now',
       role: 'Computer Engineering Student (CEDT)',
       location: 'Bangkok, Thailand',
-      img: "/chula_logo.png",
+      img: "/icon/chula_logo.png",
       },
   ]

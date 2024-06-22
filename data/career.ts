@@ -8,7 +8,7 @@ export const career = [
       date: 'August 2023 - November 2023 (4 months)',
       role: 'FullStack Developer Part-time',
       location: 'Bangkok',
-      img: "/company_logo.png",
+      img: "/icon/company_logo.png",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export const career = [
       date: 'February 2024 - June 2024 (5 months)',
       role: 'Backend Developer Part-time',
       location: 'Bangkok',
-      img: "/company_logo.png",
+      img: "/icon/company_logo.png",
       },
       {
       id: 3,
@@ -30,7 +30,7 @@ export const career = [
       date: 'April 2024 - June 2024 (3 months)',
       role: 'Frontend Developer Part-time',
       location: 'Bangkok',
-      img: "/company_logo.png",
+      img: "/icon/company_logo.png",
       },
       {
         id: 4,
@@ -41,6 +41,6 @@ export const career = [
         date: 'May 2024 - Now',
         role: 'Software Developer Internship',
         location: 'Bangkok',
-        img: "/blockfint_logo.png",
+        img: "/icon/blockfint_logo.png",
         },
   ]
