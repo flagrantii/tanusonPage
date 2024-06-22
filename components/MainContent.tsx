@@ -5,12 +5,17 @@ import { useRouter } from 'next/navigation';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import DownloadIcon from '@mui/icons-material/Download';
 import Link from 'next/link';
 
 export default function MainContent() {
   const router = useRouter();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const handleDownload = () => {
+    router.push('/resume/tanuson_resume.pdf');
+  }
 
   return (
     <>
@@ -50,23 +55,49 @@ export default function MainContent() {
             <Link href="https://www.linkedin.com/in/tanuson-deachaboonchana-743a3029b/" target='_blank'><LinkedInIcon sx={{color:"white"}} fontSize='large'/></Link>
             <Link href="https://twitter.com/TanusonD10318" target='_blank'><TwitterIcon sx={{color:"white"}} fontSize='large'/></Link>
         </Box>
-        <Button
-          variant="outlined"
-          endIcon={<SendIcon />}
-          size="large"
-          sx={{
-            color: colors.blue[800],
-            borderColor: colors.blue[800],
-            '&:hover': { backgroundColor: 'white' },
-            width: 'fit-content',
-            marginTop: 2,
-            marginLeft: isMobile ? 'auto' : 0,
-            marginRight: isMobile ? 'auto' : 0,
-          }}
-          onClick={() => router.push('/Port')}
+        <Box
+          display="flex"
+          flexDirection="row"
+          gap={2}
+          marginTop={2}
         >
-          See More
-        </Button>
+          <Button
+            variant="outlined"
+            endIcon={<SendIcon />}
+            size="large"
+            sx={{
+              color: colors.blue[800],
+              borderColor: colors.blue[800],
+              '&:hover': { backgroundColor: 'white' },
+              width: 'fit-content',
+              marginTop: 2,
+              marginLeft: isMobile ? 'auto' : 0,
+              marginRight: isMobile ? 'auto' : 0,
+            }}
+            onClick={() => router.push('/Port')}
+          >
+            See More
+          </Button>
+
+          <Button
+            variant="contained"
+            endIcon={<DownloadIcon />}
+            size="large"
+            sx={{
+              color: colors.blue[50],
+              borderColor: colors.blue[50],
+              backgroundColor: colors.blue[800],
+              '&:hover': { backgroundColor: 'white', color: colors.blue[800]},
+              width: 'fit-content',
+              marginTop: 2,
+              marginLeft: isMobile ? 'auto' : 0,
+              marginRight: isMobile ? 'auto' : 0,
+            }}
+            onClick={() => {handleDownload()}}
+          >
+            Download Resume
+          </Button>
+        </Box>
       </Box>
     </>
   );

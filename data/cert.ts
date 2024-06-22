@@ -45,7 +45,7 @@ export const cert = [
     {
       id: 2,
       title: 'Build LookML Objects in Looker',
-      href: '',
+      href: 'https://www.cloudskillsboost.google/public_profiles/4070637f-c92e-424f-a35e-c071938698cf/badges/9421029',
       description:
         'Certificate in "Build LookML Objects in Looker" validates proficiency in constructing LookML models within Looker, empowering data analysts to create robust data models for business intelligence.',
       date: 'June 2024',
