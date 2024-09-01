@@ -118,4 +118,21 @@ export const webs = [
         '/icon/golang.jpg',
       },
     },
+    {
+      id: 8,
+      title: 'Rub Puen Kao Mai 2024',
+      href: 'https://github.com/isd-sgcu/rpkm67-backend',
+      description:
+        ' Freshmen orientation registration website for Student Government of Chulalongkorn University',
+      date: 'July 2024',
+      datetime: '2020-03-16',
+      category: { title: 'Completed', href: '#' },
+      author: {
+        name: 'John Doe Team',
+        role: 'Software Developer',
+        href: '#',
+        imageUrl:
+        '/icon/sgcu_logo.jpg',
+      },
+    },
   ]
