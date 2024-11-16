@@ -2,7 +2,7 @@ export const webs = [
     {
       id: 1,
       title: 'Trip Recomendation',
-      href: 'https://github.com/flagrantii/DemoTripReecommend',
+      href: 'https://github.com/flagrantii/TripRecommend',
       description:
         'Utilizing AI algorithms, Trip Recommendation suggests tailored travel itineraries for Bangkok visitors based on individual preferences and interests. This web app enhances trip planning by providing personalized recommendations, optimizing travel experiences with local insights and curated suggestions',
       date: 'April 2023',
