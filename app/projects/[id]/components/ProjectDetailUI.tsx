@@ -29,7 +29,7 @@ const PageWrapper = styled(Box)`
 const ContentLayout = styled(Box)<{ deviceView: string }>`
   display: grid;
   grid-template-columns: ${({ deviceView }) => 
-    deviceView === 'laptop' ? '0.5fr 1024px' :
+    deviceView === 'laptop' ? '0.5fr 900px' :
     deviceView === 'tablet' ? '1fr 768px' :
     '1fr 375px'
   };
@@ -67,7 +67,7 @@ const MainContent = styled(Box)<{ deviceView: string }>`
 
 const DevicePreview = styled(Box)<{ deviceView: string }>`
   width: ${({ deviceView }) => 
-    deviceView === 'laptop' ? '1024px' :
+    deviceView === 'laptop' ? '900px' :
     deviceView === 'tablet' ? '768px' :
     '375px'
   };
@@ -81,7 +81,7 @@ const DevicePreview = styled(Box)<{ deviceView: string }>`
   transition: all 0.5s ease;
 
   @media (max-width: ${({ deviceView }) => 
-    deviceView === 'laptop' ? '1500px' :
+    deviceView === 'laptop' ? '1400px' :
     deviceView === 'tablet' ? '1200px' :
     '900px'
   }) {
