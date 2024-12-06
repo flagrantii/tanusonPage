@@ -2,7 +2,7 @@
 
 import React from 'react';
 import WebCard from './WebCard';
-import { webs } from '@/data/web';
+import { projects } from '@/data/projects';
 import { Box, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { scaleIn } from '@/utils/animations';
@@ -35,7 +35,7 @@ const ProjectCard = styled(motion.div)`
 export default function WebCatelog() {
   return (
     <CatalogGrid>
-      {webs.map((web, index) => (
+      {projects.map((web, index) => (
         <ProjectCard
           key={web.id}
           initial={{ opacity: 0, y: 20 }}

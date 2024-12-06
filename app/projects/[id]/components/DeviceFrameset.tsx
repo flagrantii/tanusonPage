@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Box, IconButton, Tooltip, Switch, Typography } from '@mui/material';
+import { Box, IconButton, Tooltip, Switch, Typography, Stack, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import TabletIcon from '@mui/icons-material/Tablet';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import { ProjectDetail } from '@/data/interface';
+import { GitHub, Code, OpenInNew } from '@mui/icons-material';
 
 const DeviceContainer = styled(Box)`
   position: relative;
@@ -194,6 +195,89 @@ interface DeviceFramesetProps {
 
 export default function DeviceFrameset({ project, view, onViewChange }: DeviceFramesetProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  if(project.demoUrl == null || project.demoUrl == ""){
+    return (
+      <DeviceContainer>
+        <DeviceFrame
+          view={view}
+            isDarkMode={isDarkMode}
+            rotation={0}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <DeviceScreen>
+              <Stack
+                spacing={3}
+                alignItems="center"
+                justifyContent="center"
+                sx={{
+                  height: '100%',
+                  p: 3,
+                  background: isDarkMode ? '#1a1a1a' : '#f5f5f5',
+                  color: isDarkMode ? '#fff' : '#000'
+                }}
+              >
+                { (project.status == "development") ?
+                <>
+                <Typography variant="h5" fontWeight="bold">
+                  Demo is in development
+                </Typography>
+                <Typography variant="body1" textAlign="center" color="text.secondary">
+                  This project is currently in development.
+                  Check out the repository for more details.
+                </Typography>
+                </>
+                :
+                <>
+                <Typography variant="h5" fontWeight="bold">
+                  Demo is not available
+                </Typography>
+                <Typography variant="body1" textAlign="center" color="text.secondary">
+                  This project is already terminated.
+                </Typography>
+                </>
+                }
+
+                <Stack direction="row" spacing={2}>
+                  {project.githubUrl && (
+                    <Button
+                      variant="contained"
+                      startIcon={<GitHub />}
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{ 
+                        bgcolor: 'background.paper',
+                        '&:hover': { transform: 'translateY(-2px)' }
+                      }}
+                    >
+                      View Source
+                    </Button>
+                  )}
+                  {project.demoUrl && (
+                    <Button
+                      variant="outlined"
+                      startIcon={<OpenInNew />}
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{ 
+                        borderColor: 'divider',
+                        '&:hover': { transform: 'translateY(-2px)' }
+                      }}
+                    >
+                      Live Preview
+                    </Button>
+                  )}
+                </Stack>
+              </Stack>
+            </DeviceScreen>
+          </DeviceFrame>
+        </DeviceContainer>
+    )
+  }
 
   return (
     <DeviceContainer>

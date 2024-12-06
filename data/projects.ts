@@ -8,6 +8,8 @@ export const projects: ProjectDetail[] = [
       longDescription: `An innovative travel companion app that leverages AI to create personalized travel experiences in Bangkok. 
       The app analyzes user preferences, travel history, and real-time data to suggest optimal itineraries, hidden gems, and local experiences.
       Features smart scheduling, budget optimization, and real-time updates for weather and crowd levels.`,
+      status: "Completed",
+      category: "Web",
       technologies: [
         "Next.js", 
         "TypeScript",
@@ -31,7 +33,7 @@ export const projects: ProjectDetail[] = [
         "/projects/trip/recommendations.png"
       ],
       githubUrl: "https://github.com/flagrantii/TripRecommend",
-      demoUrl: "https://triprecommend.vercel.app",
+      demoUrl: "",
       challenges: [
         "Implementing complex AI algorithms for personalized recommendations",
         "Optimizing real-time data processing for large-scale user base",
@@ -77,6 +79,8 @@ export const projects: ProjectDetail[] = [
       title: "Carbon Credits Marketplace",
       description: "Eco-friendly shopping via carbon credit trading",
       longDescription: "Bridging sustainability and consumerism, Carbon Credit Marketplace enables the trading of carbon credits through clothing purchases. This innovative web app promotes eco-friendly shopping habits while empowering users to contribute positively to environmental conservation efforts through their everyday choices.",
+      status: "Completed",
+      category: "Web",
       technologies: ["React", "Node.js", "MongoDB"],
       features: [
         "Carbon credit tracking",
@@ -87,6 +91,7 @@ export const projects: ProjectDetail[] = [
         "/icon/carbonlogo.jpg"
       ],
       githubUrl: "https://github.com/flagrantii/CaronCredit-main",
+      demoUrl: "",
       challenges: [
         "Building a marketplace ecosystem",
         "Ensuring eco-sustainability integration"
@@ -103,6 +108,8 @@ export const projects: ProjectDetail[] = [
       title: "Ranfoom",
       description: "Fun food suggestion app",
       longDescription: "An innovative Flutter application, Ranfoom simplifies meal decision-making by randomly suggesting food options. Users enjoy a playful and spontaneous approach to choosing meals, making dining decisions fun and effortless with intuitive mobile interface features.",
+      status: "Completed",
+      category: "Mobile",
       technologies: ["Flutter", "Dart"],
       features: [
         "Random food suggestions",
@@ -113,6 +120,7 @@ export const projects: ProjectDetail[] = [
         "/icon/foodlogo.jpg"
       ],
       githubUrl: "",
+      demoUrl: "",
       challenges: [
         "Creating engaging UI components",
         "Ensuring consistent performance on mobile devices"
@@ -129,6 +137,8 @@ export const projects: ProjectDetail[] = [
       title: "CUNEXT Event",
       description: "Campus-wide event management app",
       longDescription: "Revolutionizing university event management, CUNEXT Event employs React Native and Expo to streamline event discovery, organization, and engagement for students and faculty. It integrates comprehensive features for seamless planning and participation, enhancing campus-wide event experiences.",
+      status: "Completed",
+      category: "Mobile",
       technologies: ["React Native", "Expo", "Firebase"],
       features: [
         "Event discovery",
@@ -139,6 +149,7 @@ export const projects: ProjectDetail[] = [
         "/icon/CUNEXT.png"
       ],
       githubUrl: "https://github.com/flagrantii/cunext-event",
+      demoUrl: "",
       challenges: [
         "Ensuring real-time data syncing",
         "Enhancing user engagement features"
@@ -155,6 +166,8 @@ export const projects: ProjectDetail[] = [
       title: "Massage Reservation",
       description: "Effortless massage appointment management",
       longDescription: "Designed for ease and efficiency, Massage Reservation is a user-friendly web app for booking and managing massage appointments. It streamlines scheduling processes for clients and practitioners, ensuring seamless communication and enhancing overall service accessibility and satisfaction.",
+      status: "Completed",
+      category: "Web",
       technologies: ["React", "Node.js", "PostgreSQL"],
       features: [
         "Booking management",
@@ -165,6 +178,7 @@ export const projects: ProjectDetail[] = [
         "/icon/logo1.png"
       ],
       githubUrl: "https://github.com/flagrantii/Massage-Reservation-2",
+      demoUrl: "https://swdevprac2-project-get-a-good-rest-api-gules.vercel.app/",
       challenges: [
         "Optimizing appointment scheduling",
         "Improving communication channels"
@@ -181,6 +195,8 @@ export const projects: ProjectDetail[] = [
       title: "Minesweeper with JavaFX",
       description: "Classic gaming with JavaFX",
       longDescription: "Developed using JavaFX, Mine Sweeper offers a classic gaming experience with an intuitive user interface. Players navigate through a grid to uncover mines while strategically flagging potential dangers, combining logic and concentration in an engaging, interactive gameplay format.",
+      status: "Completed",
+      category: "Application",
       technologies: ["Java", "JavaFX"],
       features: [
         "Classic Minesweeper gameplay",
@@ -191,6 +207,7 @@ export const projects: ProjectDetail[] = [
         "/icon/bomb.png"
       ],
       githubUrl: "https://github.com/flagrantii/Minesweeper-java",
+      demoUrl: "",
       challenges: [
         "Designing intuitive gameplay mechanics",
         "Optimizing UI for responsiveness"
@@ -207,6 +224,8 @@ export const projects: ProjectDetail[] = [
       title: "Golang Concurrency API",
       description: "High-performance API with Golang",
       longDescription: "Developed as part of an internship, the Golang Concurrency API enhances application performance with robust concurrency management. This project showcases advanced Golang programming skills, optimizing resource utilization and scalability in distributed systems and high-demand environments.",
+      status: "Completed",
+      category: "Server",
       technologies: ["Golang", "Docker", "Redis"],
       features: [
         "Concurrency management",
@@ -216,7 +235,8 @@ export const projects: ProjectDetail[] = [
       images: [
         "/icon/golang.jpg"
       ],
-      githubUrl: "#",
+      githubUrl: "",
+      demoUrl: "",
       challenges: [
         "Concurrency optimization",
         "Scalable architecture design"
@@ -233,6 +253,8 @@ export const projects: ProjectDetail[] = [
       title: "Rub Puen Kao Mai 2024",
       description: "Freshmen orientation registration platform",
       longDescription: "Freshmen orientation registration website for the Student Government of Chulalongkorn University.",
+      status: "Completed",
+      category: "Web",
       technologies: ["React", "Node.js", "Express", "MongoDB"],
       features: [
         "Student registration",
@@ -243,6 +265,7 @@ export const projects: ProjectDetail[] = [
         "/icon/sgcu_logo.jpg"
       ],
       githubUrl: "https://github.com/isd-sgcu/rpkm67-backend",
+      demoUrl: "https://cufreshy2024.com/",
       challenges: [
         "Ensuring smooth registration workflows",
         "Balancing scalability and user experience"

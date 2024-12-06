@@ -19,7 +19,7 @@ export default function MainContent() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleDownload = () => {
-    router.push('/resume/Tanuson_Resume_September24.pdf');
+    router.push('/resume/Tanuson_resume_november24.pdf');
   }
 
   return (

@@ -78,6 +78,8 @@ export interface ProjectDetail {
   title: string;
   description: string;
   longDescription: string;
+  status: string;
+  category: string;
   technologies: string[];
   features: string[];
   images: string[];
