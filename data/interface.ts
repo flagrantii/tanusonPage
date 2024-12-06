@@ -54,3 +54,37 @@ export interface eduJson {
     location: string;
     img: string;
 }
+
+export interface ProjectMetrics {
+  users?: string;
+  accuracy?: string;
+  satisfaction?: string;
+  performance?: string;
+}
+
+export interface TechDetails {
+  architecture: string;
+  database: string;
+  hosting: string;
+  apis: string[];
+}
+
+export interface ProjectDetail {
+  id: number;
+  title: string;
+  description: string;
+  longDescription: string;
+  technologies: string[];
+  features: string[];
+  images: string[];
+  githubUrl: string;
+  demoUrl?: string;
+  challenges: string[];
+  learnings: string[];
+  timeline: string;
+  role: string;
+  team?: string[];
+  metrics?: ProjectMetrics;
+  techDetails?: TechDetails;
+  futureFeatures?: string[];
+}

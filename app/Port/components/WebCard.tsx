@@ -1,50 +1,111 @@
-import { Box } from '@mui/material'
-import React from 'react'
-import { webJson } from '@/data/interface'
+'use client';
 
-export default function WebCard({webProps}: {webProps: webJson}) {
+import { Box, Chip, Typography, IconButton } from '@mui/material';
+import React from 'react';
+import { webJson } from '@/data/interface';
+import { AnimatedCard } from './AnimatedCard';
+import { styled } from '@mui/material/styles';
+import { subtleGradient } from '@/utils/styles';
+import Link from 'next/link';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LaunchIcon from '@mui/icons-material/Launch';
+import InfoIcon from '@mui/icons-material/Info';
+import { useRouter } from 'next/navigation';
+
+const ProjectTitle = styled(Typography)`
+  ${subtleGradient}
+  margin-bottom: 0.5rem;
+`;
+
+const ProjectImage = styled('img')`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+const ActionButton = styled(IconButton)`
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+`;
+
+export default function WebCard({ webProps }: { webProps: webJson }) {
+  const router = useRouter();
+
   return (
-        <article key={webProps.id} className="flex max-w-xl flex-col items-start justify-between bg-gray-900 p-5 rounded-md ">
-        <div className="flex items-center gap-x-4 text-xs">
-        <time dateTime={webProps.datetime} className="text-gray-400">
+    <AnimatedCard>
+      <ProjectImage 
+        src={webProps.author.imageUrl} 
+        alt={webProps.title}
+        onClick={() => router.push(`/projects/${webProps.id}`)}
+        style={{ cursor: 'pointer' }}
+      />
+      
+      <Box display="flex" justifyContent="space-between" alignItems="flex-start" mb={2}>
+        <Box>
+          <ProjectTitle variant="h6">
+            {webProps.title}
+          </ProjectTitle>
+          <Typography variant="caption" color="gray">
             {webProps.date}
-        </time>
-        {
-            (webProps.category.title === 'Completed') ? 
-            <a href={webProps.category.href} className={`relative z-10 rounded-full bg-green-800 px-3 py-1.5 font-medium text-gray-200 hover:bg-green-900`}>
-            {webProps.category.title}
-            </a>
-            :        
-            <a href={webProps.category.href} className={`relative z-10 rounded-full bg-blue-800 px-3 py-1.5 font-medium text-gray-200 hover:bg-blue-900`}>
-            {webProps.category.title}
-            </a>
-        }
+          </Typography>
+        </Box>
+        <Chip
+          label={webProps.category.title}
+          size="small"
+          color={webProps.category.title === 'Completed' ? 'success' : 'primary'}
+        />
+      </Box>
 
-        </div>
-        <div className="group relative">
-        <div className="flex flex-row gap-3 items-center">
-            <img src={webProps.author.imageUrl} alt="" className="h-10 w-10 rounded-full mt-2 bg-gray-50" />
-            <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-gray-600 transition-all">
-            <a href={webProps.href}>
-                <span className="absolute inset-0" />
-                {webProps.title}
-            </a>
-            </h3>
-        </div>
-        <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-200">{webProps.description}</p>
-        </div>
+      <Typography color="white" mb={3} sx={{ 
+        display: '-webkit-box',
+        WebkitLineClamp: 3,
+        WebkitBoxOrient: 'vertical',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      }}>
+        {webProps.description}
+      </Typography>
 
-        <div className="relative mt-8 flex items-center gap-x-4">
-        <div className="text-sm leading-6">
-            <p className="font-semibold text-gray-900">
-            <a href={webProps.author.href}>
-                <span className="absolute inset-0" />
-                {webProps.author.name}
-            </a>
-            </p>
-            <p className="text-gray-200">{webProps.author.role}</p>
-        </div>
-        </div>
-    </article>
-  )
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Typography variant="body2" color="primary.light">
+          {webProps.author.role}
+        </Typography>
+        
+        <Box display="flex" gap={1}>
+          <ActionButton 
+            size="small"
+            onClick={() => router.push(`/projects/${webProps.id}`)}
+          >
+            <InfoIcon sx={{ color: 'white' }} />
+          </ActionButton>
+          
+          <Link href={webProps.href} target="_blank" passHref>
+            <ActionButton size="small">
+              <GitHubIcon sx={{ color: 'white' }} />
+            </ActionButton>
+          </Link>
+          
+          {webProps.category.href && (
+            <Link href={webProps.category.href} target="_blank" passHref>
+              <ActionButton size="small">
+                <LaunchIcon sx={{ color: 'white' }} />
+              </ActionButton>
+            </Link>
+          )}
+        </Box>
+      </Box>
+    </AnimatedCard>
+  );
 }

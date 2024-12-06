@@ -1,31 +1,88 @@
-import React from 'react'
-import { careerJson } from '@/data/interface'
+'use client';
+
+import React from 'react';
+import { careerJson } from '@/data/interface';
+import { Box, Typography, Link as MuiLink } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
-export default function CareerCard({careerProps}: {careerProps: careerJson}) {
+import { AnimatedCard } from './AnimatedCard';
+import { styled } from '@mui/material/styles';
+import { subtleGradient } from '@/utils/styles';
+
+const CompanyTitle = styled(Typography)`
+  ${subtleGradient}
+`;
+
+const CompanyLogo = styled(Box)`
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+  }
+`;
+
+export default function CareerCard({ careerProps }: { careerProps: careerJson }) {
   return (
-    <>
-    <div className="mx-auto max-w-6xl px-6 lg:px-8 ">
-        <div className="bg-gray-900 px-4 py-2 rounded-lg ">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:py-6 ">
-            <div className="w-16 h-16 md:w-32 md:h-32 px-1 py-1 md:px-6 md:py-6">
-              <Image src={careerProps.img} alt={careerProps.company} width={70} height={70} />
-            </div>
-            <div className='grid grid-cols-1 gap-1 w-full'>
-                <p className="text-gray-400">{careerProps.date}</p>
-                <h3 className="text-lg font-semibold text-gray-100">{careerProps.company}</h3>
-                
-                <div className='lg:flex gap-6'>
-                <p className="text-gray-200">{careerProps.role}</p>
-                <div className='flex gap-1'>
-                    <LocationOnIcon sx={{color:"white"}} />
-                    <p className="text-gray-200">{careerProps.location}</p>
-                </div>
-                </div><p className="text-gray-300 text-xs">{careerProps.description}</p>
-            </div>
-            </div>
-        </div>
-    </div>
-    </>
-  )
+    <AnimatedCard>
+      <Box display="flex" gap={3}>
+        <CompanyLogo>
+          <Image 
+            src={careerProps.img} 
+            alt={careerProps.company} 
+            width={70} 
+            height={70}
+            style={{ objectFit: 'contain' }}
+          />
+        </CompanyLogo>
+        
+        <Box flex={1}>
+          <Typography color="gray" variant="caption">
+            {careerProps.date}
+          </Typography>
+          
+          <CompanyTitle variant="h6">
+            {careerProps.company}
+          </CompanyTitle>
+          
+          <Box display="flex" alignItems="center" gap={2} my={1}>
+            <Typography color="primary.light" fontWeight="medium">
+              {careerProps.role}
+            </Typography>
+            <Box display="flex" alignItems="center" gap={0.5}>
+              <LocationOnIcon sx={{ color: 'gray', fontSize: 18 }} />
+              <Typography color="gray" variant="body2">
+                {careerProps.location}
+              </Typography>
+            </Box>
+          </Box>
+          
+          <Typography color="white" variant="body2">
+            {careerProps.description}
+          </Typography>
+          
+          {careerProps.href && (
+            <MuiLink 
+              href={careerProps.href} 
+              target="_blank" 
+              sx={{ 
+                display: 'inline-block',
+                mt: 2,
+                color: 'primary.light',
+                '&:hover': { color: 'primary.main' }
+              }}
+            >
+              Visit Company →
+            </MuiLink>
+          )}
+        </Box>
+      </Box>
+    </AnimatedCard>
+  );
 }

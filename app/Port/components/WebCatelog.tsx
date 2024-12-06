@@ -1,15 +1,28 @@
-import React from 'react'
-import WebCard from './WebCard'
-import { webs } from '@/data/web'
+'use client';
+
+import React from 'react';
+import WebCard from './WebCard';
+import { webs } from '@/data/web';
+import { Box, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { scaleIn } from '@/utils/animations';
+
+const AnimatedGrid = styled(Grid)<{ delay: number }>`
+  animation: ${scaleIn} 0.6s ease-out forwards;
+  animation-delay: ${props => props.delay}ms;
+  opacity: 0;
+`;
 
 export default function WebCatelog() {
   return (
-    <>
-      <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {webs.map((webs) => 
-            <WebCard webProps={webs} key={webs.id} />
-        )}
-      </div>
-    </>
-  )
+    <Box sx={{ columnCount: { xs: 1, sm: 2, md: 3 }, columnGap: 3 }}>
+      {webs.map((web, index) => (
+        <Box key={web.id} sx={{ breakInside: 'avoid', mb: 3 }}>
+          <AnimatedGrid delay={index * 100}>
+            <WebCard webProps={web} />
+          </AnimatedGrid>
+        </Box>
+      ))}
+    </Box>
+  );
 }
