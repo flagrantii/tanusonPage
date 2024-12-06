@@ -25,12 +25,12 @@ const DeviceFrame = styled(motion.div)<{ view: string; isDarkMode: boolean; rota
   width: ${({ view }) => 
     view === 'phone' ? '375px' : 
     view === 'tablet' ? '768px' : 
-    '900px'
+    '840px'
   };
   height: ${({ view }) => 
     view === 'phone' ? '667px' : 
     view === 'tablet' ? '1024px' : 
-    '560px'
+    '525px'
   };
   max-width: 100%;
   max-height: ${({ view }) => view === 'phone' ? '80vh' : '70vh'};
@@ -42,19 +42,19 @@ const DeviceFrame = styled(motion.div)<{ view: string; isDarkMode: boolean; rota
   };
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  transform: scale(${({ view }) => view === 'laptop' ? 0.9 : 1});
+  transform: scale(${({ view }) => view === 'laptop' ? 0.85 : 1});
   transition: all 0.5s ease;
 
   @media (max-width: 768px) {
     width: ${({ view }) => 
       view === 'phone' ? '280px' : 
       view === 'tablet' ? '500px' : 
-      '600px'
+      '560px'
     };
     height: ${({ view }) => 
       view === 'phone' ? '560px' : 
       view === 'tablet' ? '700px' : 
-      '400px'
+      '375px'
     };
   }
 
@@ -62,12 +62,12 @@ const DeviceFrame = styled(motion.div)<{ view: string; isDarkMode: boolean; rota
     width: ${({ view }) => 
       view === 'phone' ? '240px' : 
       view === 'tablet' ? '400px' : 
-      '440px'
+      '420px'
     };
     height: ${({ view }) => 
       view === 'phone' ? '480px' : 
       view === 'tablet' ? '600px' : 
-      '340px'
+      '320px'
     };
   }
 
