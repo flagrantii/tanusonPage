@@ -9,6 +9,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Tae Tanuson",
   description: "Welcome to Tae Tanuson's portfolio. Explore my projects, skills, and experiences in software development and design.",
+  keywords: '',
+  authors: [{ name: 'Tae Tanuson' }],
+  openGraph: {
+    title: 'Tae Tanuson',
+    description: 'Welcome to Tae Tanuson\'s portfolio. Explore my projects, skills, and experiences in software development and design.',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Tae Tanuson',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tae Tanuson',
+    description: 'Welcome to Tae Tanuson\'s portfolio. Explore my projects, skills, and experiences in software development and design.',
+  },
 };
 
 export default function RootLayout({

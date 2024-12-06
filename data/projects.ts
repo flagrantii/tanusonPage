@@ -5,17 +5,13 @@ export const projects: ProjectDetail[] = [
       id: 1,
       title: "Trip Recommendation",
       description: "AI-powered travel itinerary planner",
-      longDescription: `An innovative travel companion app that leverages AI to create personalized travel experiences in Bangkok. 
-      The app analyzes user preferences, travel history, and real-time data to suggest optimal itineraries, hidden gems, and local experiences.
-      Features smart scheduling, budget optimization, and real-time updates for weather and crowd levels.`,
+      longDescription: "An innovative travel companion app that leverages AI to create personalized travel experiences in Bangkok.",
       status: "Completed",
       category: "Web",
       technologies: [
         "HTML", 
         "CSS",
         "JavaScript",
-        "Python",
-        "MongoDB",
         "Google Maps API"
       ],
       features: [
@@ -34,31 +30,22 @@ export const projects: ProjectDetail[] = [
       challenges: [
         "Implementing complex AI algorithms for personalized recommendations",
         "Optimizing real-time data processing for large-scale user base",
-        "Creating an intuitive UX for complex travel planning",
-        "Balancing accuracy and performance in prediction models"
+        "Creating an intuitive UX for complex travel planning"
       ],
       learnings: [
         "Advanced AI integration in web applications",
         "Large-scale data processing and optimization",
-        "UX design for complex user journeys",
-        "Real-time system architecture"
+        "UX design for complex user journeys"
       ],
       timeline: "April 2023",
       role: "FullStack Developer",
-
       techDetails: {
         architecture: "Monolithic",
         database: "MongoDB",
         hosting: "OnRender",
         apis: [
-          "Google Maps",
         ]
       },
-      futureFeatures: [
-        "AR navigation",
-        "Social planning",
-        "Offline mode"
-      ]
     },
     {
       id: 2,
@@ -67,7 +54,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Bridging sustainability and consumerism, Carbon Credit Marketplace enables the trading of carbon credits through clothing purchases. This innovative web app promotes eco-friendly shopping habits while empowering users to contribute positively to environmental conservation efforts through their everyday choices.",
       status: "Completed",
       category: "Web",
-      technologies: ["HTML", "CSS", "JavaScript", "Python", "MongoDB"],
+      technologies:  ["HTML", "CSS", "JavaScript"],
       features: [
         "Carbon credit tracking",
         "Integrated marketplace",
@@ -100,11 +87,6 @@ export const projects: ProjectDetail[] = [
         apis: [
         ]
       },
-      futureFeatures: [
-        "Eco-friendly product integration",
-        "Enhanced user profile management",
-        "Advanced analytics and reporting"
-      ]
     },
     {
       id: 3,
