@@ -64,9 +64,7 @@ export default function Home() {
 
   return (
     <HomeContainer>
-      <ContentWrapper>
-        <MainContent />
-      </ContentWrapper>
+      <MainContent />
       {
       (isDesktop >=1600)? 
         <Spline className="h-2" scene="https://prod.spline.design/lsjnayOXzDK5gyEj/scene.splinecode" />
