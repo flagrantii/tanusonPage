@@ -169,18 +169,20 @@ const ProjectHeader = styled(Box)`
 `;
 
 const RelatedProjects = styled(Box)`
-  margin: clamp(2rem, 5vw, 4rem) auto 0;
   padding: clamp(1rem, 2vw, 2rem);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   max-width: min(600px, 95%);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
 
   > div:last-child {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: clamp(0.5rem, 2vw, 1rem);
     margin-top: 1rem;
+    justify-content: left;
   }
 `;
 
