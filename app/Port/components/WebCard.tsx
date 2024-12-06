@@ -137,11 +137,13 @@ export default function WebCard({ webProps }: { webProps: ProjectDetail }) {
               <InfoIcon sx={{ color: 'white' }} />
             </ActionButton>
             
-            <Link href={webProps.githubUrl} target="_blank" passHref>
-              <ActionButton size="small">
-                <GitHubIcon sx={{ color: 'white' }} />
-              </ActionButton>
-            </Link>
+            {webProps.githubUrl && (
+              <Link href={webProps.githubUrl} target="_blank" passHref>
+                <ActionButton size="small">
+                  <GitHubIcon sx={{ color: 'white' }} />
+                </ActionButton>
+              </Link>
+            )}
             
             {webProps.demoUrl && (
               <Link href={webProps.demoUrl} target="_blank" passHref>

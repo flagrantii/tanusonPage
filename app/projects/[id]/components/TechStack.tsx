@@ -74,6 +74,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
+                {project.techDetails.database && (
                 <TechCard variants={item}>
                   <StorageIcon sx={{ color: 'primary.main' }} />
                   <Box>
@@ -82,9 +83,11 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
                       {project.techDetails.database}
                     </Typography>
                   </Box>
-                </TechCard>
+                  </TechCard>
+                )}
               </Grid>
               <Grid item xs={12} md={6}>
+                {project.techDetails.hosting && (
                 <TechCard variants={item}>
                   <CloudIcon sx={{ color: 'primary.main' }} />
                   <Box>
@@ -94,6 +97,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
                     </Typography>
                   </Box>
                 </TechCard>
+                )}
               </Grid>
             </Grid>
           </Box>

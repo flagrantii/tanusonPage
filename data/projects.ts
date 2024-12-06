@@ -11,21 +11,17 @@ export const projects: ProjectDetail[] = [
       status: "Completed",
       category: "Web",
       technologies: [
-        "Next.js", 
-        "TypeScript",
-        "TensorFlow.js",
+        "HTML", 
+        "CSS",
+        "JavaScript",
         "Python",
-        "OpenAI API",
         "MongoDB",
         "Google Maps API"
       ],
       features: [
         "AI-powered personalized recommendations",
-        "Interactive 3D map visualization",
-        "Real-time crowd prediction",
         "Local insights and hidden gems",
         "Smart budget optimization",
-        "Weather-aware scheduling"
       ],
       icon: "/icon/triplogo.jpg",
       background: "/background/trip.png",
@@ -48,25 +44,14 @@ export const projects: ProjectDetail[] = [
         "Real-time system architecture"
       ],
       timeline: "April 2023",
-      role: "Frontend Developer",
-      team: [
-        "Lead Developer",
-        "AI Engineer",
-        "UX Designer"
-      ],
-      metrics: {
-        users: "1000+",
-        accuracy: "92%",
-        satisfaction: "4.8/5"
-      },
+      role: "FullStack Developer",
+
       techDetails: {
-        architecture: "Microservices",
+        architecture: "Monolithic",
         database: "MongoDB",
-        hosting: "Vercel",
+        hosting: "OnRender",
         apis: [
-          "OpenAI GPT-4",
           "Google Maps",
-          "Weather API"
         ]
       },
       futureFeatures: [
@@ -82,7 +67,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Bridging sustainability and consumerism, Carbon Credit Marketplace enables the trading of carbon credits through clothing purchases. This innovative web app promotes eco-friendly shopping habits while empowering users to contribute positively to environmental conservation efforts through their everyday choices.",
       status: "Completed",
       category: "Web",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["HTML", "CSS", "JavaScript", "Python", "MongoDB"],
       features: [
         "Carbon credit tracking",
         "Integrated marketplace",
@@ -98,14 +83,28 @@ export const projects: ProjectDetail[] = [
       demoUrl: "",
       challenges: [
         "Building a marketplace ecosystem",
-        "Ensuring eco-sustainability integration"
+        "Ensuring eco-sustainability integration",
+        "Creating a user-friendly interface",
+        "Ensuring scalability and performance"
       ],
       learnings: [
         "Sustainable web app design",
         "Marketplace implementation strategies"
       ],
       timeline: "May 2023",
-      role: "FullStack Developer / UXUI Designer"
+      role: "FullStack Developer / UXUI Designer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "MongoDB",
+        hosting: "OnRender",
+        apis: [
+        ]
+      },
+      futureFeatures: [
+        "Eco-friendly product integration",
+        "Enhanced user profile management",
+        "Advanced analytics and reporting"
+      ]
     },
     {
       id: 3,
@@ -134,7 +133,15 @@ export const projects: ProjectDetail[] = [
         "Flutter optimization techniques"
       ],
       timeline: "June 2021",
-      role: "Frontend Developer / UXUI Designer"
+      role: "Frontend Developer / UXUI Designer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "PostgreSQL",
+        hosting: "",
+        apis: [
+          "Mahidol food API"
+        ]
+      },
     },
     {
       id: 4,
@@ -143,11 +150,12 @@ export const projects: ProjectDetail[] = [
       longDescription: "Revolutionizing university event management, CUNEXT Event employs React Native and Expo to streamline event discovery, organization, and engagement for students and faculty. It integrates comprehensive features for seamless planning and participation, enhancing campus-wide event experiences.",
       status: "Completed",
       category: "Mobile",
-      technologies: ["React Native", "Expo", "Firebase"],
+      technologies: ["React Native", "Expo", "Firebase", "Golang", "Tailwind CSS"],
       features: [
         "Event discovery",
         "Streamlined organization",
-        "Seamless participant engagement"
+        "Seamless participant engagement",
+        "Real-time data syncing"
       ],
       icon: "/icon/CUNEXT.png",
       background: "/background/event.png",
@@ -159,14 +167,24 @@ export const projects: ProjectDetail[] = [
       demoUrl: "",
       challenges: [
         "Ensuring real-time data syncing",
-        "Enhancing user engagement features"
+        "Enhancing user engagement features",
+        "Ensuring scalability and performance",
+        "Ensuring real-time data syncing"
       ],
       learnings: [
         "Mobile-first design",
-        "Real-time application workflows"
+        "Real-time application workflows",
+        "Ensuring scalability and performance"
       ],
       timeline: "March 2024",
-      role: "Frontend Developer / Mobile Developer"
+      role: "Frontend Developer / Mobile Developer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "PostgreSQL",
+        hosting: "Expo",
+        apis: [
+        ]
+      },
     },
     {
       id: 5,
@@ -175,7 +193,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Designed for ease and efficiency, Massage Reservation is a user-friendly web app for booking and managing massage appointments. It streamlines scheduling processes for clients and practitioners, ensuring seamless communication and enhancing overall service accessibility and satisfaction.",
       status: "Completed",
       category: "Web",
-      technologies: ["React", "Node.js", "PostgreSQL"],
+      technologies: ["Next.js", "Node.js", "Tailwind CSS", "Express", "PostgreSQL"],
       features: [
         "Booking management",
         "User-practitioner communication",
@@ -191,14 +209,22 @@ export const projects: ProjectDetail[] = [
       demoUrl: "https://swdevprac2-project-get-a-good-rest-api-gules.vercel.app/",
       challenges: [
         "Optimizing appointment scheduling",
-        "Improving communication channels"
+        "Improving communication channels",
+        "Ensuring scalability and performance"
       ],
       learnings: [
         "Service-based application architecture",
         "User-focused design enhancements"
       ],
       timeline: "April 2024",
-      role: "FullStack Developer / DevOps Engineer"
+      role: "FullStack Developer / DevOps Engineer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "MongoDB",
+        hosting: "Vercel",
+        apis: [
+        ]
+      },
     },
     {
       id: 6,
@@ -230,7 +256,14 @@ export const projects: ProjectDetail[] = [
         "Enhancing gameplay interaction"
       ],
       timeline: "May 2024",
-      role: "Developer / Designer"
+      role: "Developer / Designer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "",
+        hosting: "",
+        apis: [
+        ]
+      },
     },
     {
       id: 7,
@@ -239,7 +272,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Developed as part of an internship, the Golang Concurrency API enhances application performance with robust concurrency management. This project showcases advanced Golang programming skills, optimizing resource utilization and scalability in distributed systems and high-demand environments.",
       status: "Completed",
       category: "Server",
-      technologies: ["Golang", "Docker", "Redis"],
+      technologies: ["Golang", "Docker", "Redis", "PostgreSQL", "Prometheus"],
       features: [
         "Concurrency management",
         "Optimized resource utilization",
@@ -252,14 +285,24 @@ export const projects: ProjectDetail[] = [
       demoUrl: "",
       challenges: [
         "Concurrency optimization",
-        "Scalable architecture design"
+        "Scalable architecture design",
+        "Ensuring scalability and performance",
+        "Race condition prevention"
       ],
       learnings: [
         "Concurrency patterns in Golang",
-        "Distributed system principles"
+        "Distributed system principles",
+        "Implementing monitoring and logging"
       ],
       timeline: "June 2024",
-      role: "Software Developer Internship"
+      role: "Software Developer Internship",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "PostgreSQL",
+        hosting: "",
+        apis: [
+        ]
+      },
     },
     {
       id: 8,
@@ -268,7 +311,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Freshmen orientation registration website for the Student Government of Chulalongkorn University.",
       status: "Completed",
       category: "Web",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      technologies: ["Next.js", "Golang", "Gin", "PostgreSQL"],
       features: [
         "Student registration",
         "Event information management",
@@ -291,8 +334,201 @@ export const projects: ProjectDetail[] = [
         "High-traffic web app performance"
       ],
       timeline: "July 2024",
-      role: "Software Developer"
-    }
+      role: "Software Developer",
+      metrics: {
+        users: "3000+",
+        accuracy: "95%",
+        satisfaction: "4.9/5"
+      },
+      techDetails: {
+        architecture: "Microservices",
+        database: "PostgreSQL",
+        hosting: "DigitalOcean",
+        apis: [
+        ]
+      },
+    },
+    {
+      id: 9,
+      title: "Nodi",
+      description: "Discover and connect research papers through intelligent conversations",
+      longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
+      status: "Development",
+      category: "Web",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Qdrant", "Python"],
+      features: [
+        "Intelligent conversation with research papers",
+        "Paper recommendation based on conversation history",
+        "User-friendly interface",
+      ],
+      icon: "/icon/nodi.png",
+      background: "/background/nodi.png",
+      images: [
+        "/projects/nodi/nodi-1.png",
+        "/projects/nodi/nodi-2.png"
+      ],
+      githubUrl: "https://github.com/flagrantii/dsde-web",
+      demoUrl: "https://thenodi.vercel.app/",
+      challenges: [
+        "Implementing advanced natural language processing techniques",
+        "Ensuring scalable and efficient system architecture"
+      ],
+      learnings: [
+        "Advanced natural language processing",
+        "Scalable system architecture"
+      ],
+      timeline: "December 2024",
+      role: "Software Developer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "PostgreSQL",
+        hosting: "Vercel",
+        apis: [
+          "OpenAI API"
+        ]
+      },
+      futureFeatures: [
+        "Enhanced user profile management",
+        "Advanced analytics and reporting"
+      ]
+    },
+    {
+      id: 10,
+      title: "Kasalong",
+      description: "The static website for premium Thai rice brand.",
+      longDescription: "Kasalong is a web application that high-quality rice mill that exports premium Thai rice …and has become the owner of the “Kasalong Rice” brand today. ",
+      status: "Complete",
+      category: "Web",
+      technologies: ["WordPress"],
+      features: [
+        "Premium rice brand",
+        "User-friendly interface",
+        "Responsive design"
+      ],
+      icon: "/icon/kasalong.png",
+      background: "/background/rice.png",
+      images: [
+        "/projects/rice/rice-1.png",
+        "/projects/rice/rice-2.png"
+      ],
+      githubUrl: "",
+      demoUrl: "https://www.kasalongrice.com/en/home/",
+      challenges: [
+        "Ensuring scalable and efficient system architecture",
+        "Ensuring responsiveness"
+      ],
+      learnings: [
+        "WordPress customization",
+        "Scalable system architecture"
+      ],
+      timeline: "July 2024",
+      role: "Software Developer",
+      metrics: {
+        users: "100+",
+        accuracy: "95%",
+        satisfaction: "4.9/5"
+      },
+      techDetails: {
+        architecture: "Monolithic",
+        database: "",
+        hosting: "WordPress",
+        apis: [
+        ]
+      },
+      futureFeatures: [
+        "Enhanced user profile management",
+        "Advanced analytics and reporting"
+      ]
+    },
+    {
+      id: 11,
+      title: "Zongggd",
+      description: "The e-commerce website for a sticker and print shop.",
+      longDescription: "Songdee is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
+      status: "Development",
+      category: "Web",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Nest.js", "AWS", "PostgreSQL"],
+      features: [
+        "Sticker and print shop",
+        "User-friendly interface",
+        "Responsive design",
+        "Efficient product management"
+      ],
+      icon: "/icon/sticker.png",
+      background: "/background/sticker.png",
+      images: [
+        "/projects/sticker/sticker-1.png",
+        "/projects/sticker/sticker-2.png"
+      ],
+      githubUrl: "",
+      demoUrl: "https://www.zongggd.com/th",
+      challenges: [
+        "Ensuring scalable and efficient system architecture",
+        "Complex ecommerce system"
+      ],
+      learnings: [
+        "Next.js and Tailwind CSS",
+        "Nest.js and PostgreSQL",
+        "AWS deployment"  
+      ],
+      timeline: "November 2024",
+      role: "FullStack Developer",
+      metrics: {
+        users: "200+",
+        accuracy: "95%",
+        satisfaction: "4.9/5"
+      },
+      techDetails: {
+        architecture: "Monolithic",
+        database: "PostgreSQL",
+        hosting: "DigitalOcean",
+        apis: [
+        ]
+      },
+      futureFeatures: [
+        "Product recommendation",
+      ]
+    },
+    {
+      id: 12,
+      title: "Shoppo",
+      description: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives",
+      longDescription: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives currently supports Shopee, with plans to expand to Amazon for enhanced shopping assistance",
+      status: "Development",
+      category: "Chrome Extension",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "Selenium"],
+      features: [
+        "Recommendation and alternative suggestions",
+        "Shopee and Amazon support",
+        "User-friendly interface"
+      ],
+      icon: "/icon/shoppo.png",
+      background: "/background/shoppo.png",
+      images: [
+        "/projects/shoppo/shoppo-1.png",
+        "/projects/shoppo/shoppo-2.png"
+      ],
+      githubUrl: "https://github.com/flagrantii/ChatKan-MVP",
+      demoUrl: "",
+      challenges: [
+        "Ensuring scalable and efficient system architecture"
+      ],
+      learnings: [
+        "Next.js and Tailwind CSS",
+        "Nest.js and PostgreSQL",
+        "AWS deployment"  
+      ],
+      timeline: "November 2024",
+      role: "FullStack Developer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "PostgreSQL",
+        hosting: "Chrome Extension",
+        apis: [
+        ]
+      },
+    },
+    
   ];
   
 
