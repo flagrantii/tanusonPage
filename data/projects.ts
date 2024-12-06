@@ -342,7 +342,7 @@ export const projects: ProjectDetail[] = [
       title: "Kasalong",
       description: "The static website for premium Thai rice brand.",
       longDescription: "Kasalong is a web application that high-quality rice mill that exports premium Thai rice …and has become the owner of the “Kasalong Rice” brand today. ",
-      status: "Complete",
+      status: "Completed",
       category: "Web",
       technologies: ["WordPress"],
       features: [
