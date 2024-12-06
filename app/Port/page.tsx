@@ -10,28 +10,65 @@ import { styled } from '@mui/material/styles';
 import { fadeIn } from '@/utils/animations';
 import { subtleGradient } from '@/utils/styles';
 
+const PortfolioContainer = styled(Container)`
+  padding-top: ${props => props.theme.spacing(10)};
+  padding-bottom: ${props => props.theme.spacing(6)};
+
+  @media (max-width: 768px) {
+    padding-top: ${props => props.theme.spacing(8)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+  }
+`;
+
 const SectionContainer = styled(Box)`
   animation: ${fadeIn} 0.8s ease-out;
   background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
   backdrop-filter: blur(8px);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem 0;
+  border-radius: ${props => props.theme.spacing(2)};
+  padding: ${props => props.theme.spacing(4, 3)};
+  margin: ${props => props.theme.spacing(3)} auto;
+  max-width: min(1200px, 95%);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    padding: ${props => props.theme.spacing(3, 2)};
+    margin: ${props => props.theme.spacing(2)} auto;
+    border-radius: ${props => props.theme.spacing(1.5)};
+  }
 `;
 
 const SectionTitle = styled(Typography)`
   ${subtleGradient}
-  margin-bottom: 1rem;
+  font-size: ${props => props.theme.typography.pxToRem(32)};
+  margin-bottom: ${props => props.theme.spacing(2)};
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.typography.pxToRem(24)};
+  }
 `;
 
 const SectionDescription = styled(Typography)`
-  color: #94a3b8;
-  margin-bottom: 2rem;
+  color: ${props => props.theme.palette.grey[400]};
+  font-size: ${props => props.theme.typography.pxToRem(16)};
+  margin-bottom: ${props => props.theme.spacing(4)};
+  max-width: 800px;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.typography.pxToRem(14)};
+    margin-bottom: ${props => props.theme.spacing(3)};
+  }
 `;
 
 export default function PortfolioPage() {
   return (
-    <Container maxWidth="xl" sx={{ py: 6, mt: 8 }}>
+    <PortfolioContainer maxWidth="xl">
       {/* Education Section */}
       <SectionContainer>
         <SectionTitle variant="h4" fontWeight="bold">
@@ -85,6 +122,6 @@ export default function PortfolioPage() {
         </SectionDescription>
         <CertCatalog />
       </SectionContainer>
-    </Container>
+    </PortfolioContainer>
   );
 }

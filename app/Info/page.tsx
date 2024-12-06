@@ -8,33 +8,50 @@ import SchoolIcon from '@mui/icons-material/School';
 import CodeIcon from '@mui/icons-material/Code';
 import BrushIcon from '@mui/icons-material/Brush';
 import { fadeIn } from '@/utils/animations';
+import { subtleGradient } from '@/utils/styles';
 
 const Section = styled(Box)`
   min-height: 100vh;
-  padding: 6rem 0;
+  padding: ${props => props.theme.spacing(8, 0)};
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+
+  @media (max-width: 768px) {
+    padding: ${props => props.theme.spacing(6, 0)};
+  }
 `;
 
 const GlassCard = styled(motion.div)`
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 2rem;
+  border-radius: ${props => props.theme.spacing(2)};
+  padding: ${props => props.theme.spacing(3)};
   border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: ${props => props.theme.spacing(1)};
+  transition: all 0.3s ease;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: ${props => props.theme.spacing(2)};
+  }
   
   &:hover {
     border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-5px);
   }
 `;
 
 const IconWrapper = styled(Box)`
   background: rgba(59, 130, 246, 0.1);
-  border-radius: 16px;
-  padding: 1rem;
+  border-radius: ${props => props.theme.spacing(2)};
+  padding: ${props => props.theme.spacing(1.5)};
   display: inline-flex;
-  margin-bottom: 1rem;
+  margin-bottom: ${props => props.theme.spacing(2)};
+
+  @media (max-width: 768px) {
+    padding: ${props => props.theme.spacing(1)};
+  }
 `;
 
 const HighlightText = styled(Typography)`
@@ -43,12 +60,58 @@ const HighlightText = styled(Typography)`
   -webkit-text-fill-color: transparent;
 `;
 
+const ProfileImageContainer = styled(Box)`
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    margin-top: ${props => props.theme.spacing(4)};
+  }
+`;
+
 const ProfileImage = styled(motion.img)`
-  border-radius: 24px;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  border-radius: ${props => props.theme.spacing(3)};
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+`;
+
+const InfoContainer = styled(Container)`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: ${props => props.theme.spacing(0, 2)};
+
+  @media (max-width: 768px) {
+    padding: ${props => props.theme.spacing(0, 1.5)};
+  }
+`;
+
+const InfoGrid = styled(Grid)`
+  gap: ${props => props.theme.spacing(4)};
+
+  @media (max-width: 768px) {
+    gap: ${props => props.theme.spacing(2)};
+  }
+`;
+
+const InfoTitle = styled(Typography)`
+  font-size: ${props => props.theme.typography.pxToRem(28)};
+  margin-bottom: ${props => props.theme.spacing(2, 3)};
+  text-align: center;
+  ${subtleGradient}
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.typography.pxToRem(24)};
+  }
+`;
+
+const InfoText = styled(Typography)`
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  line-height: 1.6;
+  opacity: 0.9;
 `;
 
 export default function Info() {
@@ -69,13 +132,13 @@ export default function Info() {
 
   return (
     <Section>
-      <Container maxWidth="lg">
+      <InfoContainer maxWidth="lg">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <Grid container spacing={6} alignItems="center">
+          <InfoGrid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
               <motion.div variants={itemVariants}>
                 <HighlightText variant="h2" gutterBottom fontWeight="bold">
@@ -130,16 +193,18 @@ export default function Info() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <ProfileImage
-                  src="/image/me5.png"
-                  alt="Profile"
-                  loading="lazy"
-                />
+                <ProfileImageContainer>
+                  <ProfileImage
+                    src="/image/me5.png"
+                    alt="Profile"
+                    loading="lazy"
+                  />
+                </ProfileImageContainer>
               </motion.div>
             </Grid>
-          </Grid>
+          </InfoGrid>
         </motion.div>
-      </Container>
+      </InfoContainer>
     </Section>
   );
 }

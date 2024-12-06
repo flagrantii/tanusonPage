@@ -112,24 +112,34 @@ const StyledTabs = styled(Tabs)`
   padding: clamp(0.3rem, 1vw, 0.5rem);
   margin: 0 auto clamp(1rem, 3vw, 2rem);
   max-width: min(600px, 95%);
+  width: 100%;
 
-  .MuiTab-root {
-    color: rgba(255, 255, 255, 0.7);
-    text-transform: none;
-    font-weight: 500;
-    min-width: clamp(80px, 15vw, 120px);
-    padding: clamp(0.5rem, 1vw, 1rem);
-    font-size: clamp(0.875rem, 2vw, 1rem);
+  .MuiTabs-scroller {
+    overflow: hidden !important;
+  }
 
-    &.Mui-selected {
-      color: #3b82f6;
-    }
+  .MuiTabs-flexContainer {
+    justify-content: space-between;
   }
 
   .MuiTabs-indicator {
     background: #3b82f6;
     height: 3px;
     border-radius: 3px;
+  }
+
+  .MuiTab-root {
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: none;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    padding: clamp(0.5rem, 1vw, 1rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+
+    &.Mui-selected {
+      color: #3b82f6;
+    }
   }
 `;
 
@@ -265,11 +275,12 @@ export default function ProjectDetailUI({ params }: { params: { id: string } }) 
             </Typography>
           </ProjectHeader>
 
+
+        <Box mb={3} px={2}>
           <StyledTabs
             value={tabValue}
             onChange={(_, newValue) => setTabValue(newValue)}
-            variant="scrollable"
-            scrollButtons="auto"
+            variant="fullWidth"
           >
             <Tab label="Overview" />
             <Tab label="Tech Stack" />
@@ -291,6 +302,7 @@ export default function ProjectDetailUI({ params }: { params: { id: string } }) 
               {tabValue === 3 && <Gallery project={project} />}
             </motion.div>
           </AnimatePresence>
+        </Box>
 
           {relatedProjects.length > 0 && (
             <RelatedProjects>
