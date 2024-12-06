@@ -20,6 +20,10 @@ const PageWrapper = styled(Box)`
   min-height: 100vh;
   background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 100%);
   padding-top: 70px;
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
 `;
 
 const ContentLayout = styled(Box)<{ deviceView: string }>`
@@ -32,13 +36,18 @@ const ContentLayout = styled(Box)<{ deviceView: string }>`
   gap: 2rem;
   position: relative;
   transition: all 0.5s ease;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 0 1rem;
 
   @media (max-width: ${({ deviceView }) => 
     deviceView === 'laptop' ? '1500px' :
     deviceView === 'tablet' ? '1200px' :
-    '800px'
+    '900px'
   }) {
     grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
   }
 `;
 
@@ -51,6 +60,13 @@ const MainContent = styled(Box)<{ deviceView: string }>`
   };
   margin: 0 auto;
   transition: all 0.5s ease;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 `;
 
 const DevicePreview = styled(Box)<{ deviceView: string }>`
@@ -67,18 +83,38 @@ const DevicePreview = styled(Box)<{ deviceView: string }>`
   backdrop-filter: blur(10px);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease;
+  overflow: hidden;
 
   @media (max-width: ${({ deviceView }) => 
     deviceView === 'laptop' ? '1500px' :
     deviceView === 'tablet' ? '1200px' :
-    '800px'
+    '900px'
   }) {
     width: 100%;
     position: relative;
     top: 0;
     height: auto;
+    min-height: ${({ deviceView }) => 
+      deviceView === 'phone' ? '600px' : 
+      deviceView === 'tablet' ? '800px' : 
+      '500px'
+    };
     border-left: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 480px) {
+    min-height: ${({ deviceView }) => 
+      deviceView === 'phone' ? '520px' : 
+      deviceView === 'tablet' ? '650px' : 
+      '450px'
+    };
   }
 `;
 
@@ -105,6 +141,16 @@ const StyledTabs = styled(Tabs)`
     height: 3px;
     border-radius: 3px;
   }
+
+  @media (max-width: 768px) {
+    margin: 0 0.5rem 1rem 0.5rem;
+    
+    .MuiTab-root {
+      min-width: 80px;
+      padding: 0.5rem;
+      font-size: 0.875rem;
+    }
+  }
 `;
 
 const ProjectHeader = styled(Box)`
@@ -113,6 +159,24 @@ const ProjectHeader = styled(Box)`
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    
+    > div:first-of-type {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      
+      > div:last-of-type {
+        width: 100%;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+    }
+  }
 `;
 
 const RelatedProjects = styled(Box)`
@@ -121,6 +185,11 @@ const RelatedProjects = styled(Box)`
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    margin: 2rem 0.5rem;
+    padding: 1rem;
+  }
 `;
 
 const ProjectCard = styled(motion.div)`
@@ -129,6 +198,10 @@ const ProjectCard = styled(motion.div)`
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 
   &:hover {
     border-color: #3b82f6;

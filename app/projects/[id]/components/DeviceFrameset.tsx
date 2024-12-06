@@ -3,14 +3,10 @@
 import React, { useState } from 'react';
 import { Box, IconButton, Tooltip, Switch, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import TabletIcon from '@mui/icons-material/Tablet';
 import LaptopIcon from '@mui/icons-material/Laptop';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import RotateLeftIcon from '@mui/icons-material/RotateLeft';
-import RotateRightIcon from '@mui/icons-material/RotateRight';
 import { ProjectDetail } from '@/data/interface';
 
 const DeviceContainer = styled(Box)`
@@ -21,6 +17,7 @@ const DeviceContainer = styled(Box)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 const DeviceFrame = styled(motion.div)<{ view: string; isDarkMode: boolean; rotation: number }>`
@@ -35,6 +32,8 @@ const DeviceFrame = styled(motion.div)<{ view: string; isDarkMode: boolean; rota
     view === 'tablet' ? '1024px' : 
     '640px'
   };
+  max-width: 100%;
+  max-height: ${({ view }) => view === 'phone' ? '80vh' : '70vh'};
   background: ${({ isDarkMode }) => isDarkMode ? '#1a1a1a' : 'white'};
   border-radius: ${({ view }) => 
     view === 'phone' ? '36px' : 
@@ -43,8 +42,34 @@ const DeviceFrame = styled(motion.div)<{ view: string; isDarkMode: boolean; rota
   };
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  transform: ${({ rotation }) => `rotate(${rotation}deg)`};
+  transform: scale(1);
   transition: all 0.5s ease;
+
+  @media (max-width: 768px) {
+    width: ${({ view }) => 
+      view === 'phone' ? '280px' : 
+      view === 'tablet' ? '500px' : 
+      '700px'
+    };
+    height: ${({ view }) => 
+      view === 'phone' ? '560px' : 
+      view === 'tablet' ? '700px' : 
+      '450px'
+    };
+  }
+
+  @media (max-width: 480px) {
+    width: ${({ view }) => 
+      view === 'phone' ? '240px' : 
+      view === 'tablet' ? '400px' : 
+      '500px'
+    };
+    height: ${({ view }) => 
+      view === 'phone' ? '480px' : 
+      view === 'tablet' ? '600px' : 
+      '400px'
+    };
+  }
 
   &::before {
     content: '';
@@ -83,6 +108,12 @@ const DeviceScreen = styled(Box)`
     width: 100%;
     height: 100%;
     border: none;
+    transform: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 `;
 
@@ -98,6 +129,17 @@ const Controls = styled(Box)`
   border-radius: 12px;
   backdrop-filter: blur(10px);
   z-index: 10;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  max-width: 90%;
+
+  @media (max-width: 768px) {
+    bottom: 0.5rem;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    background: rgba(0, 0, 0, 0.7);
+  }
 `;
 
 const DeviceButton = styled(IconButton)<{ isActive?: boolean }>`
@@ -109,6 +151,14 @@ const DeviceButton = styled(IconButton)<{ isActive?: boolean }>`
   &:hover {
     background: rgba(59, 130, 246, 0.4);
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 6px;
+    
+    svg {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -124,6 +174,16 @@ const RotationControls = styled(Box)`
   padding: 0.8rem;
   border-radius: 12px;
   backdrop-filter: blur(10px);
+
+  @media (max-width: 768px) {
+    right: 1rem;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 interface DeviceFramesetProps {
@@ -134,18 +194,13 @@ interface DeviceFramesetProps {
 
 export default function DeviceFrameset({ project, view, onViewChange }: DeviceFramesetProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [rotation, setRotation] = useState(0);
-
-  const handleRotate = (direction: 'left' | 'right') => {
-    setRotation(prev => direction === 'left' ? prev - 90 : prev + 90);
-  };
 
   return (
     <DeviceContainer>
       <DeviceFrame
         view={view}
         isDarkMode={isDarkMode}
-        rotation={rotation}
+        rotation={0}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -156,7 +211,6 @@ export default function DeviceFrameset({ project, view, onViewChange }: DeviceFr
             title={project.title}
             style={{
               filter: isDarkMode ? 'invert(1) hue-rotate(180deg)' : 'none',
-              transform: `scale(${view === 'phone' ? 0.75 : 1})`,
             }}
           />
         </DeviceScreen>
@@ -181,23 +235,7 @@ export default function DeviceFrameset({ project, view, onViewChange }: DeviceFr
         >
           <LaptopIcon sx={{ color: 'white' }} />
         </DeviceButton>
-        <Box sx={{ width: '1px', bgcolor: 'rgba(255,255,255,0.2)', mx: 1 }} />
-        <DeviceButton onClick={() => setIsDarkMode(!isDarkMode)}>
-          {isDarkMode ? 
-            <DarkModeIcon sx={{ color: 'white' }} /> : 
-            <LightModeIcon sx={{ color: 'white' }} />
-          }
-        </DeviceButton>
       </Controls>
-
-      <RotationControls>
-        <DeviceButton onClick={() => handleRotate('left')}>
-          <RotateLeftIcon sx={{ color: 'white' }} />
-        </DeviceButton>
-        <DeviceButton onClick={() => handleRotate('right')}>
-          <RotateRightIcon sx={{ color: 'white' }} />
-        </DeviceButton>
-      </RotationControls>
     </DeviceContainer>
   );
 } 
