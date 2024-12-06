@@ -5,7 +5,7 @@ export const projects: ProjectDetail[] = [
       id: 1,
       title: "Trip Recommendation",
       description: "AI-powered travel itinerary planner",
-      longDescription: "An innovative travel companion app that leverages AI to create personalized travel experiences in Bangkok.",
+      longDescription: "An innovative travel companion app that leverages AI to create personalized travel experiences in Bangkok. The app analyzes user preferences, travel history, and real-time data to suggest optimal itineraries, hidden gems, and local experiences.",
       status: "Completed",
       category: "Web",
       technologies: [
