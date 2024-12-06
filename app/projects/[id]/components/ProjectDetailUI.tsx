@@ -34,11 +34,10 @@ const ContentLayout = styled(Box)<{ deviceView: string }>`
     '1fr 375px'
   };
   gap: 2rem;
-  position: relative;
-  transition: all 0.5s ease;
   max-width: 100vw;
   overflow-x: hidden;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 0 max(1rem, calc((100vw - 1400px) / 2));
 
   @media (max-width: ${({ deviceView }) => 
     deviceView === 'laptop' ? '1500px' :
@@ -52,20 +51,17 @@ const ContentLayout = styled(Box)<{ deviceView: string }>`
 `;
 
 const MainContent = styled(Box)<{ deviceView: string }>`
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   max-width: ${({ deviceView }) => 
     deviceView === 'laptop' ? '800px' :
     deviceView === 'tablet' ? '600px' :
     '100%'
   };
   margin: 0 auto;
-  transition: all 0.5s ease;
+  width: 100%;
 
   @media (max-width: 768px) {
-    padding: 1rem;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: min(600px, 95%);
   }
 `;
 
@@ -78,12 +74,11 @@ const DevicePreview = styled(Box)<{ deviceView: string }>`
   position: sticky;
   top: 90px;
   height: calc(100vh - 90px);
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease;
-  overflow: hidden;
 
   @media (max-width: ${({ deviceView }) => 
     deviceView === 'laptop' ? '1500px' :
@@ -95,26 +90,18 @@ const DevicePreview = styled(Box)<{ deviceView: string }>`
     top: 0;
     height: auto;
     min-height: ${({ deviceView }) => 
-      deviceView === 'phone' ? '600px' : 
-      deviceView === 'tablet' ? '800px' : 
-      '500px'
+      deviceView === 'phone' ? 'min(600px, 90vh)' : 
+      deviceView === 'tablet' ? 'min(800px, 90vh)' : 
+      'min(500px, 90vh)'
     };
     border-left: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: 0 auto 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  @media (max-width: 480px) {
-    min-height: ${({ deviceView }) => 
-      deviceView === 'phone' ? '520px' : 
-      deviceView === 'tablet' ? '650px' : 
-      '450px'
-    };
+    max-width: 100%;
   }
 `;
 
@@ -122,14 +109,17 @@ const StyledTabs = styled(Tabs)`
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  padding: 0.5rem;
-  margin-bottom: 2rem;
+  padding: clamp(0.3rem, 1vw, 0.5rem);
+  margin: 0 auto clamp(1rem, 3vw, 2rem);
+  max-width: min(600px, 95%);
 
   .MuiTab-root {
     color: rgba(255, 255, 255, 0.7);
     text-transform: none;
     font-weight: 500;
-    min-width: 120px;
+    min-width: clamp(80px, 15vw, 120px);
+    padding: clamp(0.5rem, 1vw, 1rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
 
     &.Mui-selected {
       color: #3b82f6;
@@ -141,66 +131,69 @@ const StyledTabs = styled(Tabs)`
     height: 3px;
     border-radius: 3px;
   }
-
-  @media (max-width: 768px) {
-    margin: 0 0.5rem 1rem 0.5rem;
-    
-    .MuiTab-root {
-      min-width: 80px;
-      padding: 0.5rem;
-      font-size: 0.875rem;
-    }
-  }
 `;
 
 const ProjectHeader = styled(Box)`
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1rem, 2vw, 2rem);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   @media (max-width: 768px) {
-    padding: 1rem;
-    margin: 0 0.5rem 1rem 0.5rem;
+    margin: 0 auto 1rem;
+    max-width: min(600px, 95%);
     
     > div:first-of-type {
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
       
+      > div:first-of-type {
+        width: 100%;
+        
+        h4 {
+          font-size: clamp(1.5rem, 5vw, 2rem);
+        }
+      }
+      
       > div:last-of-type {
         width: 100%;
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
+        justify-content: flex-start;
       }
     }
   }
 `;
 
 const RelatedProjects = styled(Box)`
-  margin-top: 4rem;
-  padding: 2rem;
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  padding: clamp(1rem, 2vw, 2rem);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: min(600px, 95%);
 
-  @media (max-width: 768px) {
-    margin: 2rem 0.5rem;
-    padding: 1rem;
+  > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(0.5rem, 2vw, 1rem);
+    margin-top: 1rem;
   }
 `;
 
 const ProjectCard = styled(motion.div)`
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 
-  @media (max-width: 768px) {
-    padding: 1rem;
+  h6 {
+    font-size: clamp(1rem, 3vw, 1.25rem);
   }
 
   &:hover {
