@@ -90,43 +90,6 @@ export const projects: ProjectDetail[] = [
     },
     {
       id: 3,
-      title: "Ranfoom",
-      description: "Fun food suggestion app",
-      longDescription: "An innovative Flutter application, Ranfoom simplifies meal decision-making by randomly suggesting food options. Users enjoy a playful and spontaneous approach to choosing meals, making dining decisions fun and effortless with intuitive mobile interface features.",
-      status: "Completed",
-      category: "Mobile",
-      technologies: ["Flutter", "Dart"],
-      features: [
-        "Random food suggestions",
-        "Intuitive mobile interface",
-        "Playful and interactive design"
-      ],
-      icon: "/icon/foodlogo.jpg",
-      background: "/background/ranfoom.png",
-      images: [],
-      githubUrl: "",
-      demoUrl: "",
-      challenges: [
-        "Creating engaging UI components",
-        "Ensuring consistent performance on mobile devices"
-      ],
-      learnings: [
-        "Mobile app design patterns",
-        "Flutter optimization techniques"
-      ],
-      timeline: "June 2021",
-      role: "Frontend Developer / UXUI Designer",
-      techDetails: {
-        architecture: "Monolithic",
-        database: "PostgreSQL",
-        hosting: "",
-        apis: [
-          "Mahidol food API"
-        ]
-      },
-    },
-    {
-      id: 4,
       title: "CUNEXT Event",
       description: "Campus-wide event management app",
       longDescription: "Revolutionizing university event management, CUNEXT Event employs React Native and Expo to streamline event discovery, organization, and engagement for students and faculty. It integrates comprehensive features for seamless planning and participation, enhancing campus-wide event experiences.",
@@ -169,7 +132,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 5,
+      id: 4,
       title: "Massage Reservation",
       description: "Effortless massage appointment management",
       longDescription: "Designed for ease and efficiency, Massage Reservation is a user-friendly web app for booking and managing massage appointments. It streamlines scheduling processes for clients and practitioners, ensuring seamless communication and enhancing overall service accessibility and satisfaction.",
@@ -209,7 +172,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 6,
+      id: 5,
       title: "Minesweeper with JavaFX",
       description: "Classic gaming with JavaFX",
       longDescription: "Developed using JavaFX, Mine Sweeper offers a classic gaming experience with an intuitive user interface. Players navigate through a grid to uncover mines while strategically flagging potential dangers, combining logic and concentration in an engaging, interactive gameplay format.",
@@ -248,7 +211,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 7,
+      id: 6,
       title: "Golang Concurrency API",
       description: "High-performance API with Golang",
       longDescription: "Developed as part of an internship, the Golang Concurrency API enhances application performance with robust concurrency management. This project showcases advanced Golang programming skills, optimizing resource utilization and scalability in distributed systems and high-demand environments.",
@@ -287,7 +250,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 8,
+      id: 7,
       title: "Rub Puen Kao Mai 2024",
       description: "Freshmen orientation registration platform",
       longDescription: "Freshmen orientation registration website for the Student Government of Chulalongkorn University.",
@@ -331,7 +294,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 9,
+      id: 8,
       title: "Nodi",
       description: "Discover and connect research papers through intelligent conversations",
       longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
@@ -375,7 +338,7 @@ export const projects: ProjectDetail[] = [
       ]
     },
     {
-      id: 10,
+      id: 9,
       title: "Kasalong",
       description: "The static website for premium Thai rice brand.",
       longDescription: "Kasalong is a web application that high-quality rice mill that exports premium Thai rice …and has become the owner of the “Kasalong Rice” brand today. ",
@@ -423,7 +386,7 @@ export const projects: ProjectDetail[] = [
       ]
     },
     {
-      id: 11,
+      id: 10,
       title: "Zongggd",
       description: "The e-commerce website for a sticker and print shop.",
       longDescription: "Songdee is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
@@ -472,7 +435,7 @@ export const projects: ProjectDetail[] = [
       ]
     },
     {
-      id: 12,
+      id: 11,
       title: "Shoppo",
       description: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives",
       longDescription: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives currently supports Shopee, with plans to expand to Amazon for enhanced shopping assistance",
