@@ -83,6 +83,8 @@ export interface ProjectDetail {
   technologies: string[];
   features: string[];
   images: string[];
+  icon: string;
+  background: string;
   githubUrl: string;
   demoUrl?: string;
   challenges: string[];

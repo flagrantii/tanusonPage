@@ -201,81 +201,137 @@ export default function DeviceFrameset({ project, view, onViewChange }: DeviceFr
       <DeviceContainer>
         <DeviceFrame
           view={view}
-            isDarkMode={isDarkMode}
-            rotation={0}
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <DeviceScreen>
-              <Stack
-                spacing={3}
-                alignItems="center"
-                justifyContent="center"
-                sx={{
-                  height: '100%',
-                  p: 3,
-                  background: isDarkMode ? '#1a1a1a' : '#f5f5f5',
-                  color: isDarkMode ? '#fff' : '#000'
-                }}
-              >
-                { (project.status == "development") ?
-                <>
-                <Typography variant="h5" fontWeight="bold">
+          isDarkMode={isDarkMode}
+          rotation={0}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <DeviceScreen>
+            <Stack
+              spacing={{ xs: 2, sm: 3 }}
+              alignItems="center"
+              justifyContent="center"
+              sx={{
+                height: '100%',
+                p: { xs: 2, sm: 3 },
+                background: isDarkMode ? '#1a1a1a' : '#f5f5f5',
+                color: isDarkMode ? '#fff' : '#000'
+              }}
+            >
+              { (project.status == "development") ?
+              <>
+                <Typography 
+                  variant="h5" 
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{
+                    fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' }
+                  }}
+                >
                   Demo is in development
                 </Typography>
-                <Typography variant="body1" textAlign="center" color="text.secondary">
+                <Typography 
+                  variant="body1" 
+                  textAlign="center" 
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: '0.875rem', sm: '1rem' },
+                    maxWidth: { xs: '100%', sm: '80%', md: '70%' },
+                    mx: 'auto'
+                  }}
+                >
                   This project is currently in development.
                   Check out the repository for more details.
                 </Typography>
-                </>
-                :
-                <>
-                <Typography variant="h5" fontWeight="bold">
+              </>
+              :
+              <>
+                <Typography 
+                  variant="h5" 
+                  fontWeight="bold"
+                  textAlign="center"
+                  sx={{
+                    fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' }
+                  }}
+                >
                   Demo is not available
                 </Typography>
-                <Typography variant="body1" textAlign="center" color="text.secondary">
+                <Typography 
+                  variant="body1" 
+                  textAlign="center" 
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: '0.875rem', sm: '1rem' },
+                    maxWidth: { xs: '100%', sm: '80%', md: '70%' },
+                    mx: 'auto'
+                  }}
+                >
                   This project is already terminated.
                 </Typography>
-                </>
-                }
+              </>
+              }
 
-                <Stack direction="row" spacing={2}>
-                  {project.githubUrl && (
-                    <Button
-                      variant="contained"
-                      startIcon={<GitHub />}
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{ 
+              <Stack 
+                direction={{ xs: 'column', sm: 'row' }} 
+                spacing={{ xs: 1.5, sm: 2 }}
+                sx={{ mt: { xs: 2, sm: 3 } }}
+              >
+                {project.githubUrl && (
+                  <Button
+                    variant="contained"
+                    startIcon={<GitHub />}
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="large"
+                    sx={{ 
+                      bgcolor: 'background.paper',
+                      px: { xs: 2, sm: 3 },
+                      py: { xs: 1, sm: 1.5 },
+                      fontSize: { xs: '0.875rem', sm: '1rem' },
+                      whiteSpace: 'nowrap',
+                      minWidth: { xs: '200px', sm: 'auto' },
+                      '&:hover': { 
+                        transform: 'translateY(-2px)',
                         bgcolor: 'background.paper',
-                        '&:hover': { transform: 'translateY(-2px)' }
-                      }}
-                    >
-                      View Source
-                    </Button>
-                  )}
-                  {project.demoUrl && (
-                    <Button
-                      variant="outlined"
-                      startIcon={<OpenInNew />}
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{ 
-                        borderColor: 'divider',
-                        '&:hover': { transform: 'translateY(-2px)' }
-                      }}
-                    >
-                      Live Preview
-                    </Button>
-                  )}
-                </Stack>
+                        opacity: 0.9
+                      }
+                    }}
+                  >
+                    View Source
+                  </Button>
+                )}
+                {project.demoUrl && (
+                  <Button
+                    variant="outlined"
+                    startIcon={<OpenInNew />}
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="large"
+                    sx={{ 
+                      borderColor: 'divider',
+                      px: { xs: 2, sm: 3 },
+                      py: { xs: 1, sm: 1.5 },
+                      fontSize: { xs: '0.875rem', sm: '1rem' },
+                      whiteSpace: 'nowrap',
+                      minWidth: { xs: '200px', sm: 'auto' },
+                      '&:hover': { 
+                        transform: 'translateY(-2px)',
+                        borderColor: 'primary.main',
+                        opacity: 0.9
+                      }
+                    }}
+                  >
+                    Live Preview
+                  </Button>
+                )}
               </Stack>
-            </DeviceScreen>
-          </DeviceFrame>
-        </DeviceContainer>
+            </Stack>
+          </DeviceScreen>
+        </DeviceFrame>
+      </DeviceContainer>
     )
   }
 

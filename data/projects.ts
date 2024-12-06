@@ -27,10 +27,11 @@ export const projects: ProjectDetail[] = [
         "Smart budget optimization",
         "Weather-aware scheduling"
       ],
+      icon: "/icon/triplogo.jpg",
+      background: "/background/trip.png",
       images: [
-        "/icon/triplogo.jpg",
-        "/projects/trip/map.png",
-        "/projects/trip/recommendations.png"
+        "/projects/trip/trip-1.png",
+        "/projects/trip/trip-2.png",
       ],
       githubUrl: "https://github.com/flagrantii/TripRecommend",
       demoUrl: "",
@@ -87,8 +88,11 @@ export const projects: ProjectDetail[] = [
         "Integrated marketplace",
         "User-friendly interface"
       ],
+      icon: "/icon/carbonlogo.jpg",
+      background: "/background/carbon.png",
       images: [
-        "/icon/carbonlogo.jpg"
+        "/projects/carbon/carbon-1.png",
+        "/projects/carbon/carbon-2.png"
       ],
       githubUrl: "https://github.com/flagrantii/CaronCredit-main",
       demoUrl: "",
@@ -116,9 +120,9 @@ export const projects: ProjectDetail[] = [
         "Intuitive mobile interface",
         "Playful and interactive design"
       ],
-      images: [
-        "/icon/foodlogo.jpg"
-      ],
+      icon: "/icon/foodlogo.jpg",
+      background: "/background/ranfoom.png",
+      images: [],
       githubUrl: "",
       demoUrl: "",
       challenges: [
@@ -145,8 +149,11 @@ export const projects: ProjectDetail[] = [
         "Streamlined organization",
         "Seamless participant engagement"
       ],
+      icon: "/icon/CUNEXT.png",
+      background: "/background/event.png",
       images: [
-        "/icon/CUNEXT.png"
+        "/projects/event/event-1.png",
+        "/projects/event/event-2.png"
       ],
       githubUrl: "https://github.com/flagrantii/cunext-event",
       demoUrl: "",
@@ -174,8 +181,11 @@ export const projects: ProjectDetail[] = [
         "User-practitioner communication",
         "Efficient scheduling system"
       ],
+      icon: "/icon/logo1.png",
+      background: "/background/massage.png",
       images: [
-        "/icon/logo1.png"
+        "/projects/massage/massage-1.png",
+        "/projects/massage/massage-2.png"
       ],
       githubUrl: "https://github.com/flagrantii/Massage-Reservation-2",
       demoUrl: "https://swdevprac2-project-get-a-good-rest-api-gules.vercel.app/",
@@ -203,8 +213,11 @@ export const projects: ProjectDetail[] = [
         "Intuitive user interface",
         "Interactive grid navigation"
       ],
+      icon: "/icon/bomb.png",
+      background: "/background/mine.png",
       images: [
-        "/icon/bomb.png"
+        "/projects/mine/mine-1.png",
+        "/projects/mine/mine-2.png"
       ],
       githubUrl: "https://github.com/flagrantii/Minesweeper-java",
       demoUrl: "",
@@ -232,9 +245,9 @@ export const projects: ProjectDetail[] = [
         "Optimized resource utilization",
         "Scalable system architecture"
       ],
-      images: [
-        "/icon/golang.jpg"
-      ],
+      icon: "/icon/golang.jpg",
+      background: "/background/golang.png",
+      images: [],
       githubUrl: "",
       demoUrl: "",
       challenges: [
@@ -261,8 +274,11 @@ export const projects: ProjectDetail[] = [
         "Event information management",
         "User-friendly platform"
       ],
+      icon: "/icon/sgcu_logo.jpg",
+      background: "/background/rpkm.png",
       images: [
-        "/icon/sgcu_logo.jpg"
+        "/projects/rpkm/rpkm-1.png",
+        "/projects/rpkm/rpkm-2.png"
       ],
       githubUrl: "https://github.com/isd-sgcu/rpkm67-backend",
       demoUrl: "https://cufreshy2024.com/",

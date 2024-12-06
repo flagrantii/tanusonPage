@@ -85,7 +85,7 @@ export default function WebCard({ webProps }: { webProps: ProjectDetail }) {
   return (
     <CardContainer>
       <ProjectImage 
-        src={webProps.images[0]} 
+        src={webProps.background} 
         alt={webProps.title}
         onClick={() => router.push(`/projects/${webProps.id}`)}
         style={{ cursor: 'pointer' }}
