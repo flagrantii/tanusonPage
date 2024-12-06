@@ -1,210 +1,238 @@
-'use client';
+'use client'
+import React, { useEffect, useRef } from 'react'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { fadeIn, slideIn } from '@/utils/animations'
+import styled from '@emotion/styled'
+import { School, Laptop, Rocket } from "@mui/icons-material";
 
-import React from 'react';
-import { Box, Container, Typography, Grid, IconButton } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { motion } from 'framer-motion';
-import SchoolIcon from '@mui/icons-material/School';
-import CodeIcon from '@mui/icons-material/Code';
-import BrushIcon from '@mui/icons-material/Brush';
-import { fadeIn } from '@/utils/animations';
-import { subtleGradient } from '@/utils/styles';
-
-const Section = styled(Box)`
-  min-height: 100vh;
-  padding: ${props => props.theme.spacing(8, 0)};
+const StyledSection = styled.section`
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
-
-  @media (max-width: 768px) {
-    padding: ${props => props.theme.spacing(6, 0)};
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(13,17,23,0.8) 0%, rgba(13,17,23,0.4) 100%);
+    z-index: -1;
   }
-`;
 
-const GlassCard = styled(motion.div)`
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      flex-direction: column-reverse;
+    }
+  }
+`
+
+const TextContainer = styled(motion.div)`
+  h1 {
+    background: linear-gradient(to right, #64B5F6, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, #64B5F6, #2196F3);
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+`
+
+const ImageContainer = styled(motion.div)`
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(33,150,243,0.15), transparent);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.15);
+  }
+
+  img {
+    border-radius: 1rem;
+    transition: all 0.4s ease;
+    filter: brightness(0.95);
+    
+    &:hover {
+      transform: scale(1.02) translateY(-5px);
+      filter: brightness(1.05);
+    }
+  }
+`
+
+const HighlightCard = styled(motion.div)`
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border-radius: ${props => props.theme.spacing(2)};
-  padding: ${props => props.theme.spacing(3)};
+  border-radius: 1rem;
+  padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: ${props => props.theme.spacing(1)};
   transition: all 0.3s ease;
-  
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: ${props => props.theme.spacing(2)};
-  }
-  
+
   &:hover {
-    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-5px);
   }
-`;
 
-const IconWrapper = styled(Box)`
-  background: rgba(59, 130, 246, 0.1);
-  border-radius: ${props => props.theme.spacing(2)};
-  padding: ${props => props.theme.spacing(1.5)};
-  display: inline-flex;
-  margin-bottom: ${props => props.theme.spacing(2)};
-
-  @media (max-width: 768px) {
-    padding: ${props => props.theme.spacing(1)};
+  .icon {
+    color: #2196F3;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
-`;
+`
 
-const HighlightText = styled(Typography)`
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
+export default function InfoPage() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  const { scrollYProgress } = useScroll()
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50])
 
-const ProfileImageContainer = styled(Box)`
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    max-width: 300px;
-    margin-top: ${props => props.theme.spacing(4)};
-  }
-`;
-
-const ProfileImage = styled(motion.img)`
-  width: 100%;
-  height: auto;
-  border-radius: ${props => props.theme.spacing(3)};
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-`;
-
-const InfoContainer = styled(Container)`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: ${props => props.theme.spacing(0, 2)};
-
-  @media (max-width: 768px) {
-    padding: ${props => props.theme.spacing(0, 1.5)};
-  }
-`;
-
-const InfoGrid = styled(Grid)`
-  gap: ${props => props.theme.spacing(4)};
-
-  @media (max-width: 768px) {
-    gap: ${props => props.theme.spacing(2)};
-  }
-`;
-
-const InfoTitle = styled(Typography)`
-  font-size: ${props => props.theme.typography.pxToRem(28)};
-  margin-bottom: ${props => props.theme.spacing(2, 3)};
-  text-align: center;
-  ${subtleGradient}
-
-  @media (max-width: 768px) {
-    font-size: ${props => props.theme.typography.pxToRem(24)};
-  }
-`;
-
-const InfoText = styled(Typography)`
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  line-height: 1.6;
-  opacity: 0.9;
-`;
-
-export default function Info() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+  const highlights = [
+    {
+      icon: <School />,
+      title: "Education",
+      description: "CEDT, Chulalongkorn University"
+    },
+    {
+      icon: <Laptop />,
+      title: "Expertise",
+      description: "Full-stack Development"
+    },
+    {
+      icon: <Rocket />,
+      title: "Focus",
+      description: "Innovation & Problem Solving"
     }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
+  ]
 
   return (
-    <Section>
-      <InfoContainer maxWidth="lg">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <InfoGrid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <motion.div variants={itemVariants}>
-                <HighlightText variant="h2" gutterBottom fontWeight="bold">
-                  About Me
-                </HighlightText>
-                <Typography variant="h5" color="white" paragraph>
-                  Passionate Developer & Creative Thinker
-                </Typography>
-              </motion.div>
+    <StyledSection ref={ref}>
+      <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+        <div className="content-wrapper flex flex-col lg:flex-row justify-between gap-12 mt-20">
+          <TextContainer
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
+            }}
+            className="w-full lg:w-5/12"
+          >
+            <motion.h1 
+              variants={{
+                hidden: { x: -50, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
+              className="text-4xl lg:text-5xl font-bold"
+            >
+              About Me
+            </motion.h1>
+            
+            <motion.p 
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1 }
+              }}
+              className="text-gray-200 text-lg"
+            >
+              A motivated and highly detail-oriented Software Engineer with a proven track record of designing, developing, and implementing innovative software solutions.
+            </motion.p>
 
-              <motion.div variants={itemVariants}>
-                <GlassCard>
-                  <IconWrapper>
-                    <SchoolIcon sx={{ fontSize: 40, color: '#3b82f6' }} />
-                  </IconWrapper>
-                  <Typography color="white" paragraph>
-                    Since the sixth grade, I attended a school where I explored various initiatives, studies, and hobbies—all centered around computers. This experience clearly highlighted my future interests and how I should progress in the tech industry.
-                  </Typography>
-                </GlassCard>
-              </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+              {highlights.map((item, index) => (
+                <HighlightCard
+                  key={index}
+                  variants={{
+                    hidden: { y: 20, opacity: 0 },
+                    visible: { y: 0, opacity: 1 }
+                  }}
+                  transition={{ delay: index * 0.2 }}
+                >
+                  <div className="icon">{item.icon}</div>
+                  <h3 className="text-white font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-300 text-sm">{item.description}</p>
+                </HighlightCard>
+              ))}
+            </div>
 
-              <Box mt={4}>
-                <motion.div variants={itemVariants}>
-                  <GlassCard>
-                    <IconWrapper>
-                      <CodeIcon sx={{ fontSize: 40, color: '#3b82f6' }} />
-                    </IconWrapper>
-                    <Typography color="white" paragraph>
-                      My involvement in PCCNST's tech and innovation initiatives provided a platform to exercise my creative muscles, ignited my passion for design, and enhanced my ability to handle adversity.
-                    </Typography>
-                  </GlassCard>
-                </motion.div>
-              </Box>
+            <motion.h1 
+              variants={{
+                hidden: { x: -50, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
+              className="text-4xl lg:text-5xl font-bold mt-8"
+            >
+              My Journey
+            </motion.h1>
+            
+            <motion.div
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1 }
+              }}
+              className="space-y-4"
+            >
+              <p className="text-gray-200">
+                Since the sixth grade, I've been immersed in the world of technology, exploring various initiatives and studies centered around computers. This early exposure shaped my path in the tech industry.
+              </p>
+              <p className="text-gray-200">
+                My involvement in PCCNST's tech initiatives and ThaiHealth camp experiences have shaped my passion for creating impactful solutions and fostered my love for continuous learning.
+              </p>
+            </motion.div>
+          </TextContainer>
 
-              <Box mt={4}>
-                <motion.div variants={itemVariants}>
-                  <GlassCard>
-                    <IconWrapper>
-                      <BrushIcon sx={{ fontSize: 40, color: '#3b82f6' }} />
-                    </IconWrapper>
-                    <Typography color="white" paragraph>
-                      Additionally, my participation in a camp at ThaiHeath allowed me to discover my love for building products that positively impact people's lives.
-                    </Typography>
-                  </GlassCard>
-                </motion.div>
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
+          <ImageContainer
+            style={{ y }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ 
+              duration: 0.7, 
+              ease: "easeOut",
+              delay: 0.2 
+            }}
+            className="w-full lg:w-6/12 flex items-center justify-center sticky top-20"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative w-full max-w-md"
+            >
+              <img 
+                className="w-full rounded-lg shadow-2xl"
+                src="/image/me5.png" 
+                alt="Profile Image"
+                loading="lazy"
+              />
               <motion.div
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="absolute -bottom-4 -right-4 bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-medium shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
               >
-                <ProfileImageContainer>
-                  <ProfileImage
-                    src="/image/me5.png"
-                    alt="Profile"
-                    loading="lazy"
-                  />
-                </ProfileImageContainer>
+                Software Engineer
               </motion.div>
-            </Grid>
-          </InfoGrid>
-        </motion.div>
-      </InfoContainer>
-    </Section>
-  );
+            </motion.div>
+          </ImageContainer>
+        </div>
+      </div>
+    </StyledSection>
+  )
 }
