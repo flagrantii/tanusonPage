@@ -81,7 +81,7 @@ export interface ProjectDetail {
   status: string;
   category: string;
   technologies: string[];
-  features: string[];
+  features: Feature[];
   images: string[];
   icon: string;
   background: string;
@@ -95,4 +95,12 @@ export interface ProjectDetail {
   metrics?: ProjectMetrics;
   techDetails?: TechDetails;
   futureFeatures?: string[];
+}
+
+export interface Feature {
+  feature: string;
+  description: string;
+  icon?: string;
+  category?: string;
+  status?: 'completed' | 'in-progress' | 'planned';
 }

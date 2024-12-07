@@ -14,10 +14,11 @@ export const projects: ProjectDetail[] = [
         "JavaScript"
       ],
       features: [
-        "AI-powered personalized recommendations",
-        "Local insights and hidden gems",
-        "Smart budget optimization",
+        { feature: "AI-powered personalized recommendations", description: "Utilizes AI to suggest customized itineraries based on user preferences.", status: "completed", category: "Core" },
+        { feature: "Local insights and hidden gems", description: "Reveals less-known attractions for a unique travel experience.", status: "completed", category: "Discovery" },
+        { feature: "Smart budget optimization", description: "Balances travel plans with user-defined budget constraints.", status: "completed", category: "Planning" }
       ],
+            
       icon: "/icon/triplogo.jpg",
       background: "/background/trip.png",
       images: [
@@ -56,10 +57,10 @@ export const projects: ProjectDetail[] = [
       category: "Web",
       technologies:  ["HTML5", "CSS3", "JavaScript"],
       features: [
-        "Carbon credit tracking",
-        "Integrated marketplace",
-        "User-friendly interface"
-      ],
+        { feature: "Carbon credit tracking", description: "Tracks carbon credits earned through eco-friendly shopping.", status: "completed", category: "Core" },
+        { feature: "Integrated marketplace", description: "Provides a platform for trading and redeeming carbon credits.", status: "completed", category: "Marketplace" },
+        { feature: "User-friendly interface", description: "Ensures intuitive navigation for all users.", status: "completed", category: "User Experience" }
+      ],      
       icon: "/icon/carbonlogo.jpg",
       background: "/background/carbon.png",
       images: [
@@ -96,11 +97,11 @@ export const projects: ProjectDetail[] = [
       category: "Mobile",
       technologies: ["React Native", "Expo", "Firebase", "Golang", "Tailwind"],
       features: [
-        "Event discovery",
-        "Streamlined organization",
-        "Seamless participant engagement",
-        "Real-time data syncing"
-      ],
+        { feature: "Event discovery", description: "Allows users to find events based on interests.", status: "completed", category: "Discovery" },
+        { feature: "Streamlined organization", description: "Simplifies the process of organizing and managing events.", status: "completed", category: "Planning" },
+        { feature: "Seamless participant engagement", description: "Facilitates communication between event organizers and attendees.", status: "completed", category: "Engagement" },
+        { feature: "Real-time data syncing", description: "Ensures up-to-date information is always available.", status: "completed", category: "Performance" }
+      ],      
       icon: "/icon/CUNEXT.png",
       background: "/background/event.png",
       images: [
@@ -138,10 +139,10 @@ export const projects: ProjectDetail[] = [
       category: "Web",
       technologies: ["Next.js", "Node.js", "Tailwind", "Express", "PostgreSQL"],
       features: [
-        "Booking management",
-        "User-practitioner communication",
-        "Efficient scheduling system"
-      ],
+        { feature: "Booking management", description: "Enables easy scheduling of massage appointments.", status: "completed", category: "Core" },
+        { feature: "User-practitioner communication", description: "Provides direct communication between clients and practitioners.", status: "completed", category: "Engagement" },
+        { feature: "Efficient scheduling system", description: "Optimizes appointment booking and rescheduling.", status: "completed", category: "Planning" }
+      ],      
       icon: "/icon/logo1.png",
       background: "/background/massage.png",
       images: [
@@ -177,10 +178,10 @@ export const projects: ProjectDetail[] = [
       category: "Application",
       technologies: ["Java", "JavaFX"],
       features: [
-        "Classic Minesweeper gameplay",
-        "Intuitive user interface",
-        "Interactive grid navigation"
-      ],
+        { feature: "Classic Minesweeper gameplay", description: "Recreates the traditional Minesweeper experience.", status: "completed", category: "Core" },
+        { feature: "Intuitive user interface", description: "Enhances gameplay with a clean, easy-to-navigate design.", status: "completed", category: "User Experience" },
+        { feature: "Interactive grid navigation", description: "Allows players to navigate the grid seamlessly.", status: "completed", category: "Performance" }
+      ],      
       icon: "/icon/bomb.png",
       background: "/background/mine.png",
       images: [
@@ -215,10 +216,10 @@ export const projects: ProjectDetail[] = [
       category: "Server",
       technologies: ["Golang", "Docker", "Redis", "PostgreSQL", "Prometheus"],
       features: [
-        "Concurrency management",
-        "Optimized resource utilization",
-        "Scalable system architecture"
-      ],
+        { feature: "Concurrency management", description: "Optimizes API performance with advanced concurrency techniques.", status: "completed", category: "Core" },
+        { feature: "Optimized resource utilization", description: "Ensures efficient use of server resources.", status: "completed", category: "Performance" },
+        { feature: "Scalable system architecture", description: "Supports high-demand environments with ease.", status: "completed", category: "Scalability" }
+      ],      
       icon: "/icon/golang.jpg",
       background: "/background/golang.png",
       images: [],
@@ -253,10 +254,10 @@ export const projects: ProjectDetail[] = [
       category: "Web",
       technologies: ["Next.js", "Golang", "Gin", "PostgreSQL"],
       features: [
-        "Student registration",
-        "Event information management",
-        "User-friendly platform"
-      ],
+        { feature: "Student registration", description: "Handles the registration process for freshmen orientation events.", status: "completed", category: "Core" },
+        { feature: "Event information management", description: "Provides essential details for all orientation activities.", status: "completed", category: "Discovery" },
+        { feature: "User-friendly platform", description: "Ensures a seamless registration and onboarding experience.", status: "completed", category: "User Experience" }
+      ],      
       icon: "/icon/sgcu_logo.jpg",
       background: "/background/rpkm.png",
       images: [
@@ -294,12 +295,12 @@ export const projects: ProjectDetail[] = [
       longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
       status: "Development",
       category: "Web",
-      technologies: ["Next.js", "TypeScript", "Tailwind", "OpenAI API", "Qdrant", "Python"],
+      technologies: ["Next.js", "TypeScript", "Tailwind", "Qdrant", "Python"],
       features: [
-        "Intelligent conversation with research papers",
-        "Paper recommendation based on conversation history",
-        "User-friendly interface",
-      ],
+        { feature: "Intelligent conversation with research papers", description: "Engages users with AI-driven paper discussions.", status: "in-progress", category: "Core" },
+        { feature: "Paper recommendation based on conversation history", description: "Suggests relevant papers tailored to user preferences.", status: "in-progress", category: "Discovery" },
+        { feature: "User-friendly interface", description: "Simplifies research discovery and interaction.", status: "in-progress", category: "User Experience" }
+      ],      
       icon: "/icon/nodi.png",
       background: "/background/nodi.png",
       images: [
@@ -338,10 +339,10 @@ export const projects: ProjectDetail[] = [
       category: "Web",
       technologies: ["WordPress"],
       features: [
-        "Premium rice brand",
-        "User-friendly interface",
-        "Responsive design"
-      ],
+        { feature: "Showcase premium Thai rice", description: "Highlights the quality and story behind the Kasalong brand.", status: "completed", category: "Core" },
+        { feature: "Interactive product catalog", description: "Offers an engaging display of products with detailed descriptions.", status: "completed", category: "Discovery" },
+        { feature: "Responsive design", description: "Ensures a smooth user experience across devices.", status: "completed", category: "User Experience" }
+      ],      
       icon: "/icon/kasalong.png",
       background: "/background/rice.png",
       images: [
@@ -383,13 +384,13 @@ export const projects: ProjectDetail[] = [
       longDescription: "Songdee is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
       status: "Development",
       category: "Web",
-      technologies: ["Next.js", "TypeScript", "Tailwind", "Nest.js", "AWS", "PostgreSQL"],
+      technologies: ["Next.js", "TypeScript", "Tailwind", "Nest.js", "PostgreSQL"],
       features: [
-        "Sticker and print shop",
-        "User-friendly interface",
-        "Responsive design",
-        "Efficient product management"
-      ],
+        { feature: "Sticker and print shop", description: "Showcases products and services for printing.", status: "in-progress", category: "Core" },
+        { feature: "User-friendly interface", description: "Simplifies navigation and product selection.", status: "in-progress", category: "User Experience" },
+        { feature: "Responsive design", description: "Ensures functionality across devices.", status: "in-progress", category: "User Experience" },
+        { feature: "Efficient product management", description: "Streamlines inventory and order processing.", status: "in-progress", category: "Planning" }
+      ],      
       icon: "/icon/sticker.png",
       background: "/background/sticker.png",
       images: [
@@ -433,10 +434,10 @@ export const projects: ProjectDetail[] = [
       category: "Chrome Extension",
       technologies: ["Next.js", "TypeScript", "Tailwind", "Python", "Selenium"],
       features: [
-        "Recommendation and alternative suggestions",
-        "Shopee and Amazon support",
-        "User-friendly interface"
-      ],
+        { feature: "Recommendation and alternative suggestions", description: "Suggests optimal products for user needs.", status: "in-progress", category: "Core" },
+        { feature: "Shopee and Amazon support", description: "Integrates with leading e-commerce platforms.", status: "in-progress", category: "Integration" },
+        { feature: "User-friendly interface", description: "Ensures a seamless browsing experience.", status: "in-progress", category: "User Experience" }
+      ],      
       icon: "/icon/shoppo.png",
       background: "/background/shoppo.png",
       images: [
