@@ -8,6 +8,7 @@ import { ProjectDetail } from '@/data/interface';
 import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
+import { techIconsMap, type TechIconMapping } from '@/utils/techIcons';
 
 const TechCard = styled(motion.div)`
   background: rgba(255, 255, 255, 0.05);
@@ -68,12 +69,45 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
   const isInView = useInView(ref, { once: true });
 
   const getTechIcon = (tech: string) => {
-    const techIcons: { [key: string]: JSX.Element } = {
-      'React': <CodeIcon sx={{ color: '#61DAFB' }} />,
-      'Node.js': <CodeIcon sx={{ color: '#68A063' }} />,
-      'TypeScript': <CodeIcon sx={{ color: '#3178C6' }} />,
-    };
-    return techIcons[tech] || <CodeIcon sx={{ color: 'primary.main' }} />;
+    const normalizedTech = Object.keys(techIconsMap).find(
+      key => key.toLowerCase() === tech.toLowerCase()
+    );
+
+    if (normalizedTech && techIconsMap[normalizedTech]) {
+      const { icon: Icon, color, gradient } = techIconsMap[normalizedTech];
+      return (
+        <Box
+          sx={{
+            background: gradient,
+            borderRadius: '8px',
+            p: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'scale(1.1)',
+              boxShadow: `0 0 20px ${color}40`
+            }
+          }}
+        >
+          <Icon size={24} />
+        </Box>
+      );
+    }
+
+    // Fallback icon
+    return (
+      <Box
+        sx={{
+          background: 'linear-gradient(45deg, #666, #888)',
+          borderRadius: '8px',
+          p: 1
+        }}
+      >
+        <CodeIcon sx={{ color: 'white' }} />
+      </Box>
+    );
   };
 
   return (
@@ -83,8 +117,9 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
       >
-        <Typography 
-          variant="h5" 
+        { project.technologies.length > 0 && (
+          <Typography 
+            variant="h5" 
           color="primary.light" 
           gutterBottom
           sx={{
@@ -94,7 +129,8 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
           }}
         >
           Technologies & Architecture
-        </Typography>
+          </Typography>
+        )}
 
         <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
           {project.technologies.map((tech, index) => (
@@ -128,7 +164,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
           ))}
         </Grid>
 
-        {project.techDetails && (
+        {project.techDetails?.database || project.techDetails?.hosting && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -9,8 +9,8 @@ export const projects: ProjectDetail[] = [
       status: "Completed",
       category: "Web",
       technologies: [
-        "HTML", 
-        "CSS",
+        "HTML5", 
+        "CSS3",
         "JavaScript",
         "Google Maps API"
       ],
@@ -54,7 +54,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Bridging sustainability and consumerism, Carbon Credit Marketplace enables the trading of carbon credits through clothing purchases. This innovative web app promotes eco-friendly shopping habits while empowering users to contribute positively to environmental conservation efforts through their everyday choices.",
       status: "Completed",
       category: "Web",
-      technologies:  ["HTML", "CSS", "JavaScript"],
+      technologies:  ["HTML5", "CSS3", "JavaScript"],
       features: [
         "Carbon credit tracking",
         "Integrated marketplace",
@@ -95,7 +95,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Revolutionizing university event management, CUNEXT Event employs React Native and Expo to streamline event discovery, organization, and engagement for students and faculty. It integrates comprehensive features for seamless planning and participation, enhancing campus-wide event experiences.",
       status: "Completed",
       category: "Mobile",
-      technologies: ["React Native", "Expo", "Firebase", "Golang", "Tailwind CSS"],
+      technologies: ["React Native", "Expo", "Firebase", "Golang", "Tailwind"],
       features: [
         "Event discovery",
         "Streamlined organization",
@@ -138,7 +138,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Designed for ease and efficiency, Massage Reservation is a user-friendly web app for booking and managing massage appointments. It streamlines scheduling processes for clients and practitioners, ensuring seamless communication and enhancing overall service accessibility and satisfaction.",
       status: "Completed",
       category: "Web",
-      technologies: ["Next.js", "Node.js", "Tailwind CSS", "Express", "PostgreSQL"],
+      technologies: ["Next.js", "Node.js", "Tailwind", "Express", "PostgreSQL"],
       features: [
         "Booking management",
         "User-practitioner communication",
@@ -300,7 +300,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
       status: "Development",
       category: "Web",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Qdrant", "Python"],
+      technologies: ["Next.js", "TypeScript", "Tailwind", "OpenAI API", "Qdrant", "Python"],
       features: [
         "Intelligent conversation with research papers",
         "Paper recommendation based on conversation history",
@@ -392,7 +392,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Songdee is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
       status: "Development",
       category: "Web",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Nest.js", "AWS", "PostgreSQL"],
+      technologies: ["Next.js", "TypeScript", "Tailwind", "Nest.js", "AWS", "PostgreSQL"],
       features: [
         "Sticker and print shop",
         "User-friendly interface",
@@ -441,7 +441,7 @@ export const projects: ProjectDetail[] = [
       longDescription: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives currently supports Shopee, with plans to expand to Amazon for enhanced shopping assistance",
       status: "Development",
       category: "Chrome Extension",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "Selenium"],
+      technologies: ["Next.js", "TypeScript", "Tailwind", "Python", "Selenium"],
       features: [
         "Recommendation and alternative suggestions",
         "Shopee and Amazon support",
