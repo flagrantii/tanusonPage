@@ -11,8 +11,7 @@ export const projects: ProjectDetail[] = [
       technologies: [
         "HTML5", 
         "CSS3",
-        "JavaScript",
-        "Google Maps API"
+        "JavaScript"
       ],
       features: [
         "AI-powered personalized recommendations",
@@ -43,7 +42,8 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "MongoDB",
         hosting: "OnRender",
-        apis: [
+        thirdParty: [
+          "Google Maps API"
         ]
       },
     },
@@ -84,8 +84,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "MongoDB",
         hosting: "OnRender",
-        apis: [
-        ]
+        thirdParty: []
       },
     },
     {
@@ -127,8 +126,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "PostgreSQL",
         hosting: "Expo",
-        apis: [
-        ]
+        thirdParty: []
       },
     },
     {
@@ -167,8 +165,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "MongoDB",
         hosting: "Vercel",
-        apis: [
-        ]
+        thirdParty: []
       },
     },
     {
@@ -206,8 +203,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "",
         hosting: "",
-        apis: [
-        ]
+        thirdParty: []
       },
     },
     {
@@ -245,8 +241,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "PostgreSQL",
         hosting: "",
-        apis: [
-        ]
+        thirdParty: []
       },
     },
     {
@@ -289,8 +284,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Microservices",
         database: "PostgreSQL",
         hosting: "DigitalOcean",
-        apis: [
-        ]
+        thirdParty: ["AWS S3"]
       },
     },
     {
@@ -328,9 +322,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "PostgreSQL",
         hosting: "Vercel",
-        apis: [
-          "OpenAI API"
-        ]
+        thirdParty: ["OpenAI API", "Scopus API"]
       },
       futureFeatures: [
         "Enhanced user profile management",
@@ -377,8 +369,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "",
         hosting: "WordPress",
-        apis: [
-        ]
+        thirdParty: []
       },
       futureFeatures: [
         "Enhanced user profile management",
@@ -427,8 +418,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "PostgreSQL",
         hosting: "DigitalOcean",
-        apis: [
-        ]
+        thirdParty: ["AWS S3", "AWS Amplify"]
       },
       futureFeatures: [
         "Product recommendation",
@@ -469,8 +459,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "PostgreSQL",
         hosting: "Chrome Extension",
-        apis: [
-        ]
+        thirdParty: ["OpenAI API"]
       },
     },
     

@@ -67,10 +67,10 @@ export interface ProjectMetrics {
 }
 
 export interface TechDetails {
-  architecture: string;
-  database: string;
-  hosting: string;
-  apis: string[];
+  database?: string;
+  hosting?: string;
+  architecture?: string;
+  thirdParty?: string[];
 }
 
 export interface ProjectDetail {

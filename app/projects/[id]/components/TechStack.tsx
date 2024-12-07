@@ -8,6 +8,8 @@ import { ProjectDetail } from '@/data/interface';
 import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
+import ArchitectureIcon from '@mui/icons-material/Architecture';
+import IntegrationIcon from '@mui/icons-material/Extension';
 import { techIconsMap, type TechIconMapping } from '@/utils/techIcons';
 
 const TechCard = styled(motion.div)`
@@ -164,7 +166,10 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
           ))}
         </Grid>
 
-        {project.techDetails?.database || project.techDetails?.hosting && (
+        {(project.techDetails?.database || 
+          project.techDetails?.hosting || 
+          project.techDetails?.architecture ||
+          project.techDetails?.thirdParty?.length) && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -184,8 +189,8 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
                 Technical Details
               </Typography>
               <Grid container spacing={{ xs: 1.5, sm: 2, md: 3 }}>
-                {project.techDetails.database && (
-                  <Grid item xs={12} md={6}>
+                {project.techDetails?.database && (
+                  <Grid item xs={12} md={4}>
                     <TechCard variants={item}>
                       <StorageIcon sx={{ 
                         color: 'primary.main',
@@ -216,8 +221,8 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
                   </Grid>
                 )}
 
-                {project.techDetails.hosting && (
-                  <Grid item xs={12} md={6}>
+                {project.techDetails?.hosting && (
+                  <Grid item xs={12} md={4}>
                     <TechCard variants={item}>
                       <CloudIcon sx={{ 
                         color: 'primary.main',
@@ -242,6 +247,70 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
                           }}
                         >
                           {project.techDetails.hosting}
+                        </Typography>
+                      </Box>
+                    </TechCard>
+                  </Grid>
+                )}
+
+                {project.techDetails?.architecture && (
+                  <Grid item xs={12} md={4}>
+                    <TechCard variants={item}>
+                      <ArchitectureIcon sx={{ 
+                        color: 'primary.main',
+                        fontSize: { xs: 24, sm: 28 }
+                      }} />
+                      <Box>
+                        <Typography 
+                          color="white"
+                          sx={{ 
+                            fontSize: { xs: '0.9rem', sm: '1rem' },
+                            fontWeight: 500
+                          }}
+                        >
+                          Architecture
+                        </Typography>
+                        <Typography 
+                          color="gray" 
+                          variant="body2"
+                          sx={{ 
+                            fontSize: { xs: '0.8rem', sm: '0.9rem' },
+                            mt: 0.5
+                          }}
+                        >
+                          {project.techDetails.architecture}
+                        </Typography>
+                      </Box>
+                    </TechCard>
+                  </Grid>
+                )}
+
+                {project.techDetails?.thirdParty && project.techDetails.thirdParty.length > 0 && (
+                  <Grid item xs={12} md={4}>
+                    <TechCard variants={item}>
+                      <IntegrationIcon sx={{ 
+                        color: 'primary.main',
+                        fontSize: { xs: 24, sm: 28 }
+                      }} />
+                      <Box>
+                        <Typography 
+                          color="white"
+                          sx={{ 
+                            fontSize: { xs: '0.9rem', sm: '1rem' },
+                            fontWeight: 500
+                          }}
+                        >
+                          Integrations
+                        </Typography>
+                        <Typography 
+                          color="gray" 
+                          variant="body2"
+                          sx={{ 
+                            fontSize: { xs: '0.8rem', sm: '0.9rem' },
+                            mt: 0.5
+                          }}
+                        >
+                          {project.techDetails.thirdParty.join(', ')}
                         </Typography>
                       </Box>
                     </TechCard>
