@@ -293,19 +293,21 @@ export const projects: ProjectDetail[] = [
       title: "Nodi",
       description: "Discover and connect research papers through intelligent conversations",
       longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
-      status: "Development",
+      status: "Completed",
       category: "Web",
       technologies: ["Next.js", "TypeScript", "Tailwind", "Qdrant", "Python"],
       features: [
-        { feature: "Intelligent conversation with research papers", description: "Engages users with AI-driven paper discussions.", status: "in-progress", category: "Core" },
-        { feature: "Paper recommendation based on conversation history", description: "Suggests relevant papers tailored to user preferences.", status: "in-progress", category: "Discovery" },
-        { feature: "User-friendly interface", description: "Simplifies research discovery and interaction.", status: "in-progress", category: "User Experience" }
+        { feature: "Intelligent conversation with research papers", description: "Engages users with AI-driven paper discussions.", status: "completed", category: "Core" },
+        { feature: "Paper recommendation based on conversation history", description: "Suggests relevant papers tailored to user preferences.", status: "completed", category: "Discovery" },
+        { feature: "User-friendly interface", description: "Simplifies research discovery and interaction.", status: "completed", category: "User Experience" }
       ],      
       icon: "/icon/nodi.png",
       background: "/background/nodi.png",
       images: [
         "/projects/nodi/nodi-1.png",
-        "/projects/nodi/nodi-2.png"
+        "/projects/nodi/nodi-2.png",
+        "/projects/nodi/nodi-3.png",
+        "/projects/nodi/nodi-4.png"
       ],
       githubUrl: "https://github.com/flagrantii/dsde-web",
       demoUrl: "https://thenodi.vercel.app/",
@@ -323,7 +325,7 @@ export const projects: ProjectDetail[] = [
         architecture: "Monolithic",
         database: "PostgreSQL",
         hosting: "Vercel",
-        thirdParty: ["OpenAI API", "Scopus API"]
+        thirdParty: ["OpenAI API", "Scopus API", "Vertex AI"]
       },
       futureFeatures: [
         "Enhanced user profile management",
