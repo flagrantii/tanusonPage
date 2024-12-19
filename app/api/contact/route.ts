@@ -1,9 +1,16 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { RateLimiter } from '@/utils/rateLimit';
+
+const rateLimiter = new RateLimiter(5, 3600000); // 5 requests per hour
 
 export async function POST(req: Request) {
   try {
     const { name, email, message } = await req.json();
+
+    // Check rate limit
+    const identifier = `${email.toLowerCase()}`; // Use email as identifier
+    const { limited, remainingAttempts } = await rateLimiter.isRateLimited(identifier);
 
     // Create transporter with App Password
     const transporter = nodemailer.createTransport({
@@ -113,10 +120,23 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ 
       success: true,
-      message: 'Email sent successfully' 
+      message: 'Email sent successfully',
+      remainingAttempts 
     });
   } catch (error) {
     console.error('Email error:', error);
+    
+    // Check if it's a rate limit error
+    if (error instanceof Error && error.message.includes('Rate limit exceeded')) {
+      return NextResponse.json(
+        { 
+          success: false,
+          error: error.message
+        },
+        { status: 429 } // Too Many Requests
+      );
+    }
+
     return NextResponse.json(
       { 
         success: false,

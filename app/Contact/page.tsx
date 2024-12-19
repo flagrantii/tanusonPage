@@ -249,6 +249,9 @@ export default function Contact() {
       const data = await response.json();
 
       if (!response.ok) {
+        if (response.status === 429) {
+          throw new Error(data.error); // Rate limit error message
+        }
         throw new Error(data.error || 'Failed to send message');
       }
 
