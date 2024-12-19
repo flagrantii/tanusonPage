@@ -465,6 +465,50 @@ export const projects: ProjectDetail[] = [
         thirdParty: ["OpenAI API"]
       },
     },
+    {
+      id: 12,
+      title: "Smart Parking",
+      description: "The Embedding-based Project for Smart Parking, developed the prototype for the project",
+      longDescription: "The Embedding-based Project for Smart Parking, developed the prototype for the project, which is a system that have web-app for report the parking status and the parking slot, and see the real-time parking slot status and the parking slot",
+      status: "Completed",
+      category: "Hardware",
+      technologies: ["Next.js", "TypeScript", "C++"],
+      features: [
+        { feature: "Web-app", description: "The web-app for report the parking status and the parking slot, and see the real-time parking slot status and the parking slot", status: "completed", category: "Core" },
+        { feature: "Real-time data", description: "The real-time data for the parking slot status and the parking slot", status: "completed", category: "User Experience" },
+        { feature: "Report Data", description: "The report data for the parking slot status and the parking slot", status: "completed", category: "User Experience" },
+        { feature: "AI integration", description: "The AI integration webcam to detect the parking slot status", status: "completed", category: "Integration" }
+      ],      
+      icon: "/icon/parking.png",
+      background: "/background/parking.png",
+      images: [
+        "/projects/parking/parking-1.png",
+        "/projects/parking/parking-2.png",
+        "/projects/parking/parking-3.png",
+        "/projects/parking/parking-4.png"
+      ],
+      githubUrl: "https://github.com/flagrantii/embedded-ui",
+      demoUrl: "https://embedded-ui-three.vercel.app/",
+      challenges: [
+        "Hardware implementation",
+        "Webcam implementation and integration"
+      ],
+      learnings: [
+        "Embedded system",
+        "Webcam implementation and integration"
+      ],
+      timeline: "November 2024",
+      role: "Software Engineer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "Firebase",
+        hosting: "Vercel",
+        thirdParty: ["Firebase RTDB"]
+      },
+      futureFeatures: [
+        "Integrate with AI",
+      ]
+    },
     
   ];
   
