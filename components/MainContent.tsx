@@ -4,10 +4,11 @@ import SendIcon from '@mui/icons-material/Send';
 import { useRouter } from 'next/navigation';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import XIcon from '@mui/icons-material/X';
 import DownloadIcon from '@mui/icons-material/Download';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { PiXCircleDuotone } from 'react-icons/pi';
 
 const MotionBox = motion(Box as any);
 const MotionButton = motion(Button as any);
@@ -92,7 +93,7 @@ export default function MainContent() {
         {[
           { href: "https://github.com/flagrantii", Icon: GitHubIcon },
           { href: "https://www.linkedin.com/in/tanuson-deachaboonchana-743a3029b/", Icon: LinkedInIcon },
-          { href: "https://twitter.com/TanusonD10318", Icon: TwitterIcon }
+          { href: "https://twitter.com/TanusonD10318", Icon: XIcon }
         ].map(({ href, Icon }, index) => (
           <motion.div
             key={href}

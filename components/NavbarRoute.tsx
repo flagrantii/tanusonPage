@@ -45,6 +45,7 @@ export default function NavbarRoute() {
             <NavItem onClick={() => router.push('/')}>Home</NavItem>
             <NavItem onClick={() => router.push('/Port')}>Port</NavItem>
             <NavItem onClick={() => router.push('/Info')}>Info</NavItem>
+            <NavItem onClick={() => router.push('/Contact')}>Contact</NavItem>
         </Box>
     )
 }

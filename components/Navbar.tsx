@@ -118,6 +118,7 @@ export default function Navbar() {
     { label: 'Home', path: '/' },
     { label: 'Portfolio', path: '/Port' },
     { label: 'About', path: '/Info' },
+    { label: 'Contact', path: '/Contact' },
   ];
 
   const navVariants = {
