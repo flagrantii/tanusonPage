@@ -86,51 +86,113 @@ const SocialButton = styled(motion.div)`
   }
 `;
 
-const StyledTextField = styled(TextField)`
-  .MuiOutlinedInput-root {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(5px);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+const StyledTextField = styled(TextField)(({ theme }) => ({
+  '& .MuiOutlinedInput-root': {
+    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    backdropFilter: 'blur(5px)',
+    WebkitBackdropFilter: 'blur(5px)', // For Safari
+    borderRadius: '12px',
+    transition: 'all 0.3s ease',
+    color: theme.palette.common.white,
     
-    fieldset {
-      border-color: rgba(255, 255, 255, 0.1);
-      border-width: 1px;
-      transition: all 0.3s ease;
-    }
+    '& fieldset': {
+      borderColor: 'rgba(255, 255, 255, 0.1)',
+      borderWidth: '1px',
+      transition: 'all 0.3s ease',
+    },
     
-    &:hover fieldset {
-      border-color: rgba(255, 255, 255, 0.2);
-    }
+    '&:hover fieldset': {
+      borderColor: 'rgba(255, 255, 255, 0.2)',
+    },
     
-    &.Mui-focused {
-      background: rgba(255, 255, 255, 0.05);
+    '&.Mui-focused': {
+      backgroundColor: 'rgba(255, 255, 255, 0.05)',
       
-      fieldset {
-        border-color: ${({ theme }) => theme.palette.primary.main};
-        border-width: 2px;
-      }
-    }
-  }
+      '& fieldset': {
+        borderColor: theme.palette.primary.main,
+        borderWidth: '2px',
+      },
+    },
 
-  .MuiInputLabel-root {
-    color: rgba(255, 255, 255, 0.7);
-    transition: all 0.3s ease;
-    
-    &.Mui-focused {
-      color: ${({ theme }) => theme.palette.primary.main};
-    }
-  }
+    // Fix for Autofill styles
+    '& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus': {
+      WebkitBoxShadow: '0 0 0 30px rgba(255, 255, 255, 0.03) inset',
+      WebkitTextFillColor: theme.palette.common.white,
+      caretColor: theme.palette.common.white,
+      transition: 'background-color 5000s ease-in-out 0s',
+    },
+  },
 
-  input, textarea {
-    color: white;
-    font-size: 1rem;
+  '& .MuiInputLabel-root': {
+    color: 'rgba(255, 255, 255, 0.7)',
+    transition: 'all 0.3s ease',
     
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-  }
-`;
+    '&.Mui-focused': {
+      color: theme.palette.primary.main,
+    },
+
+    '&.Mui-error': {
+      color: theme.palette.error.main,
+    },
+  },
+
+  '& .MuiOutlinedInput-input': {
+    color: theme.palette.common.white,
+    fontSize: '1rem',
+    padding: '14px 16px',
+    
+    '&::placeholder': {
+      color: 'rgba(255, 255, 255, 0.5)',
+      opacity: 1,
+    },
+  },
+
+  '& .MuiInputBase-multiline': {
+    padding: '14px 16px',
+  },
+
+  // Error states
+  '& .Mui-error .MuiOutlinedInput-notchedOutline': {
+    borderColor: theme.palette.error.main,
+  },
+
+  '& .MuiFormHelperText-root': {
+    color: 'rgba(255, 255, 255, 0.7)',
+    marginLeft: '4px',
+    
+    '&.Mui-error': {
+      color: theme.palette.error.main,
+    },
+  },
+
+  // Disabled states
+  '& .Mui-disabled': {
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'rgba(255, 255, 255, 0.1)',
+    },
+    '& .MuiInputBase-input': {
+      color: 'rgba(255, 255, 255, 0.5)',
+    },
+  },
+
+  // Dark mode optimization
+  '@media (prefers-color-scheme: dark)': {
+    '& .MuiOutlinedInput-root': {
+      backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    },
+  },
+
+  // Mobile optimization
+  '@media (max-width: 600px)': {
+    '& .MuiOutlinedInput-input': {
+      fontSize: '0.875rem',
+      padding: '12px 14px',
+    },
+    '& .MuiInputLabel-root': {
+      fontSize: '0.875rem',
+    },
+  },
+}));
 
 const SendButton = styled(Button)`
   background: linear-gradient(45deg, #2196F3, #64B5F6);
