@@ -96,23 +96,11 @@ const SocialButton = styled(motion.div)`
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
-    background: 'transparent',
+    background: 'rgba(18, 18, 18, 0.5)',
     backdropFilter: 'blur(5px)',
     WebkitBackdropFilter: 'blur(5px)',
     borderRadius: '12px',
     transition: 'all 0.3s ease',
-    
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'rgba(255, 255, 255, 0.03)',
-      borderRadius: '12px',
-      zIndex: -1,
-    },
     
     '& fieldset': {
       borderColor: 'rgba(255, 255, 255, 0.1)',
@@ -125,9 +113,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     },
     
     '&.Mui-focused': {
-      '&::before': {
-        background: 'rgba(255, 255, 255, 0.05)',
-      },
+      background: 'rgba(18, 18, 18, 0.7)',
       
       '& fieldset': {
         borderColor: theme.palette.primary.main,
@@ -137,22 +123,23 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 
     // Input text color
     '& input, & textarea': {
-      color: theme.palette.common.white,
-      WebkitTextFillColor: theme.palette.common.white,
-      opacity: 1,
+      color: '#ffffff !important',
+      WebkitTextFillColor: '#ffffff !important',
+      caretColor: '#ffffff !important',
       '&::placeholder': {
-        color: 'rgba(255, 255, 255, 0.5)',
-        WebkitTextFillColor: 'rgba(255, 255, 255, 0.5)',
+        color: 'rgba(255, 255, 255, 0.5) !important',
+        WebkitTextFillColor: 'rgba(255, 255, 255, 0.5) !important',
         opacity: 1,
       },
     },
 
     // Autofill styles for Safari
     '& input:-webkit-autofill, & textarea:-webkit-autofill': {
-      '-webkit-box-shadow': '0 0 0 30px rgba(0, 0, 0, 0.5) inset !important',
-      '-webkit-text-fill-color': `${theme.palette.common.white} !important`,
-      'caret-color': `${theme.palette.common.white} !important`,
-      'border-radius': '12px',
+      boxShadow: '0 0 0 30px rgba(18, 18, 18, 0.8) inset !important',
+      WebkitBoxShadow: '0 0 0 30px rgba(18, 18, 18, 0.8) inset !important',
+      WebkitTextFillColor: '#ffffff !important',
+      caretColor: '#ffffff !important',
+      borderRadius: '12px',
     },
   },
 
@@ -160,7 +147,6 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   '& .MuiInputLabel-root': {
     color: 'rgba(255, 255, 255, 0.7)',
     WebkitTextFillColor: 'rgba(255, 255, 255, 0.7)',
-    transition: 'all 0.3s ease',
     
     '&.Mui-focused': {
       color: theme.palette.primary.main,
@@ -172,7 +158,6 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-input': {
     padding: '14px 16px',
     fontSize: '1rem',
-    zIndex: 1,
   },
 
   '& .MuiInputBase-multiline': {
@@ -182,12 +167,11 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   // Safari-specific fixes
   '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)': {
     '& .MuiOutlinedInput-root': {
-      '&::before': {
-        background: 'rgba(18, 18, 18, 0.8)',
-      },
+      background: 'rgba(18, 18, 18, 0.8)',
       '& input, & textarea': {
-        color: `${theme.palette.common.white} !important`,
-        WebkitTextFillColor: `${theme.palette.common.white} !important`,
+        color: '#ffffff !important',
+        WebkitTextFillColor: '#ffffff !important',
+        caretColor: '#ffffff !important',
       },
     },
   },
