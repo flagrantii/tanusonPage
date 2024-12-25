@@ -139,6 +139,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     '& input, & textarea': {
       color: theme.palette.common.white,
       WebkitTextFillColor: theme.palette.common.white,
+      opacity: 1,
       '&::placeholder': {
         color: 'rgba(255, 255, 255, 0.5)',
         WebkitTextFillColor: 'rgba(255, 255, 255, 0.5)',
@@ -146,13 +147,12 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
       },
     },
 
-    // Autofill styles
-    '& input:-webkit-autofill': {
-      '-webkit-box-shadow': '0 0 0 100px rgba(0, 0, 0, 0.01) inset',
-      '-webkit-text-fill-color': theme.palette.common.white,
-      'caret-color': theme.palette.common.white,
+    // Autofill styles for Safari
+    '& input:-webkit-autofill, & textarea:-webkit-autofill': {
+      '-webkit-box-shadow': '0 0 0 30px rgba(0, 0, 0, 0.5) inset !important',
+      '-webkit-text-fill-color': `${theme.palette.common.white} !important`,
+      'caret-color': `${theme.palette.common.white} !important`,
       'border-radius': '12px',
-      'transition': 'background-color 5000s ease-in-out 0s',
     },
   },
 
@@ -165,11 +165,6 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     '&.Mui-focused': {
       color: theme.palette.primary.main,
       WebkitTextFillColor: theme.palette.primary.main,
-    },
-
-    '&.Mui-error': {
-      color: theme.palette.error.main,
-      WebkitTextFillColor: theme.palette.error.main,
     },
   },
 
@@ -184,38 +179,15 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     padding: '14px 16px',
   },
 
-  // Error states
-  '& .Mui-error .MuiOutlinedInput-notchedOutline': {
-    borderColor: theme.palette.error.main,
-  },
-
-  '& .MuiFormHelperText-root': {
-    color: 'rgba(255, 255, 255, 0.7)',
-    WebkitTextFillColor: 'rgba(255, 255, 255, 0.7)',
-    marginLeft: '4px',
-    
-    '&.Mui-error': {
-      color: theme.palette.error.main,
-      WebkitTextFillColor: theme.palette.error.main,
-    },
-  },
-
-  // Disabled states
-  '& .Mui-disabled': {
-    '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'rgba(255, 255, 255, 0.1)',
-    },
-    '& .MuiInputBase-input': {
-      color: 'rgba(255, 255, 255, 0.5)',
-      WebkitTextFillColor: 'rgba(255, 255, 255, 0.5)',
-    },
-  },
-
   // Safari-specific fixes
   '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)': {
     '& .MuiOutlinedInput-root': {
       '&::before': {
         background: 'rgba(18, 18, 18, 0.8)',
+      },
+      '& input, & textarea': {
+        color: `${theme.palette.common.white} !important`,
+        WebkitTextFillColor: `${theme.palette.common.white} !important`,
       },
     },
   },
@@ -228,6 +200,9 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     },
     '& .MuiInputLabel-root': {
       fontSize: '0.875rem',
+    },
+    '& .MuiInputBase-multiline': {
+      minHeight: '120px',
     },
   },
 }));
@@ -462,14 +437,15 @@ export default function Contact() {
                 variant="outlined"
                 margin="normal"
                 multiline
-                rows={3}
+                rows={isMobile ? 5 : 3}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 sx={{ 
                   mb: { xs: 2.5, sm: 3 },
                   '& .MuiOutlinedInput-root': {
-                    height: { xs: '45px', sm: 'auto' }
+                    height: 'auto',
+                    minHeight: { xs: '120px', sm: 'auto' }
                   }
                 }}
               />
