@@ -43,15 +43,19 @@ const ContactCard = styled(motion.div)`
     left: 100%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     padding: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.25rem;
   }
 `;
 
 const SocialButton = styled(motion.div)`
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
-  padding: 1rem;
+  padding: 0.875rem;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -59,6 +63,10 @@ const SocialButton = styled(motion.div)`
   justify-content: center;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 600px) {
+    padding: 0.75rem;
+  }
 
   &::after {
     content: '';
@@ -88,12 +96,23 @@ const SocialButton = styled(motion.div)`
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
-    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    background: 'transparent',
     backdropFilter: 'blur(5px)',
-    WebkitBackdropFilter: 'blur(5px)', // For Safari
+    WebkitBackdropFilter: 'blur(5px)',
     borderRadius: '12px',
     transition: 'all 0.3s ease',
-    color: theme.palette.common.white,
+    
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(255, 255, 255, 0.03)',
+      borderRadius: '12px',
+      zIndex: -1,
+    },
     
     '& fieldset': {
       borderColor: 'rgba(255, 255, 255, 0.1)',
@@ -106,7 +125,9 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     },
     
     '&.Mui-focused': {
-      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+      '&::before': {
+        background: 'rgba(255, 255, 255, 0.05)',
+      },
       
       '& fieldset': {
         borderColor: theme.palette.primary.main,
@@ -114,37 +135,49 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
       },
     },
 
-    // Fix for Autofill styles
-    '& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus': {
-      WebkitBoxShadow: '0 0 0 30px rgba(255, 255, 255, 0.03) inset',
+    // Input text color
+    '& input, & textarea': {
+      color: theme.palette.common.white,
       WebkitTextFillColor: theme.palette.common.white,
-      caretColor: theme.palette.common.white,
-      transition: 'background-color 5000s ease-in-out 0s',
+      '&::placeholder': {
+        color: 'rgba(255, 255, 255, 0.5)',
+        WebkitTextFillColor: 'rgba(255, 255, 255, 0.5)',
+        opacity: 1,
+      },
+    },
+
+    // Autofill styles
+    '& input:-webkit-autofill': {
+      '-webkit-box-shadow': '0 0 0 100px rgba(0, 0, 0, 0.01) inset',
+      '-webkit-text-fill-color': theme.palette.common.white,
+      'caret-color': theme.palette.common.white,
+      'border-radius': '12px',
+      'transition': 'background-color 5000s ease-in-out 0s',
     },
   },
 
+  // Label styles
   '& .MuiInputLabel-root': {
     color: 'rgba(255, 255, 255, 0.7)',
+    WebkitTextFillColor: 'rgba(255, 255, 255, 0.7)',
     transition: 'all 0.3s ease',
     
     '&.Mui-focused': {
       color: theme.palette.primary.main,
+      WebkitTextFillColor: theme.palette.primary.main,
     },
 
     '&.Mui-error': {
       color: theme.palette.error.main,
+      WebkitTextFillColor: theme.palette.error.main,
     },
   },
 
+  // Input styles
   '& .MuiOutlinedInput-input': {
-    color: theme.palette.common.white,
-    fontSize: '1rem',
     padding: '14px 16px',
-    
-    '&::placeholder': {
-      color: 'rgba(255, 255, 255, 0.5)',
-      opacity: 1,
-    },
+    fontSize: '1rem',
+    zIndex: 1,
   },
 
   '& .MuiInputBase-multiline': {
@@ -158,10 +191,12 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 
   '& .MuiFormHelperText-root': {
     color: 'rgba(255, 255, 255, 0.7)',
+    WebkitTextFillColor: 'rgba(255, 255, 255, 0.7)',
     marginLeft: '4px',
     
     '&.Mui-error': {
       color: theme.palette.error.main,
+      WebkitTextFillColor: theme.palette.error.main,
     },
   },
 
@@ -172,13 +207,16 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     },
     '& .MuiInputBase-input': {
       color: 'rgba(255, 255, 255, 0.5)',
+      WebkitTextFillColor: 'rgba(255, 255, 255, 0.5)',
     },
   },
 
-  // Dark mode optimization
-  '@media (prefers-color-scheme: dark)': {
+  // Safari-specific fixes
+  '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)': {
     '& .MuiOutlinedInput-root': {
-      backgroundColor: 'rgba(255, 255, 255, 0.03)',
+      '&::before': {
+        background: 'rgba(18, 18, 18, 0.8)',
+      },
     },
   },
 
@@ -341,18 +379,34 @@ export default function Contact() {
       initial="hidden"
       animate="visible"
       sx={{ 
-        p: { xs: 2, sm: 4, md: 6 }, 
-        mt: { xs: 4, sm: 6, md: 8 },
-        maxWidth: '1400px',
-        mx: 'auto'
+        p: { xs: 2, sm: 3, md: 4 },
+        mt: { xs: 8, sm: 10, md: 12 },
+        maxWidth: '1200px',
+        mx: 'auto',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
       }}
     >
-      <Grid container spacing={{ xs: 3, md: 4 }} alignItems="stretch">
+      <Grid 
+        container 
+        spacing={{ xs: 3, sm: 4, md: 4 }}
+        alignItems="stretch"
+        sx={{
+          width: '100%',
+          mx: 'auto',
+          px: { xs: 1, sm: 2 },
+        }}
+      >
         <Grid item xs={12} md={6}>
           <ContactCard
             variants={itemVariants}
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300 }}
+            style={{
+              minHeight: '100%',
+            }}
           >
             <Typography 
               variant="h4" 
@@ -361,9 +415,10 @@ export default function Contact() {
                 background: 'linear-gradient(to right, #64B5F6, #2196F3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                mb: 3,
-                fontSize: { xs: '1.75rem', sm: '2rem', md: '2.25rem' },
-                fontWeight: 600
+                mb: { xs: 3, sm: 3.5 },
+                fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                fontWeight: 600,
+                textAlign: { xs: 'center', sm: 'left' }
               }}
             >
               Get in Touch
@@ -378,6 +433,12 @@ export default function Contact() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
+                sx={{ 
+                  mb: { xs: 2.5, sm: 3 },
+                  '& .MuiOutlinedInput-root': {
+                    height: { xs: '45px', sm: 'auto' }
+                  }
+                }}
               />
               <StyledTextField
                 fullWidth
@@ -388,6 +449,12 @@ export default function Contact() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
+                sx={{ 
+                  mb: { xs: 2.5, sm: 3 },
+                  '& .MuiOutlinedInput-root': {
+                    height: { xs: '45px', sm: 'auto' }
+                  }
+                }}
               />
               <StyledTextField
                 fullWidth
@@ -395,27 +462,45 @@ export default function Contact() {
                 variant="outlined"
                 margin="normal"
                 multiline
-                rows={4}
+                rows={3}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
-              />
-              <SendButton
-                type="submit"
-                variant="contained"
-                size="large"
-                startIcon={<Send />}
-                disabled={isLoading}
                 sx={{ 
-                  mt: 2,
-                  background: 'linear-gradient(45deg, #2196F3, #64B5F6)',
-                  '&:hover': {
-                    background: 'linear-gradient(45deg, #1976D2, #42A5F5)'
+                  mb: { xs: 2.5, sm: 3 },
+                  '& .MuiOutlinedInput-root': {
+                    height: { xs: '45px', sm: 'auto' }
                   }
                 }}
+              />
+              <Box 
+                sx={{ 
+                  mt: { xs: 3, sm: 4 },
+                  display: 'flex',
+                  justifyContent: { xs: 'center', sm: 'flex-start' }
+                }}
               >
-                {isLoading ? 'Sending...' : 'Send Message'}
-              </SendButton>
+                <SendButton
+                  type="submit"
+                  variant="contained"
+                  size="medium"
+                  startIcon={<Send />}
+                  disabled={isLoading}
+                  sx={{ 
+                    mt: { xs: 1, sm: 1.5 },
+                    py: { xs: 1.5, sm: 1.75 },
+                    px: { xs: 3, sm: 4 },
+                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                    minWidth: { xs: '200px', sm: 'auto' },
+                    background: 'linear-gradient(45deg, #2196F3, #64B5F6)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #1976D2, #42A5F5)'
+                    }
+                  }}
+                >
+                  {isLoading ? 'Sending...' : 'Send Message'}
+                </SendButton>
+              </Box>
             </form>
           </ContactCard>
         </Grid>
@@ -425,6 +510,9 @@ export default function Contact() {
             variants={itemVariants}
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300 }}
+            style={{
+              minHeight: '100%',
+            }}
           >
             <Typography 
               variant="h4" 
@@ -433,9 +521,10 @@ export default function Contact() {
                 background: 'linear-gradient(to right, #64B5F6, #2196F3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                mb: 3,
-                fontSize: { xs: '1.75rem', sm: '2rem', md: '2.25rem' },
-                fontWeight: 600
+                mb: { xs: 3, sm: 3.5 },
+                fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                fontWeight: 600,
+                textAlign: { xs: 'center', sm: 'left' }
               }}
             >
               Connect With Me
@@ -444,10 +533,11 @@ export default function Contact() {
             <Box 
               sx={{ 
                 display: 'flex', 
-                gap: { xs: 2, sm: 3 }, 
-                mb: 4,
+                gap: { xs: 3, sm: 2 },
+                mb: { xs: 4, sm: 3 },
                 flexWrap: 'wrap',
-                justifyContent: { xs: 'center', sm: 'flex-start' }
+                justifyContent: 'center',
+                px: { xs: 2, sm: 0 }
               }}
             >
               {socialLinks.map((social, index) => (
@@ -459,7 +549,7 @@ export default function Contact() {
                   style={{ textDecoration: 'none' }}
                 >
                   <SocialButton
-                    whileHover={{ y: -5, scale: 1.1 }}
+                    whileHover={{ y: -3, scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -471,25 +561,20 @@ export default function Contact() {
                     style={{ color: social.color }}
                   >
                     {social.icon}
-                    <motion.div
-                      className="hover-effect"
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileHover={{ scale: 1, opacity: 1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    />
                   </SocialButton>
                 </Link>
               ))}
             </Box>
 
-            <Box>
+            <Box sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
               <Typography 
                 variant="body1" 
                 color="gray" 
                 gutterBottom
                 sx={{ 
-                  fontSize: { xs: '0.9rem', sm: '1rem' },
-                  opacity: 0.8
+                  fontSize: { xs: '0.875rem', sm: '0.9rem' },
+                  opacity: 0.8,
+                  mb: 2
                 }}
               >
                 Or reach me directly at:
@@ -500,12 +585,14 @@ export default function Contact() {
                 sx={{ 
                   display: 'flex', 
                   alignItems: 'center', 
+                  justifyContent: { xs: 'center', sm: 'flex-start' },
                   gap: 1,
-                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
+                  fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
                   wordBreak: 'break-all'
                 }}
               >
-                <Email /> tanuson679@gmail.com
+                <Email sx={{ fontSize: { xs: '1.5rem', sm: '1.75rem' } }} /> 
+                tanuson679@gmail.com
               </Typography>
             </Box>
           </ContactCard>
