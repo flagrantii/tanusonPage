@@ -29,12 +29,12 @@ const PageWrapper = styled(Box)`
 const ContentLayout = styled(Box)<{ deviceView: string }>`
   display: grid;
   grid-template-columns: ${({ deviceView }) => 
-    deviceView === 'laptop' ? '1fr 840px' :
+    deviceView === 'laptop' ? '0.5fr 840px' :
     deviceView === 'tablet' ? '1fr 768px' :
     '1fr 375px'
   };
   gap: 2rem;
-  max-width: 1600px;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 0 max(1rem, calc((100vw - 1400px) / 2));
 
@@ -55,18 +55,21 @@ const ContentLayout = styled(Box)<{ deviceView: string }>`
 
 const MainContent = styled(Box)<{ deviceView: string }>`
   padding: clamp(1rem, 3vw, 2rem);
-  width: 100%;
-  max-width: min(900px, 95%);
+  max-width: ${({ deviceView }) => 
+    deviceView === 'laptop' ? '800px' :
+    deviceView === 'tablet' ? '600px' :
+    '100%'
+  };
   margin: 0 auto;
+  width: 100%;
 
   @media (max-width: 768px) {
     padding: 1rem;
-    max-width: min(600px, 95%);
+    max-width: 450px;
   }
 
   @media (max-width: 600px) {
     padding: 0.5rem;
-    max-width: min(450px, 95%);
   }
 `;
 
@@ -155,10 +158,13 @@ const ProjectHeader = styled(Box)`
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
-  max-width: min(900px, 100%);
+  max-width: 900px;
+  margin-left: 0;
+  margin-right: auto;
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    margin-left: 0;
+    max-width: 450px;
     
     > div:first-of-type {
       flex-direction: column;
@@ -169,7 +175,7 @@ const ProjectHeader = styled(Box)`
         width: 100%;
         
         h4 {
-          font-size: clamp(1.25rem, 4vw, 2rem);
+          font-size: clamp(1.5rem, 5vw, 2rem);
         }
       }
       
@@ -190,16 +196,18 @@ const RelatedProjects = styled(Box)`
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
+  max-width: 900px;
   margin: clamp(2rem, 5vw, 4rem) auto 1rem;
 
   > div:last-child {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: clamp(0.5rem, 2vw, 1rem);
     margin-top: 1rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
+    margin: 1rem auto;
     padding: 1rem;
     
     > div:last-child {
@@ -216,13 +224,14 @@ const ProjectCard = styled(motion.div)`
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   width: 100%;
+  max-width: 600px;
 
-  @media (max-width: 768px) {
-    max-width: 100%;
+  @media (max-width: 600px) {
+    max-width: 400px;
   }
 
   h6 {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-size: clamp(1rem, 3vw, 1.25rem);
   }
 
   &:hover {
