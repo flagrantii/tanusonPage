@@ -228,7 +228,7 @@ export default function ProjectDetailUI({ params }: { params: { id: string } }) 
       <ContentLayout deviceView={deviceView}>
         <MainContent deviceView={deviceView}>
           <ProjectHeader>
-            <Box display="flex" alignItems="center" gap={2} mb={3}>
+            <Box display="flex" alignItems="center" gap={2}>
               <IconButton
                 onClick={() => router.back()}
                 sx={{ 
@@ -248,7 +248,7 @@ export default function ProjectDetailUI({ params }: { params: { id: string } }) 
                 </Typography>
               </Box>
               <Box display="flex" gap={1}>
-                <Button
+                {project.githubUrl && <Button
                   variant="contained"
                   startIcon={<GitHubIcon />}
                   href={project.githubUrl}
@@ -256,7 +256,7 @@ export default function ProjectDetailUI({ params }: { params: { id: string } }) 
                   sx={{ textTransform: 'none' }}
                 >
                   View Code
-                </Button>
+                </Button>}
                 {project.demoUrl && (
                   <Button
                     variant="outlined"
@@ -270,9 +270,6 @@ export default function ProjectDetailUI({ params }: { params: { id: string } }) 
                 )}
               </Box>
             </Box>
-            <Typography color="white" variant="body1" sx={{ opacity: 0.8 }}>
-              {project.longDescription}
-            </Typography>
           </ProjectHeader>
 
 

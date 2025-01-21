@@ -76,6 +76,7 @@ export interface TechDetails {
 export interface ProjectDetail {
   id: number;
   title: string;
+  shortDescription: string;
   description: string;
   longDescription: string;
   status: string;

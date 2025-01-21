@@ -4,6 +4,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 1,
       title: "Trip Recommendation",
+      shortDescription: "Ai-powered Trip Planner",
       description: "AI-powered travel itinerary planner",
       longDescription: "An innovative travel companion app that leverages AI to create personalized travel experiences in Bangkok. The app analyzes user preferences, travel history, and real-time data to suggest optimal itineraries, hidden gems, and local experiences.",
       status: "Completed",
@@ -51,6 +52,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 2,
       title: "Carbon Credits Marketplace",
+      shortDescription: "Eco-friendly Shopping",
       description: "Eco-friendly shopping via carbon credit trading",
       longDescription: "Bridging sustainability and consumerism, Carbon Credit Marketplace enables the trading of carbon credits through clothing purchases. This innovative web app promotes eco-friendly shopping habits while empowering users to contribute positively to environmental conservation efforts through their everyday choices.",
       status: "Completed",
@@ -91,6 +93,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 3,
       title: "CUNEXT Event",
+      shortDescription: "Campus-wide Event Management",
       description: "Campus-wide event management app",
       longDescription: "Revolutionizing university event management, CUNEXT Event employs React Native and Expo to streamline event discovery, organization, and engagement for students and faculty. It integrates comprehensive features for seamless planning and participation, enhancing campus-wide event experiences.",
       status: "Completed",
@@ -133,6 +136,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 4,
       title: "Massage Reservation",
+      shortDescription: "Effortless Massage Appointment Management",
       description: "Effortless massage appointment management",
       longDescription: "Designed for ease and efficiency, Massage Reservation is a user-friendly web app for booking and managing massage appointments. It streamlines scheduling processes for clients and practitioners, ensuring seamless communication and enhancing overall service accessibility and satisfaction.",
       status: "Completed",
@@ -172,6 +176,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 5,
       title: "Minesweeper with JavaFX",
+      shortDescription: "Classic Gaming Experience",
       description: "Classic gaming with JavaFX",
       longDescription: "Developed using JavaFX, Mine Sweeper offers a classic gaming experience with an intuitive user interface. Players navigate through a grid to uncover mines while strategically flagging potential dangers, combining logic and concentration in an engaging, interactive gameplay format.",
       status: "Completed",
@@ -210,7 +215,8 @@ export const projects: ProjectDetail[] = [
     {
       id: 6,
       title: "Golang Concurrency API",
-      description: "High-performance API with Golang",
+      shortDescription: "High-performance API with Golang",
+      description: "High-performance API with Golang, implemented with concurrency management, optimized resource utilization, and scalable system architecture.",
       longDescription: "Developed as part of an internship, the Golang Concurrency API enhances application performance with robust concurrency management. This project showcases advanced Golang programming skills, optimizing resource utilization and scalability in distributed systems and high-demand environments.",
       status: "Completed",
       category: "Server",
@@ -248,8 +254,9 @@ export const projects: ProjectDetail[] = [
     {
       id: 7,
       title: "Rub Puen Kao Mai 2024",
-      description: "Freshmen orientation registration platform",
-      longDescription: "Freshmen orientation registration website for the Student Government of Chulalongkorn University.",
+      shortDescription: "Freshmen orientation registration platform",
+      description: "Freshmen orientation registration platform for the Student Government of Chulalongkorn University.",
+      longDescription: "Freshmen orientation registration website for the Student Government of Chulalongkorn University, Each year, the Student Government of Chulalongkorn University organizes a series of events to welcome new freshmen to the university. These events are designed to help students become familiar with the university and its resources, as well as to provide them with opportunities to meet other students and faculty members.",
       status: "Completed",
       category: "Web",
       technologies: ["Next.js", "Golang", "Gin", "PostgreSQL"],
@@ -291,8 +298,9 @@ export const projects: ProjectDetail[] = [
     {
       id: 8,
       title: "Nodi",
-      description: "Discover and connect research papers through intelligent conversations",
-      longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
+      shortDescription: "Neural similarity for research papers",
+      description: "Discover and connect research papers through intelligent conversations, using advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
+      longDescription: "Nodi is a web application that allows users to discover and connect research papers through intelligent conversations. It uses advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users. The application is designed to help users find relevant research papers and to connect with other researchers.",
       status: "Completed",
       category: "Web",
       technologies: ["Next.js", "TypeScript", "Tailwind", "Qdrant", "Python"],
@@ -335,6 +343,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 9,
       title: "Kasalong",
+      shortDescription: "Premium Thai rice brand.",
       description: "The static website for premium Thai rice brand.",
       longDescription: "Kasalong is a web application that high-quality rice mill that exports premium Thai rice …and has become the owner of the “Kasalong Rice” brand today. ",
       status: "Completed",
@@ -382,8 +391,9 @@ export const projects: ProjectDetail[] = [
     {
       id: 10,
       title: "Zongggd",
-      description: "The e-commerce website for a sticker and print shop.",
-      longDescription: "Songdee is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
+      shortDescription: "The e-commerce website for a sticker and print shop.",
+      description: "The e-commerce website for a sticker and print shop, which is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
+      longDescription: "Songdee is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work. This project is very niche e-commerce website, and the project is very challenging because it is a factory that accepts printing of stickers, postal envelopes, plastic envelopes, business cards, all kinds of cards. We have our own factory, no middlemen, low minimums, high quality work.",
       status: "Development",
       category: "Web",
       technologies: ["Next.js", "TypeScript", "Tailwind", "Nest.js", "PostgreSQL"],
@@ -430,6 +440,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 11,
       title: "Shoppo",
+      shortDescription: "Shopping Friend next to you",
       description: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives",
       longDescription: "Browser extension that aids purchasing decisions by recommending products and suggesting alternatives currently supports Shopee, with plans to expand to Amazon for enhanced shopping assistance",
       status: "Development",
@@ -457,7 +468,7 @@ export const projects: ProjectDetail[] = [
         "AWS deployment"  
       ],
       timeline: "November 2024",
-      role: "FullStack Developer",
+      role: "Co-Founder, FullStack Developer",
       techDetails: {
         architecture: "Monolithic",
         database: "PostgreSQL",
@@ -468,6 +479,7 @@ export const projects: ProjectDetail[] = [
     {
       id: 12,
       title: "Smart Parking",
+      shortDescription: "Parking Slot Management",
       description: "The Embedding-based Project for Smart Parking, developed the prototype for the project",
       longDescription: "The Embedding-based Project for Smart Parking, developed the prototype for the project, which is a system that have web-app for report the parking status and the parking slot, and see the real-time parking slot status and the parking slot",
       status: "Completed",
@@ -498,7 +510,7 @@ export const projects: ProjectDetail[] = [
         "Webcam implementation and integration"
       ],
       timeline: "November 2024",
-      role: "Software Engineer",
+      role: "Co-Founder, Software Engineer",
       techDetails: {
         architecture: "Monolithic",
         database: "Firebase",
@@ -509,7 +521,49 @@ export const projects: ProjectDetail[] = [
         "Integrate with AI",
       ]
     },
-    
+    {
+      id: 13,
+      title: "Servus",
+      shortDescription: "The close-professor for students",
+      description: "The Discord Bot for helping students to improve their learning experience",
+      longDescription: "The Discord Bot for helping students to improve their learning experience, which is a system that can help students to improve their learning experience by using the AI to help them to learn the material and the AI to help them to improve their learning experience",
+      status: "Development",
+      category: "Discord Bot",
+      technologies: ["Next.js", "Discord.js", "Typescript", "Supabase"],
+      features: [
+        { feature: "AI integration", description: "The AI integration to help students to learn the material", status: "in-progress", category: "Core" },
+        { feature: "Discord integration", description: "The Discord integration to help students to improve their learning experience", status: "in-progress", category: "Integration" },
+        { feature: "User-friendly interface", description: "The user-friendly interface to help students to improve their learning experience", status: "in-progress", category: "User Experience" }
+
+      ],      
+      icon: "/icon/servus.png",
+      background: "/background/servus.png",
+      images: [
+        "/projects/servus/servus-1.png",
+        "/projects/servus/servus-2.png"
+      ],
+      githubUrl: "",
+      demoUrl: "https://servus-page.vercel.app/",
+      challenges: [
+        "Discord integration",
+      ],
+      learnings: [
+        "Discord.js",
+        "Supabase"
+      ],
+      timeline: "January 2025",
+      role: "Co-Founder, Software Engineer",
+      techDetails: {
+        architecture: "Monolithic",
+        database: "Supabase",
+        hosting: "Vercel",
+        thirdParty: ["OpenAI API"]
+      },
+      futureFeatures: [
+        "Integrate with AI",
+        "Discord integration"
+      ]
+    },
   ];
   
 

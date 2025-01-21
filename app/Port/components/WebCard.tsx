@@ -48,6 +48,7 @@ const ProjectContent = styled(Box)`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const TechStack = styled(Box)`
@@ -108,13 +109,20 @@ export default function WebCard({ webProps }: { webProps: ProjectDetail }) {
           />
         </Box>
 
-        <Typography color="white" mb={3} sx={{ 
-          display: '-webkit-box',
-          WebkitLineClamp: 3,
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-        }}>
+        <Typography 
+          color="white" 
+          mb={3} 
+          sx={{ 
+            display: '-webkit-box',
+            WebkitLineClamp: { xs: 2, sm: 3 },
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            fontSize: { xs: '0.875rem', sm: '1rem' },
+            lineHeight: { xs: 1.4, sm: 1.6 },
+            maxHeight: { xs: '2.8em', sm: '4.8em' },
+          }}
+        >
           {webProps.description}
         </Typography>
 
