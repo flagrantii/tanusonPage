@@ -1,25 +1,38 @@
 'use client';
 
 import React from 'react';
-import { Box, Typography, Chip, Grid } from '@mui/material';
+import { Box, Typography, Chip, Button, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { motion } from 'framer-motion';
 import { ProjectDetail } from '@/data/interface';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import PersonIcon from '@mui/icons-material/Person';
-import GroupIcon from '@mui/icons-material/Group';
-import StarIcon from '@mui/icons-material/Star';
 
-const MetricCard = styled(motion.div)`
+const OverviewContainer = styled(Box)`
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: ${props => props.theme.spacing(3)};
+  margin: 0 auto ${props => props.theme.spacing(4)};
+  max-width: 800x;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    padding: ${props => props.theme.spacing(2)};
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
+`;
+
+const Description = styled(Typography)`
+  color: rgba(255, 255, 255, 0.9);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.8;
+  margin: ${props => props.theme.spacing(3)} 0;
   
-  &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-5px);
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 `;
 
@@ -29,82 +42,43 @@ interface ProjectOverviewProps {
 
 export default function ProjectOverview({ project }: ProjectOverviewProps) {
   return (
-    <Box>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+    <OverviewContainer>
+      <Typography 
+        variant="h4" 
+        color="primary.light"
+        sx={{
+          fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
+          fontWeight: 600,
+          mb: 2
+        }}
       >
-        <Typography variant="h4" color="white" gutterBottom>
-          {project.title}
-        </Typography>
-        <Typography color="gray" paragraph>
-          {project.longDescription}
-        </Typography>
+        {project.shortDescription}
+      </Typography>
 
-        <Grid container spacing={3} sx={{ mt: 4 }}>
-          <Grid item xs={12} sm={6} md={3}>
-            <MetricCard
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <AccessTimeIcon sx={{ color: 'primary.main', fontSize: 40, mb: 2 }} />
-              <Typography variant="h6" color="white">
-                Timeline
-              </Typography>
-              <Typography color="gray">
-                {project.timeline}
-              </Typography>
-            </MetricCard>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <MetricCard
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <PersonIcon sx={{ color: 'primary.main', fontSize: 40, mb: 2 }} />
-              <Typography variant="h6" color="white">
-                Role
-              </Typography>
-              <Typography color="gray">
-                {project.role}
-              </Typography>
-            </MetricCard>
-          </Grid>
-          {project.metrics && (
-            <>
-              <Grid item xs={12} sm={6} md={3}>
-                <MetricCard
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <GroupIcon sx={{ color: 'primary.main', fontSize: 40, mb: 2 }} />
-                  <Typography variant="h6" color="white">
-                    Users
-                  </Typography>
-                  <Typography color="gray">
-                    {project.metrics.users}
-                  </Typography>
-                </MetricCard>
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <MetricCard
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <StarIcon sx={{ color: 'primary.main', fontSize: 40, mb: 2 }} />
-                  <Typography variant="h6" color="white">
-                    Satisfaction
-                  </Typography>
-                  <Typography color="gray">
-                    {project.metrics.satisfaction}
-                  </Typography>
-                </MetricCard>
-              </Grid>
-            </>
-          )}
-        </Grid>
-      </motion.div>
-    </Box>
+      <Stack 
+        direction={{ xs: 'column', sm: 'row' }} 
+        spacing={2} 
+        alignItems={{ xs: 'flex-start', sm: 'center' }}
+        mb={2}
+      >
+        <Chip 
+          label={project.status} 
+          color={project.status === 'Completed' ? 'success' : 'primary'}
+          size="small"
+        />
+        <Typography 
+          color="gray" 
+          variant="body2"
+          sx={{ fontSize: { xs: '0.8rem', sm: '0.9rem' } }}
+        >
+          {project.timeline}
+        </Typography>
+      </Stack>
+
+      <Description variant="body1">
+        {project.longDescription || project.description}
+      </Description>
+
+    </OverviewContainer>
   );
 } 

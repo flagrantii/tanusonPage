@@ -175,45 +175,6 @@ export const projects: ProjectDetail[] = [
     },
     {
       id: 5,
-      title: "Minesweeper with JavaFX",
-      shortDescription: "Classic Gaming Experience",
-      description: "Classic gaming with JavaFX",
-      longDescription: "Developed using JavaFX, Mine Sweeper offers a classic gaming experience with an intuitive user interface. Players navigate through a grid to uncover mines while strategically flagging potential dangers, combining logic and concentration in an engaging, interactive gameplay format.",
-      status: "Completed",
-      category: "Application",
-      technologies: ["Java", "JavaFX"],
-      features: [
-        { feature: "Classic Minesweeper gameplay", description: "Recreates the traditional Minesweeper experience.", status: "completed", category: "Core" },
-        { feature: "Intuitive user interface", description: "Enhances gameplay with a clean, easy-to-navigate design.", status: "completed", category: "User Experience" },
-        { feature: "Interactive grid navigation", description: "Allows players to navigate the grid seamlessly.", status: "completed", category: "Performance" }
-      ],      
-      icon: "/icon/bomb.png",
-      background: "/background/mine.png",
-      images: [
-        "/projects/mine/mine-1.png",
-        "/projects/mine/mine-2.png"
-      ],
-      githubUrl: "https://github.com/flagrantii/Minesweeper-java",
-      demoUrl: "",
-      challenges: [
-        "Designing intuitive gameplay mechanics",
-        "Optimizing UI for responsiveness"
-      ],
-      learnings: [
-        "JavaFX application development",
-        "Enhancing gameplay interaction"
-      ],
-      timeline: "May 2024",
-      role: "Developer / Designer",
-      techDetails: {
-        architecture: "Monolithic",
-        database: "",
-        hosting: "",
-        thirdParty: []
-      },
-    },
-    {
-      id: 6,
       title: "Golang Concurrency API",
       shortDescription: "High-performance API with Golang",
       description: "High-performance API with Golang, implemented with concurrency management, optimized resource utilization, and scalable system architecture.",
@@ -252,7 +213,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 7,
+      id: 6,
       title: "Rub Puen Kao Mai 2024",
       shortDescription: "Freshmen orientation registration platform",
       description: "Freshmen orientation registration platform for the Student Government of Chulalongkorn University.",
@@ -296,7 +257,7 @@ export const projects: ProjectDetail[] = [
       },
     },
     {
-      id: 8,
+      id: 7,
       title: "Nodi",
       shortDescription: "Neural similarity for research papers",
       description: "Discover and connect research papers through intelligent conversations, using advanced natural language processing techniques to understand the content of the papers and to generate intelligent conversations with the users.",
@@ -341,14 +302,14 @@ export const projects: ProjectDetail[] = [
       ]
     },
     {
-      id: 9,
+      id: 8,
       title: "Kasalong",
       shortDescription: "Premium Thai rice brand.",
       description: "The static website for premium Thai rice brand.",
       longDescription: "Kasalong is a web application that high-quality rice mill that exports premium Thai rice …and has become the owner of the “Kasalong Rice” brand today. ",
       status: "Completed",
       category: "Web",
-      technologies: ["WordPress"],
+      technologies: ["WordPress", "Yoast SEO"],
       features: [
         { feature: "Showcase premium Thai rice", description: "Highlights the quality and story behind the Kasalong brand.", status: "completed", category: "Core" },
         { feature: "Interactive product catalog", description: "Offers an engaging display of products with detailed descriptions.", status: "completed", category: "Discovery" },

@@ -51,6 +51,51 @@ const TechCard = styled(motion.div)`
   }
 `;
 
+const TechStackContainer = styled(Box)`
+  padding: ${props => props.theme.spacing(2)};
+  margin: 0 auto ${props => props.theme.spacing(2)};
+  max-width: 800x;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    padding: ${props => props.theme.spacing(2)};
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
+`;
+
+const TechGridContainer = styled(Grid)`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(0.8rem, 1vw, 1.5rem);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  & > * {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  & > *:only-child {
+    grid-column: 1 / -1;
+  }
+
+  @supports (grid-template-rows: masonry) {
+    grid-template-rows: masonry;
+    align-items: start;
+  }
+`;
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -113,7 +158,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
   };
 
   return (
-    <Box ref={ref}>
+    <TechStackContainer ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -134,7 +179,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
           </Typography>
         )}
 
-        <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
+        <TechGridContainer>
           {project.technologies.map((tech, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Tooltip 
@@ -164,8 +209,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
               </Tooltip>
             </Grid>
           ))}
-        </Grid>
-
+        </TechGridContainer>
         {(project.techDetails?.database || 
           project.techDetails?.hosting || 
           project.techDetails?.architecture ||
@@ -188,7 +232,7 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
               >
                 Technical Details
               </Typography>
-              <Grid container spacing={{ xs: 1.5, sm: 2, md: 3 }}>
+              <TechGridContainer>
                 {project.techDetails?.database && (
                   <Grid item xs={12} md={4}>
                     <TechCard variants={item}>
@@ -316,11 +360,11 @@ export default function TechStack({ project }: { project: ProjectDetail }) {
                     </TechCard>
                   </Grid>
                 )}
-              </Grid>
+              </TechGridContainer>
             </Box>
           </motion.div>
         )}
       </motion.div>
-    </Box>
+    </TechStackContainer>
   );
 } 

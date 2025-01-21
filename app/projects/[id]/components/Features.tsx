@@ -41,20 +41,56 @@ const FeatureCard = styled(motion.div)`
     transition: 0.5s;
   }
 
-  &:hover::before {
-    left: 100%;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    border-color: ${({ theme }) => theme.palette.primary.main};
-    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
-  }
-
   @media (max-width: 768px) {
     padding: 1.5rem;
   }
 `;
+
+const FeaturesContainer = styled(Box)`
+  padding: ${props => props.theme.spacing(2)};
+  margin: 0 auto ${props => props.theme.spacing(2)};
+  max-width: 800x;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    padding: ${props => props.theme.spacing(2)};
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
+`;
+
+const CardGridContainer = styled(Grid)`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: clamp(0.8rem, 1vw, 1.5rem);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  & > * {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  & > *:only-child {
+    grid-column: 1 / -1;
+  }
+
+  @supports (grid-template-rows: masonry) {
+    grid-template-rows: masonry;
+    align-items: start;
+  }
+`;
+
 
 const IconContainer = styled(motion.div)`
   background: rgba(59, 130, 246, 0.1);
@@ -63,11 +99,6 @@ const IconContainer = styled(motion.div)`
   display: inline-flex;
   transition: all 0.3s ease;
   margin-bottom: 0.5rem;
-
-  &:hover {
-    background: rgba(59, 130, 246, 0.2);
-    transform: rotate(10deg);
-  }
 `;
 
 const StatusChip = styled(Chip)`
@@ -94,7 +125,6 @@ export default function Features({ project }: { project: ProjectDetail }) {
         return theme.palette.primary.main;
     }
   };
-
   const getStatusIcon = (status?: string) => {
     switch (status) {
       case 'completed':
@@ -118,13 +148,9 @@ export default function Features({ project }: { project: ProjectDetail }) {
     
     return (
       <IconContainer
-        whileHover={{ rotate: 10 }}
         transition={{ type: "spring", stiffness: 300 }}
         sx={{
           background: `${iconMapping.gradient}15`,
-          '&:hover': {
-            background: `${iconMapping.gradient}25`
-          }
         }}
       >
         <IconComponent 
@@ -139,7 +165,7 @@ export default function Features({ project }: { project: ProjectDetail }) {
   };
 
   return (
-    <Box ref={ref}>
+    <FeaturesContainer ref={ref}>
       <Typography 
         variant="h5" 
         color="primary.light" 
@@ -152,8 +178,8 @@ export default function Features({ project }: { project: ProjectDetail }) {
       >
         Key Features
       </Typography>
-
-      <Grid container spacing={{ xs: 2, sm: 3 }}>
+        
+      <CardGridContainer>
         {project.features.map((feature, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <FeatureCard
@@ -226,7 +252,7 @@ export default function Features({ project }: { project: ProjectDetail }) {
             </FeatureCard>
           </Grid>
         ))}
-      </Grid>
-    </Box>
+      </CardGridContainer>
+    </FeaturesContainer>
   );
 } 
