@@ -22,7 +22,6 @@ export default function ProjectDetailPage() {
   return (
     <div className="px-6 lg:px-8 mx-auto max-w-4xl py-16">
       <div className="flex items-center gap-3">
-        <img src={project.author.imageUrl} className="h-10 w-10 rounded-full" alt="" />
         <div>
           <h1 className="text-3xl font-semibold">{project.title}</h1>
           <p className="text-sm text-gray-500">{project.date}</p>

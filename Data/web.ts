@@ -12,6 +12,7 @@ export type WebItem = {
   tags: string[]
   techStack: string[]
   images: string[]
+  icon: string
   isDemo: boolean
   features: string[]
 }
@@ -32,6 +33,7 @@ export const webItems: WebItem[] = [
     tags: ['Frontend', 'AI'],
     techStack: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB', 'Google Maps API'],
     images: ['/projects/trip/trip-1.png', '/projects/trip/trip-2.png'],
+    icon: '/icon/trip.png',
     isDemo: false,
     features: [
       'AI-powered personalized recommendations',
@@ -54,6 +56,7 @@ export const webItems: WebItem[] = [
     techStack: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB'],
     images: ['/projects/carbon/carbon-1.png', '/projects/carbon/carbon-2.png'],
     isDemo: false,
+    icon: '/icon/carbon.png',
     features: [
       'Carbon credit tracking',
       'Integrated marketplace',
@@ -75,6 +78,7 @@ export const webItems: WebItem[] = [
     techStack: ['React Native', 'Expo', 'Firebase', 'Golang', 'Tailwind', 'PostgreSQL'],
     images: ['/projects/event/event-1.png', '/projects/event/event-2.png'],
     isDemo: false,
+    icon: '/icon/event.png',
     features: [
       'Event discovery',
       'Streamlined organization',
@@ -97,6 +101,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'Node.js', 'Tailwind', 'Express', 'PostgreSQL', 'Vercel'],
     images: ['/projects/massage/massage-1.png', '/projects/massage/massage-2.png'],
     isDemo: true,
+    icon: '/icon/massage.png',
     features: [
       'Booking management',
       'User-practitioner communication',
@@ -118,6 +123,7 @@ export const webItems: WebItem[] = [
     techStack: ['Golang', 'Docker', 'Redis', 'PostgreSQL', 'Prometheus'],
     images: [],
     isDemo: false,
+    icon: '/icon/golang.png',
     features: [
       'Concurrency management',
       'Optimized resource utilization',
@@ -139,6 +145,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'Golang', 'Gin', 'PostgreSQL', 'DigitalOcean', 'AWS S3'],
     images: ['/projects/rpkm/rpkm-1.png', '/projects/rpkm/rpkm-2.png'],
     isDemo: true,
+    icon: '/icon/rpkm.png',
     features: [
       'Student registration',
       'Event information management',
@@ -160,6 +167,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Qdrant', 'Python', 'Vercel', 'OpenAI API', 'Scopus API', 'Vertex AI'],
     images: ['/projects/nodi/nodi-1.png', '/projects/nodi/nodi-2.png', '/projects/nodi/nodi-3.png', '/projects/nodi/nodi-4.png'],
     isDemo: true,
+    icon: '/icon/nodi.png',
     features: [
       'Intelligent conversation with research papers',
       'Paper recommendation based on conversation history',
@@ -181,6 +189,7 @@ export const webItems: WebItem[] = [
     techStack: ['WordPress', 'Yoast SEO'],
     images: ['/projects/rice/rice-1.png', '/projects/rice/rice-2.png'],
     isDemo: true,
+    icon: '/icon/rice.png',
     features: [
       'Showcase premium Thai rice',
       'Interactive product catalog',
@@ -202,6 +211,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Nest.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify', 'DigitalOcean'],
     images: ['/projects/sticker/sticker-1.png', '/projects/sticker/sticker-2.png'],
     isDemo: true,
+    icon: '/icon/sticker.png',
     features: [
       'Sticker and print shop',
       'User-friendly interface',
@@ -224,6 +234,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Python', 'Selenium', 'OpenAI API'],
     images: ['/projects/shoppo/shoppo-1.png', '/projects/shoppo/shoppo-2.png'],
     isDemo: false,
+    icon: '/icon/shoppo.png',
     features: [
       'Recommendation and alternative suggestions',
       'Shopee and Amazon support',
@@ -245,6 +256,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'TypeScript', 'C++', 'Firebase'],
     images: ['/projects/parking/parking-1.png', '/projects/parking/parking-2.png', '/projects/parking/parking-3.png', '/projects/parking/parking-4.png'],
     isDemo: true,
+    icon: '/icon/parking.png',
     features: [
       'Web-app',
       'Real-time data',
@@ -267,6 +279,7 @@ export const webItems: WebItem[] = [
     techStack: ['Next.js', 'Discord.js', 'Typescript', 'Supabase', 'OpenAI API'],
     images: ['/projects/servus/servus-1.png', '/projects/servus/servus-2.png'],
     isDemo: true,
+    icon: '/icon/servus.png',
     features: [
       'AI integration',
       'Discord integration',
@@ -292,11 +305,7 @@ export const webs = webItems.map((item) => ({
   images: item.images,
   isDemo: item.isDemo,
   features: item.features,
-  author: {
-    name: 'Tanuson Chaboonchana',
-    role: 'Software Engineer',
-    imageUrl: '/me4.png',
-  },
+  icon: item.icon,
   links: {
     live: item.href.demoUrl,
     repo: item.href.repoUrl,
