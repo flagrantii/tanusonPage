@@ -16,6 +16,7 @@ export const webs = [
         imageUrl:
           '/triplogo.jpg',
       },
+      tags: ['AI', 'Frontend'],
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export const webs = [
         imageUrl:
           '/carbonlogo.jpg',
       },
+      tags: ['Fullstack', 'UX/UI'],
     },{
       id: 3,
       title: '10 Days Project (Full Option Ecommerce)',
@@ -51,6 +53,7 @@ export const webs = [
         imageUrl:
           '10logo.jpg',
       },
+      tags: ['Fullstack', 'DevOps'],
     },{
       id: 4,
       title: 'Tech Cave',
@@ -68,6 +71,7 @@ export const webs = [
         imageUrl:
         'techcavelogo.jpg',
       },
+      tags: ['Frontend', 'UX/UI'],
     },
     {
       id: 5,
@@ -86,5 +90,6 @@ export const webs = [
         imageUrl:
         'foodlogo.jpg',
       },
+      tags: ['Frontend', 'UX/UI'],
     },
   ]
