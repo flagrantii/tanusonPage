@@ -1,10 +1,11 @@
 "use client"
 import { useMemo, useRef, useState } from 'react'
 import { useReactToPrint } from 'react-to-print'
-import { activities, techGroups } from '@/Data/resume'
+import { ActivityItem, activities } from '@/Data/activites'
 import { TimelineItem, timelineItems } from '@/Data/timeline'
 import { WebItem, webItems } from '@/Data/web'
 import { formatDate } from '@/lib/utils/date'
+import { SkillGroup, skillGroups } from '@/Data/skills'
 
 type SectionKey =
   | 'header'
@@ -75,10 +76,10 @@ function TechSection() {
     <section>
       <SectionTitle>Technologies and Languages</SectionTitle>
       <div className="grid sm:grid-cols-2 gap-4 text-[12px]">
-        {techGroups.map((g) => (
+        {skillGroups.map((g: SkillGroup) => (
           <div key={g.title}>
             <p className="font-medium">{g.title}</p>
-            <p className="text-gray-800 mt-1">{g.items.join(', ')}</p>
+            <p className="text-gray-800 mt-1">{g.skills.join(', ')}</p>
           </div>
         ))}
       </div>
@@ -107,7 +108,7 @@ function ActivitiesSection() {
     <section>
       <SectionTitle>Extracurricular Activities</SectionTitle>
       <div className="space-y-3 text-[12px]">
-        {activities.map((a) => (
+        {activities.map((a: ActivityItem) => (
           <div key={a.org}>
             <div className="flex items-baseline justify-between">
               <p className="font-semibold">{a.role}</p>

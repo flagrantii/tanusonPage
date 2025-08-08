@@ -8,7 +8,7 @@ export type EducationItem = {
 export const education: EducationItem[] = [
   {
     period: '2017 - 2023',
-    institution: 'PCSHS-NST',
+    institution: 'Princess Chulabhorn Science High School Nakhon Si Thammarat',
     program: 'Science Math Program',
     details: 'Focused on computing, projects, and innovation programs.'
   },

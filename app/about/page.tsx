@@ -5,6 +5,7 @@ import { timelineItems } from '@/Data/timeline'
 import { skillGroups } from '@/Data/skills'
 import { education } from '@/Data/education'
 import { cers } from '@/Data/cert'
+import { activities } from '@/Data/activites'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 12 },
@@ -97,6 +98,36 @@ export default function AboutPage() {
                 <p className="text-sm text-gray-700">{e.program}</p>
               </div>
               {e.details && <p className="mt-2 text-sm text-gray-600">{e.details}</p>}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="text-xl font-medium mb-4">Extracurricular Activities</h2>
+        <div className="grid gap-4">
+          {activities.map((a, idx) => (
+            <motion.div
+              key={a.org + idx}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              className="rounded-lg border p-4"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-500">{a.period}</p>
+                  <h3 className="text-base font-semibold">{a.role}</h3>
+                  <p className="text-sm text-gray-600">{a.org}</p>
+                </div>
+              </div>
+              <ul className="mt-2 list-disc ml-5 text-sm text-gray-700 space-y-1">
+                {a.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

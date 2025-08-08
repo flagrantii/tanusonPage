@@ -1,14 +1,6 @@
-  export const techGroups = [
-    { title: 'Programming Languages', items: ['JavaScript', 'TypeScript', 'Golang', 'Java', 'Python', 'C++', 'SQL'] },
-    { title: 'Frameworks / Libraries', items: ['Next.js', 'Nest.js', 'Go Fiber', 'React', 'Prisma', 'Django', 'GORM'] },
-    { title: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Supabase'] },
-    { title: 'Tools', items: ['Git', 'Docker', 'Kubernetes'] },
-    { title: 'Cloud and DevOps', items: ['AWS', 'DigitalOcean', 'Firebase', 'Vercel', 'GitHub Actions', 'Grafana', 'Argo CD'] },
-  ]
+  export type ActivityItem = { role: string; org: string; period: string; bullets: string[] }
 
-  export type SimpleItem = { role: string; org: string; period: string; bullets: string[] }
-
-  export const activities: SimpleItem[] = [
+  export const activities: ActivityItem[] = [
     {
       role: 'Software Engineer',
       org: 'Information System Development, SGCU',
