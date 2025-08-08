@@ -31,18 +31,35 @@ export default function ProjectDetailPage() {
 
       <p className="mt-6 text-gray-700">{project.description}</p>
 
-      <section className="mt-10">
-        <h2 className="text-xl font-semibold">The Problem</h2>
-        <p className="mt-2 text-sm text-gray-700">{project.problem}</p>
-      </section>
+      {project.isDemo && project.links?.live && (
+        <section className="mt-8">
+          <h2 className="text-xl font-semibold">Live Demo</h2>
+          <div className="mt-3 rounded-lg border bg-white overflow-hidden">
+            <div className="flex items-center gap-2 px-3 py-2 border-b bg-gray-50">
+              <span className="h-2 w-2 rounded-full bg-red-400" />
+              <span className="h-2 w-2 rounded-full bg-yellow-400" />
+              <span className="h-2 w-2 rounded-full bg-green-400" />
+              <div className="ml-3 truncate text-xs text-gray-500">{project.links.live}</div>
+            </div>
+            <div className="aspect-[16/9] w-full">
+              <iframe
+                src={project.links.live}
+                title="Live Demo"
+                className="w-full h-full"
+                allow="clipboard-write; encrypted-media; fullscreen"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">UX Process</h2>
-        <ol className="mt-3 list-decimal ml-6 text-sm text-gray-700 space-y-1">
-          {project.uxProcess?.map((s: string) => (
-            <li key={s}>{s}</li>
+        <h2 className="text-xl font-semibold">Features</h2>
+        <ul className="mt-3 list-disc ml-6 text-sm text-gray-700 space-y-1">
+          {project.features?.map((f: string) => (
+            <li key={f}>{f}</li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       <section className="mt-8">

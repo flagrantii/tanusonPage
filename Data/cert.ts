@@ -1,3 +1,15 @@
+export type CertItem = {
+  id: number
+  title: string
+  href: string
+  description: string
+  date: string
+  datetime: string
+  category: { title: string; org: string }
+  author: { href: string; imageUrl: string; cersimage: string }
+  skills: string[]
+}
+
 export const cers = [
     {
       id: 1,
@@ -8,10 +20,7 @@ export const cers = [
       date: 'October 2022',
       datetime: '2020-03-16',
       category: { title: 'Coursera', org: 'DeepLearning.AI' },
-      style: 'relative z-10 rounded-full bg-green-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100',
         author: {
-        name: 'PCSHS-NST Team',
-        role: 'Frontend Developer',
         href: '#',
         imageUrl:
             '/coursera.png',
