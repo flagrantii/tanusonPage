@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { timeline } from '@/Data/timeline'
+import { timelineItems } from '@/Data/timeline'
 import { skillGroups } from '@/Data/skills'
 import { education } from '@/Data/education'
 import { cers } from '@/Data/cert'
@@ -24,9 +24,9 @@ export default function AboutPage() {
         <div>
           <h2 className="text-xl font-medium mb-4">Timeline</h2>
           <ol className="relative border-l border-gray-200">
-            {timeline.map((item, idx) => (
+            {timelineItems.map((item, idx) => (
               <motion.li
-                key={item.title}
+                key={item.company}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -35,10 +35,10 @@ export default function AboutPage() {
                 className="mb-8 ml-4"
               >
                 <div className="absolute w-3 h-3 bg-black rounded-full -left-1.5 border border-white"></div>
-                <time className="mb-1 text-sm font-normal leading-none text-gray-500">{item.date}</time>
-                <h3 className="text-base font-semibold">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.subtitle} — {item.location}</p>
-                <p className="mt-2 text-sm text-gray-700">{item.description}</p>
+                <time className="mb-1 text-sm font-normal leading-none text-gray-500">{item.period}</time>
+                <h3 className="text-base font-semibold">{item.role}</h3>
+                <p className="text-sm text-gray-600">{item.type} — {item.company}</p>
+                <p className="mt-2 text-sm text-gray-700">{item.bullets.join('\n')}</p>
               </motion.li>
             ))}
           </ol>

@@ -11,10 +11,12 @@ export type WebItem = {
   category: { title: string; href: string }
   tags: string[]
   techStack: string[]
+  techStackResume: string[]
   images: string[]
   icon: string
   isDemo: boolean
   features: string[]
+  isShowResume: boolean
 }
 
 // Source of truth: WebItem[]
@@ -32,6 +34,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['Frontend', 'AI'],
     techStack: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB', 'Google Maps API'],
+    techStackResume: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB', 'Google Maps API'],
     images: ['/projects/trip/trip-1.png', '/projects/trip/trip-2.png'],
     icon: '/icon/trip.png',
     isDemo: false,
@@ -40,6 +43,7 @@ export const webItems: WebItem[] = [
       'Local insights and hidden gems',
       'Smart budget optimization',
     ],
+    isShowResume: false,
   },
   {
     id: 2,
@@ -54,6 +58,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['Frontend', 'Fullstack'],
     techStack: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB'],
+    techStackResume: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB'],
     images: ['/projects/carbon/carbon-1.png', '/projects/carbon/carbon-2.png'],
     isDemo: false,
     icon: '/icon/carbon.png',
@@ -62,6 +67,7 @@ export const webItems: WebItem[] = [
       'Integrated marketplace',
       'User-friendly interface',
     ],
+    isShowResume: false,
   },
   {
     id: 3,
@@ -76,6 +82,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Mobile', href: '/projects?filter=Mobile' },
     tags: ['Frontend', 'Mobile'],
     techStack: ['React Native', 'Expo', 'Firebase', 'Golang', 'Tailwind', 'PostgreSQL'],
+    techStackResume: ['React Native', 'Expo', 'Firebase', 'Golang', 'Tailwind', 'PostgreSQL'],
     images: ['/projects/event/event-1.png', '/projects/event/event-2.png'],
     isDemo: false,
     icon: '/icon/event.png',
@@ -85,6 +92,7 @@ export const webItems: WebItem[] = [
       'Seamless participant engagement',
       'Real-time data syncing',
     ],
+    isShowResume: false,
   },
   {
     id: 4,
@@ -99,6 +107,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['Fullstack', 'DevOps'],
     techStack: ['Next.js', 'Node.js', 'Tailwind', 'Express', 'PostgreSQL', 'Vercel'],
+    techStackResume: ['Next.js', 'Node.js', 'Tailwind', 'Express', 'PostgreSQL', 'Vercel'],
     images: ['/projects/massage/massage-1.png', '/projects/massage/massage-2.png'],
     isDemo: true,
     icon: '/icon/massage.png',
@@ -107,6 +116,7 @@ export const webItems: WebItem[] = [
       'User-practitioner communication',
       'Efficient scheduling system',
     ],
+    isShowResume: false,
   },
   {
     id: 5,
@@ -119,8 +129,9 @@ export const webItems: WebItem[] = [
     description: 'High-performance API with Golang',
     datetime: '2024-06-01',
     category: { title: 'Server', href: '/projects?filter=Server' },
-    tags: ['Backend', 'DevOps'],
+    tags: ['Backend', 'DevOps'],        
     techStack: ['Golang', 'Docker', 'Redis', 'PostgreSQL', 'Prometheus'],
+    techStackResume: ['Golang', 'Docker', 'Redis', 'PostgreSQL', 'Prometheus'],
     images: [],
     isDemo: false,
     icon: '/icon/golang.png',
@@ -129,6 +140,7 @@ export const webItems: WebItem[] = [
       'Optimized resource utilization',
       'Scalable system architecture',
     ],
+    isShowResume: false,
   },
   {
     id: 6,
@@ -138,12 +150,13 @@ export const webItems: WebItem[] = [
       demoUrl: 'https://cufreshy2024.com/',
       repoUrl: 'https://github.com/isd-sgcu/rpkm67-backend',
     },
-    description: 'Freshmen orientation registration platform',
+    description: 'Freshmen orientation registration website; supports up to 3,000 daily users with robust distributed system.',
     datetime: '2024-07-01',
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['Fullstack', 'DevOps'],
     techStack: ['Next.js', 'Golang', 'Gin', 'PostgreSQL', 'DigitalOcean', 'AWS S3'],
-    images: ['/projects/rpkm/rpkm-1.png', '/projects/rpkm/rpkm-2.png'],
+    techStackResume: ['Golang', 'Microservices'],
+    images: ['/projects/rpkm/rpkm-1.png', '/projects/rpkm/rpkm-2.png', '/projects/rpkm/rpkm-3.png'],
     isDemo: true,
     icon: '/icon/rpkm.png',
     features: [
@@ -151,6 +164,7 @@ export const webItems: WebItem[] = [
       'Event information management',
       'User-friendly platform',
     ],
+    isShowResume: true,
   },
   {
     id: 7,
@@ -160,11 +174,12 @@ export const webItems: WebItem[] = [
       demoUrl: 'https://thenodi.vercel.app/',
       repoUrl: 'https://github.com/flagrantii/dsde-web',
     },
-    description: 'Neural similarity for research papers',
+    description: 'Web app for discovering research papers via intelligent conversations using RAG techniques.',
     datetime: '2024-12-01',
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['AI', 'Frontend', 'Fullstack'],
     techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Qdrant', 'Python', 'Vercel', 'OpenAI API', 'Scopus API', 'Vertex AI'],
+    techStackResume: ['RAG', 'Qdrant', 'Python', 'Vercel', 'OpenAI API', 'Scopus API', 'Vertex AI'],
     images: ['/projects/nodi/nodi-1.png', '/projects/nodi/nodi-2.png', '/projects/nodi/nodi-3.png', '/projects/nodi/nodi-4.png'],
     isDemo: true,
     icon: '/icon/nodi.png',
@@ -173,6 +188,7 @@ export const webItems: WebItem[] = [
       'Paper recommendation based on conversation history',
       'User-friendly interface',
     ],
+    isShowResume: true,
   },
   {
     id: 8,
@@ -187,6 +203,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['Frontend'],
     techStack: ['WordPress', 'Yoast SEO'],
+    techStackResume: ['WordPress', 'Yoast SEO'],
     images: ['/projects/rice/rice-1.png', '/projects/rice/rice-2.png'],
     isDemo: true,
     icon: '/icon/rice.png',
@@ -195,6 +212,7 @@ export const webItems: WebItem[] = [
       'Interactive product catalog',
       'Responsive design',
     ],
+    isShowResume: false,
   },
   {
     id: 10,
@@ -209,6 +227,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Web', href: '/projects?filter=Web' },
     tags: ['Fullstack'],
     techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Nest.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify', 'DigitalOcean'],
+    techStackResume: ['Next.js', 'TypeScript', 'Tailwind', 'Nest.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify', 'DigitalOcean'],
     images: ['/projects/sticker/sticker-1.png', '/projects/sticker/sticker-2.png'],
     isDemo: true,
     icon: '/icon/sticker.png',
@@ -218,6 +237,7 @@ export const webItems: WebItem[] = [
       'Responsive design',
       'Efficient product management',
     ],
+    isShowResume: false,
   },
   {
     id: 11,
@@ -227,11 +247,12 @@ export const webItems: WebItem[] = [
       demoUrl: '',
       repoUrl: 'https://github.com/flagrantii/ChatKan-MVP',
     },
-    description: 'Browser extension that aids purchasing decisions',
+    description: 'Browser extension that recommends products and alternatives; supports Shopee.',
     datetime: '2024-11-01',
     category: { title: 'Chrome Extension', href: '/projects?filter=Chrome%20Extension' },
     tags: ['AI', 'Frontend', 'Fullstack'],
     techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Python', 'Selenium', 'OpenAI API'],
+    techStackResume: ['Chrome Extension', 'Python', 'Selenium', 'OpenAI API', 'Golang'],
     images: ['/projects/shoppo/shoppo-1.png', '/projects/shoppo/shoppo-2.png'],
     isDemo: false,
     icon: '/icon/shoppo.png',
@@ -240,6 +261,7 @@ export const webItems: WebItem[] = [
       'Shopee and Amazon support',
       'User-friendly interface',
     ],
+    isShowResume: true,
   },
   {
     id: 12,
@@ -249,11 +271,12 @@ export const webItems: WebItem[] = [
       demoUrl: 'https://embedded-ui-three.vercel.app/',
       repoUrl: 'https://github.com/flagrantii/embedded-ui',
     },
-    description: 'Parking Slot Management',
+    description: 'System and web app for parking lot status reporting and real‑time slot visualization.',
     datetime: '2024-11-01',
     category: { title: 'Hardware', href: '/projects?filter=Hardware' },
     tags: ['AI', 'Hardware', 'Frontend'],
     techStack: ['Next.js', 'TypeScript', 'C++', 'Firebase'],
+    techStackResume: ['C++', 'Firebase', 'Hardware'],
     images: ['/projects/parking/parking-1.png', '/projects/parking/parking-2.png', '/projects/parking/parking-3.png', '/projects/parking/parking-4.png'],
     isDemo: true,
     icon: '/icon/parking.png',
@@ -263,6 +286,7 @@ export const webItems: WebItem[] = [
       'Report Data',
       'AI integration',
     ],
+    isShowResume: true,
   },
   {
     id: 13,
@@ -277,6 +301,7 @@ export const webItems: WebItem[] = [
     category: { title: 'Discord Bot', href: '/projects?filter=Discord%20Bot' },
     tags: ['AI', 'Integration'],
     techStack: ['Next.js', 'Discord.js', 'Typescript', 'Supabase', 'OpenAI API'],
+    techStackResume: ['Next.js', 'Discord.js', 'Typescript', 'Supabase', 'OpenAI API'],
     images: ['/projects/servus/servus-1.png', '/projects/servus/servus-2.png'],
     isDemo: true,
     icon: '/icon/servus.png',
@@ -285,6 +310,56 @@ export const webItems: WebItem[] = [
       'Discord integration',
       'User-friendly interface',
     ],
+    isShowResume: false,
+  },
+  {
+    id: 14,
+    slug: 'cu-openhouse',
+    title: 'CU Openhouse',
+    href: {
+      demoUrl: 'https://servus-page.vercel.app/',
+      repoUrl: '',
+    },
+    description: 'Scalable service for Chulalongkorn Openhouse 2025 supporting 12,000 concurrent users and 120,000 registered users. QR scanning, real‑time updates.',
+    datetime: '2025-01-01',
+    category: { title: 'Web', href: '/projects?filter=Web' },
+    tags: ['AI', 'Integration'],
+    techStack: ['Next.js', 'Golang', 'Line LIFF', 'PostgreSQL', 'Redis', 'Vercel'],
+    techStackResume: ['Next.js', 'Golang', 'Line LIFF', 'PostgreSQL'],
+    images: ['/projects/openhouse/openhouse-1.png', '/projects/openhouse/openhouse-2.png'],
+    isDemo: true,
+    icon: '/icon/openhouse.png',
+    features: [
+      'QR scanning',
+      'Real-time updates',
+      'Scalable system',
+    ],
+    isShowResume: true,
+},
+  {
+    id: 15,
+    slug: 'tucu-football-match',
+    title: 'TUCU Football Match',
+    href: {
+      demoUrl: 'https://servus-page.vercel.app/',
+      repoUrl: '',
+    },
+    description: 'Announcements and registration platform supporting up to 3,000 concurrent registrations; user base over 20,000.',
+    datetime: '2025-01-01',
+    category: { title: 'Web', href: '/projects?filter=Web' },
+    tags: ['AI', 'Integration'],
+    techStack: ['Next.js', 'Golang', 'AWS S3', 'AWS Amplify', 'DigitalOcean', 'PostgreSQL'],
+    techStackResume: ['Golang', 'AWS S3', 'PostgreSQL'],
+    images: ['/projects/football/football-1.png', '/projects/football/football-2.png'],
+    isDemo: true,
+    icon: '/icon/football.png',
+    features: [
+      'Announcements',
+      'Registration',
+      'User-friendly interface',
+      'Scalable system',
+    ],
+    isShowResume: true,
   },
 ]
 
